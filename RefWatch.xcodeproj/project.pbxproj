@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */; };
+		5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8631D0D556A003EBBA2 /* ViewController.swift */; };
+		5B0EA8671D0D556A003EBBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0EA8651D0D556A003EBBA2 /* Main.storyboard */; };
+		5B0EA8691D0D556A003EBBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0EA8681D0D556A003EBBA2 /* Assets.xcassets */; };
+		5B0EA86C1D0D556A003EBBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0EA86A1D0D556A003EBBA2 /* LaunchScreen.storyboard */; };
+		5B0EA89E1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5B0EA8A51D0D55FA003EBBA2 /* MainIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */; };
+		5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */; };
+		5B0EA8AF1D0D55FA003EBBA2 /* RefWatchWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */; };
+		5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */; };
+		5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4769341DD47B8E00636E60 /* SettingsIC.swift */; };
+		5B84F7011D11EC6200516291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84F6FF1D11EC6200516291 /* Interface.storyboard */; };
+		5B84F7031D11EFF600516291 /* RefWatchContextSanction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */; };
+		5BCC69621D0E10C900A21628 /* SanctionTypeIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */; };
+		5BCC69641D0E156100A21628 /* RefWatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69631D0E156100A21628 /* RefWatchContext.swift */; };
+		5BCC69661D0E184F00A21628 /* RefWatchContextScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69651D0E184F00A21628 /* RefWatchContextScore.swift */; };
+		5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69671D0E208600A21628 /* ScoreIC.swift */; };
+		5BCC696A1D0E99D600A21628 /* SanctionPlayerIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69691D0E99D600A21628 /* SanctionPlayerIC.swift */; };
+		5BF67FAA1D0EAC7A00B4641A /* SanctionConfirmIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF67FA91D0EAC7A00B4641A /* SanctionConfirmIC.swift */; };
+		5BF67FAC1D0EB5FE00B4641A /* RefWatchContextSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF67FAB1D0EB5FE00B4641A /* RefWatchContextSettings.swift */; };
+		5BF7DBD41DD7B4B800E7D4E0 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7DBD31DD7B4B800E7D4E0 /* ComplicationController.swift */; };
+		5BF7DBD51DD7B73A00E7D4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B0EA8681D0D556A003EBBA2 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B0EA8731D0D556A003EBBA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B0EA85D1D0D556A003EBBA2;
+			remoteInfo = RefWatch;
+		};
+		5B0EA87E1D0D556A003EBBA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B0EA85D1D0D556A003EBBA2;
+			remoteInfo = RefWatch;
+		};
+		5B0EA89F1D0D55FA003EBBA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B0EA89C1D0D55FA003EBBA2;
+			remoteInfo = "RefWatchWatch Extension";
+		};
+		5B0EA8AD1D0D55FA003EBBA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B0EA8901D0D55FA003EBBA2;
+			remoteInfo = RefWatchWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B0EA8B31D0D55FA003EBBA2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5B0EA89E1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA8B71D0D55FA003EBBA2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5B0EA8AF1D0D55FA003EBBA2 /* RefWatchWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B0EA8631D0D556A003EBBA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B0EA8661D0D556A003EBBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B0EA8681D0D556A003EBBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B0EA86B1D0D556A003EBBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B0EA86D1D0D556A003EBBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefWatchWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0EA8981D0D55FA003EBBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RefWatchWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B0EA8A31D0D55FA003EBBA2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainIC.swift; path = "RefWatchWatch Extension/MainIC.swift"; sourceTree = SOURCE_ROOT; };
+		5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5B0EA8AC1D0D55FA003EBBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMgmtIC.swift; sourceTree = "<group>"; };
+		5B4769341DD47B8E00636E60 /* SettingsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIC.swift; sourceTree = "<group>"; };
+		5B84F7001D11EC6200516291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextSanction.swift; sourceTree = "<group>"; };
+		5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionTypeIC.swift; sourceTree = "<group>"; };
+		5BCC69631D0E156100A21628 /* RefWatchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContext.swift; sourceTree = "<group>"; };
+		5BCC69651D0E184F00A21628 /* RefWatchContextScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextScore.swift; sourceTree = "<group>"; };
+		5BCC69671D0E208600A21628 /* ScoreIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreIC.swift; sourceTree = "<group>"; };
+		5BCC69691D0E99D600A21628 /* SanctionPlayerIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionPlayerIC.swift; sourceTree = "<group>"; };
+		5BF67FA91D0EAC7A00B4641A /* SanctionConfirmIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionConfirmIC.swift; sourceTree = "<group>"; };
+		5BF67FAB1D0EB5FE00B4641A /* RefWatchContextSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextSettings.swift; sourceTree = "<group>"; };
+		5BF7DBD31DD7B4B800E7D4E0 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B0EA85B1D0D556A003EBBA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA86F1D0D556A003EBBA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA87A1D0D556A003EBBA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA89A1D0D55FA003EBBA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B0EA8551D0D556A003EBBA2 = {
+			isa = PBXGroup;
+			children = (
+				5B0EA8601D0D556A003EBBA2 /* RefWatch */,
+				5B0EA8921D0D55FA003EBBA2 /* RefWatchWatch */,
+				5B0EA8A11D0D55FA003EBBA2 /* RefWatchWatch Extension */,
+				5B0EA85F1D0D556A003EBBA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B0EA85F1D0D556A003EBBA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */,
+				5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */,
+				5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */,
+				5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */,
+				5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B0EA8601D0D556A003EBBA2 /* RefWatch */ = {
+			isa = PBXGroup;
+			children = (
+				5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */,
+				5B0EA8631D0D556A003EBBA2 /* ViewController.swift */,
+				5B0EA8651D0D556A003EBBA2 /* Main.storyboard */,
+				5B0EA8681D0D556A003EBBA2 /* Assets.xcassets */,
+				5B0EA86A1D0D556A003EBBA2 /* LaunchScreen.storyboard */,
+				5B0EA86D1D0D556A003EBBA2 /* Info.plist */,
+			);
+			path = RefWatch;
+			sourceTree = "<group>";
+		};
+		5B0EA8921D0D55FA003EBBA2 /* RefWatchWatch */ = {
+			isa = PBXGroup;
+			children = (
+				5B84F6FF1D11EC6200516291 /* Interface.storyboard */,
+				5B0EA8981D0D55FA003EBBA2 /* Info.plist */,
+				5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */,
+			);
+			path = RefWatchWatch;
+			sourceTree = "<group>";
+		};
+		5B0EA8A11D0D55FA003EBBA2 /* RefWatchWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */,
+				5BF7DBD31DD7B4B800E7D4E0 /* ComplicationController.swift */,
+				5B0EA8AC1D0D55FA003EBBA2 /* Info.plist */,
+				5B0EA8A21D0D55FA003EBBA2 /* Supporting Files */,
+				5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */,
+				5B4769341DD47B8E00636E60 /* SettingsIC.swift */,
+				5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */,
+				5BF67FA91D0EAC7A00B4641A /* SanctionConfirmIC.swift */,
+				5BCC69691D0E99D600A21628 /* SanctionPlayerIC.swift */,
+				5BCC69631D0E156100A21628 /* RefWatchContext.swift */,
+				5BCC69651D0E184F00A21628 /* RefWatchContextScore.swift */,
+				5BCC69671D0E208600A21628 /* ScoreIC.swift */,
+				5BF67FAB1D0EB5FE00B4641A /* RefWatchContextSettings.swift */,
+				5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */,
+			);
+			path = "RefWatchWatch Extension";
+			sourceTree = "<group>";
+		};
+		5B0EA8A21D0D55FA003EBBA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B0EA8A31D0D55FA003EBBA2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B0EA85D1D0D556A003EBBA2 /* RefWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B0EA8861D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatch" */;
+			buildPhases = (
+				5B0EA85A1D0D556A003EBBA2 /* Sources */,
+				5B0EA85B1D0D556A003EBBA2 /* Frameworks */,
+				5B0EA85C1D0D556A003EBBA2 /* Resources */,
+				5B0EA8B71D0D55FA003EBBA2 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B0EA8AE1D0D55FA003EBBA2 /* PBXTargetDependency */,
+			);
+			name = RefWatch;
+			productName = RefWatch;
+			productReference = 5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B0EA8711D0D556A003EBBA2 /* RefWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B0EA8891D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchTests" */;
+			buildPhases = (
+				5B0EA86E1D0D556A003EBBA2 /* Sources */,
+				5B0EA86F1D0D556A003EBBA2 /* Frameworks */,
+				5B0EA8701D0D556A003EBBA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B0EA8741D0D556A003EBBA2 /* PBXTargetDependency */,
+			);
+			name = RefWatchTests;
+			productName = RefWatchTests;
+			productReference = 5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B0EA87C1D0D556A003EBBA2 /* RefWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B0EA88C1D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchUITests" */;
+			buildPhases = (
+				5B0EA8791D0D556A003EBBA2 /* Sources */,
+				5B0EA87A1D0D556A003EBBA2 /* Frameworks */,
+				5B0EA87B1D0D556A003EBBA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B0EA87F1D0D556A003EBBA2 /* PBXTargetDependency */,
+			);
+			name = RefWatchUITests;
+			productName = RefWatchUITests;
+			productReference = 5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		5B0EA8901D0D55FA003EBBA2 /* RefWatchWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B0EA8B41D0D55FA003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchWatch" */;
+			buildPhases = (
+				5B0EA88F1D0D55FA003EBBA2 /* Resources */,
+				5B0EA8B31D0D55FA003EBBA2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B0EA8A01D0D55FA003EBBA2 /* PBXTargetDependency */,
+			);
+			name = RefWatchWatch;
+			productName = RefWatchWatch;
+			productReference = 5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5B0EA89C1D0D55FA003EBBA2 /* RefWatchWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B0EA8B01D0D55FA003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchWatch Extension" */;
+			buildPhases = (
+				5B0EA8991D0D55FA003EBBA2 /* Sources */,
+				5B0EA89A1D0D55FA003EBBA2 /* Frameworks */,
+				5B0EA89B1D0D55FA003EBBA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RefWatchWatch Extension";
+			productName = "RefWatchWatch Extension";
+			productReference = 5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B0EA8561D0D556A003EBBA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Martin Croker";
+				TargetAttributes = {
+					5B0EA85D1D0D556A003EBBA2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R24S75THVV;
+						LastSwiftMigration = 1010;
+					};
+					5B0EA8711D0D556A003EBBA2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5B0EA85D1D0D556A003EBBA2;
+					};
+					5B0EA87C1D0D556A003EBBA2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5B0EA85D1D0D556A003EBBA2;
+					};
+					5B0EA8901D0D55FA003EBBA2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R24S75THVV;
+						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.app = {
+								enabled = 0;
+							};
+						};
+					};
+					5B0EA89C1D0D55FA003EBBA2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R24S75THVV;
+						LastSwiftMigration = 1010;
+					};
+				};
+			};
+			buildConfigurationList = 5B0EA8591D0D556A003EBBA2 /* Build configuration list for PBXProject "RefWatch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B0EA8551D0D556A003EBBA2;
+			productRefGroup = 5B0EA85F1D0D556A003EBBA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B0EA85D1D0D556A003EBBA2 /* RefWatch */,
+				5B0EA8711D0D556A003EBBA2 /* RefWatchTests */,
+				5B0EA87C1D0D556A003EBBA2 /* RefWatchUITests */,
+				5B0EA8901D0D55FA003EBBA2 /* RefWatchWatch */,
+				5B0EA89C1D0D55FA003EBBA2 /* RefWatchWatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B0EA85C1D0D556A003EBBA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B0EA86C1D0D556A003EBBA2 /* LaunchScreen.storyboard in Resources */,
+				5B0EA8691D0D556A003EBBA2 /* Assets.xcassets in Resources */,
+				5B0EA8671D0D556A003EBBA2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA8701D0D556A003EBBA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA87B1D0D556A003EBBA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA88F1D0D55FA003EBBA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BF7DBD51DD7B73A00E7D4E0 /* Assets.xcassets in Resources */,
+				5B84F7011D11EC6200516291 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA89B1D0D55FA003EBBA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B0EA85A1D0D556A003EBBA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */,
+				5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA86E1D0D556A003EBBA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA8791D0D556A003EBBA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B0EA8991D0D55FA003EBBA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B84F7031D11EFF600516291 /* RefWatchContextSanction.swift in Sources */,
+				5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */,
+				5BF67FAC1D0EB5FE00B4641A /* RefWatchContextSettings.swift in Sources */,
+				5BCC69641D0E156100A21628 /* RefWatchContext.swift in Sources */,
+				5BCC69661D0E184F00A21628 /* RefWatchContextScore.swift in Sources */,
+				5BCC696A1D0E99D600A21628 /* SanctionPlayerIC.swift in Sources */,
+				5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */,
+				5BF67FAA1D0EAC7A00B4641A /* SanctionConfirmIC.swift in Sources */,
+				5BCC69621D0E10C900A21628 /* SanctionTypeIC.swift in Sources */,
+				5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */,
+				5BF7DBD41DD7B4B800E7D4E0 /* ComplicationController.swift in Sources */,
+				5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */,
+				5B0EA8A51D0D55FA003EBBA2 /* MainIC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B0EA8741D0D556A003EBBA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B0EA85D1D0D556A003EBBA2 /* RefWatch */;
+			targetProxy = 5B0EA8731D0D556A003EBBA2 /* PBXContainerItemProxy */;
+		};
+		5B0EA87F1D0D556A003EBBA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B0EA85D1D0D556A003EBBA2 /* RefWatch */;
+			targetProxy = 5B0EA87E1D0D556A003EBBA2 /* PBXContainerItemProxy */;
+		};
+		5B0EA8A01D0D55FA003EBBA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B0EA89C1D0D55FA003EBBA2 /* RefWatchWatch Extension */;
+			targetProxy = 5B0EA89F1D0D55FA003EBBA2 /* PBXContainerItemProxy */;
+		};
+		5B0EA8AE1D0D55FA003EBBA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B0EA8901D0D55FA003EBBA2 /* RefWatchWatch */;
+			targetProxy = 5B0EA8AD1D0D55FA003EBBA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B0EA8651D0D556A003EBBA2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B0EA8661D0D556A003EBBA2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B0EA86A1D0D556A003EBBA2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B0EA86B1D0D556A003EBBA2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5B84F6FF1D11EC6200516291 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B84F7001D11EC6200516291 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B0EA8841D0D556A003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5B0EA8851D0D556A003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B0EA8871D0D556A003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = RefWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		5B0EA8881D0D556A003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = RefWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		5B0EA88A1D0D556A003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RefWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefWatch.app/RefWatch";
+			};
+			name = Debug;
+		};
+		5B0EA88B1D0D556A003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RefWatchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefWatch.app/RefWatch";
+			};
+			name = Release;
+		};
+		5B0EA88D1D0D556A003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RefWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RefWatch;
+			};
+			name = Debug;
+		};
+		5B0EA88E1D0D556A003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RefWatchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RefWatch;
+			};
+			name = Release;
+		};
+		5B0EA8B11D0D55FA003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		5B0EA8B21D0D55FA003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		5B0EA8B51D0D55FA003EBBA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				IBSC_MODULE = RefWatchWatch_Extension;
+				INFOPLIST_FILE = RefWatchWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		5B0EA8B61D0D55FA003EBBA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				IBSC_MODULE = RefWatchWatch_Extension;
+				INFOPLIST_FILE = RefWatchWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B0EA8591D0D556A003EBBA2 /* Build configuration list for PBXProject "RefWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA8841D0D556A003EBBA2 /* Debug */,
+				5B0EA8851D0D556A003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B0EA8861D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA8871D0D556A003EBBA2 /* Debug */,
+				5B0EA8881D0D556A003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B0EA8891D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA88A1D0D556A003EBBA2 /* Debug */,
+				5B0EA88B1D0D556A003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B0EA88C1D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA88D1D0D556A003EBBA2 /* Debug */,
+				5B0EA88E1D0D556A003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B0EA8B01D0D55FA003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA8B11D0D55FA003EBBA2 /* Debug */,
+				5B0EA8B21D0D55FA003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B0EA8B41D0D55FA003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B0EA8B51D0D55FA003EBBA2 /* Debug */,
+				5B0EA8B61D0D55FA003EBBA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B0EA8561D0D556A003EBBA2 /* Project object */;
+}
