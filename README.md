@@ -11,5 +11,4 @@ All contributions welcome - get in touch with mcroker@gmail.com
 
 ## Usage
 it's fairly self-explanatory, but the below may help
-![Usage image]
-(https://github.com/mcroker/refwatch/blob/master/RefWatchUIDesign.png)
+![Usage image](https://github.com/mcroker/refwatch/blob/master/RefWatchUIDesign.png "Usage image")
