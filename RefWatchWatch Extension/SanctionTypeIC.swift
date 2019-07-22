@@ -12,25 +12,22 @@ import Foundation
 
 class SanctionTypeIC: WKInterfaceController {
     
+    @IBOutlet var WKSinBinButtonOutlet: WKInterfaceButton!
+    
     var _context : RefWatchContext?
-
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         _context = context as? RefWatchContext
-        
-        // If player is already set close dialogue
     }
     
     override func willActivate() {
         super.willActivate()
-        // This method is called when watch view controller is about to be visible to user
-        
-       // if _context!.tmpsanction.player >= 0 {
-       //     _context!.addsanction(_context!.tmpsanction.ishometeam, player: _context!.tmpsanction.player, sanctiontype: _context!.tmpsanction.sanctiontype )
-       //     dismissController()
-       // }
-
+        if _context?.settings.sinbinduration == 0 {
+            WKSinBinButtonOutlet.setHidden(true)
+        } else {
+            WKSinBinButtonOutlet.setHidden(false)
+        }
     }
     
     override func didDeactivate() {
@@ -39,14 +36,18 @@ class SanctionTypeIC: WKInterfaceController {
     }
     
    @IBAction func WKCautionButton() {
-            _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.caution
-            presentController(withName: "SanctionPlayer", context: _context)
+        _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.caution
+        presentController(withName: "SanctionPlayer", context: _context)
+    }
+    
+    @IBAction func WKPenalityButton() {
+        _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.penalty
+        presentController(withName: "SanctionPlayer", context: _context)
     }
     
     @IBAction func WKSinBinButton() {
         _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.sinBin
         presentController(withName: "SanctionPlayer", context: _context)
-
     }
     
     @IBAction func WKSendOffButton() {

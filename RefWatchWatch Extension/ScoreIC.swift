@@ -12,6 +12,10 @@ import Foundation
 
 class ScoreIC: WKInterfaceController {
     
+    
+    @IBOutlet var WKConvGrp: WKInterfaceGroup!
+    @IBOutlet var WKPenGrp: WKInterfaceGroup!
+    
     @IBOutlet var WKTry: WKInterfaceLabel!
     @IBOutlet var WKConv: WKInterfaceLabel!
     @IBOutlet var WKPen: WKInterfaceLabel!
@@ -29,7 +33,7 @@ class ScoreIC: WKInterfaceController {
         
         _context = context as? RefWatchContext
 
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             WKTry.setText(String(_context!.homescore.trys))
             WKPen.setText(String(_context!.homescore.pen))
             WKConv.setText(String(_context!.homescore.conv))
@@ -52,7 +56,17 @@ class ScoreIC: WKInterfaceController {
     }
     
     func setEnabled() {
-        if _context!.ishomeopp {
+        if _context!.settings.convpoints == 0 {
+            WKConvGrp.setHidden(true)
+        } else {
+            WKConvGrp.setHidden(false)
+        }
+        if _context!.settings.penpoints == 0 {
+            WKPenGrp.setHidden(true)
+        } else {
+            WKPenGrp.setHidden(false)
+        }
+        if _context!.ishometeam {
             if _context!.homescore.trys > 0 {
                 WKTryDownButton.setEnabled(true)
                 WKConvUpButton.setEnabled(true)
@@ -112,7 +126,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKTryAdd() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context!.homescore.trys+=1
             WKTry.setText(String(_context!.homescore.trys))
         }
@@ -124,7 +138,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKTryDown() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context?.homescore.trys-=1
             WKTry.setText(String(_context!.homescore.trys))
         }
@@ -136,7 +150,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKConvUp() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context!.homescore.conv+=1
             WKConv.setText(String(_context!.homescore.conv))
         }
@@ -148,7 +162,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKConvDown() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context!.homescore.conv-=1
             WKConv.setText(String(_context!.homescore.conv))
         }
@@ -161,7 +175,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKPenUp() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context!.homescore.pen+=1
             WKPen.setText(String(_context!.homescore.pen))
         }
@@ -173,7 +187,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKPenDown() {
-        if _context!.ishomeopp {
+        if _context!.ishometeam {
             _context!.homescore.pen-=1
             WKPen.setText(String(_context!.homescore.pen))
         }

@@ -22,8 +22,8 @@ class RefWatchContextSettings {
     fileprivate var _sinbinduration : TimeInterval = 600
     fileprivate var _displaygraceperiod : TimeInterval = 120
     
-    // private var _sinbinduration : NSTimeInterval = 3
-    // private var _displaygraceperiod : NSTimeInterval = 2
+    fileprivate var _pkrecentmins: TimeInterval = 600
+    fileprivate var _pklimit: Int = 3
     
     fileprivate init() {}
     
@@ -41,6 +41,24 @@ class RefWatchContextSettings {
         }
         set {
             _periodduration = newValue
+        }
+    }
+    
+    var pkrecentmins : TimeInterval {
+        get {
+            return _pkrecentmins
+        }
+        set {
+            _pkrecentmins = newValue
+        }
+    }
+    
+    var pklimit : Int {
+        get {
+            return _pklimit
+        }
+        set {
+            _pklimit = newValue
         }
     }
     

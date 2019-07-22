@@ -53,44 +53,93 @@ class MainIC: WKInterfaceController {
     
     @IBOutlet var WKHomeCautionP: WKInterfaceLabel!
     
+    @IBOutlet var WKHomePKRecent: WKInterfaceLabel!
+
+    @IBOutlet var WKHomePKPeriod: WKInterfaceLabel!
+    
+    @IBOutlet var WKHomePKTotal: WKInterfaceLabel!
+    
+    @IBOutlet var WKAwayPKRecent: WKInterfaceLabel!
+    
+    @IBOutlet var WKAwayPKPeriod: WKInterfaceLabel!
+    
+    @IBOutlet var WKAwayPKTotal: WKInterfaceLabel!
+    
     @IBOutlet var WKGrpAwayOff: WKInterfaceGroup!
     
     @IBOutlet var WKAwayOffP: WKInterfaceLabel!
     
     @IBOutlet var WKAwayCautionP: WKInterfaceLabel!
     
+    var myTimer : Timer?  //internal timer to keep track
+    var TimerInterval : TimeInterval = 1
     
-    func draw() {
-        if _context.istimeon {
-            WKTimeButton.setTitle("Time Off")
-        }
-        else {
-            WKTimeButton.setTitle("Time On")
-        }
-
-        WKAwayScore.setText(String(_context.awayscore.score))
-        WKHomeScore.setText(String(_context.homescore.score))
-        
-        //WKGameTimer.setDate(Date(timeIntervalSinceNow: _context.periodplayedtime ))
-        
-        if _context.istimeon {
-            if _context.istimeup {
-                WKGameTimer.setTextColor(UIColor.red)
-            }
-            else {
-                WKGameTimer.setTextColor(UIColor.white)
-            }
-        }
-        else {
-            WKGameTimer.setTextColor(UIColor.darkGray)
-        }
-        
-        //WKElapsedTimer.setDate(Date(timeIntervalSinceNow: _context.periodelapsedtime ))
-        
-        drawsanctions()
+    var _context : RefWatchContext
+    var _complicationserver : CLKComplicationServer
+    var _oldistimeup : Bool = false
+    
+    override init() {
+        _context=RefWatchContext.sharedInstance
+        _complicationserver=CLKComplicationServer.sharedInstance()
+        super.init()
     }
     
-    func drawsanctions() {
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        if context is RefWatchContext {
+            _context = context as! RefWatchContext
+        }
+        draw()
+    }
+    
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        
+        // Start the timer
+        startComplicationTimer()
+        
+        draw()
+    }
+    
+    override func didDeactivate() {
+        super.didDeactivate()
+    }
+    
+    func draw() {
+        drawSanctions()
+        drawPKTracking()
+        drawClock()
+        drawScores()
+    }
+    
+    func drawScores() {
+        WKAwayScore.setText(String(_context.awayscore.score))
+        WKHomeScore.setText(String(_context.homescore.score))
+    }
+    
+    func drawPKTracking() {
+        let recentHome = _context.countRecentSanctions(true)
+        let recentAway = _context.countRecentSanctions(false)
+        WKHomePKRecent.setText(String(recentHome))
+        WKAwayPKRecent.setText(String(recentAway))
+        if (recentHome >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKHomePKRecent.setTextColor(UIColor.yellow)
+        } else {
+            WKHomePKRecent.setTextColor(UIColor.white)
+        }
+        if (recentAway >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKAwayPKRecent.setTextColor(UIColor.yellow)
+        } else {
+            WKAwayPKRecent.setTextColor(UIColor.white)
+        }
+        WKHomePKPeriod.setText(String(_context.countPeriodSanctions(true)))
+        WKAwayPKPeriod.setText(String(_context.countPeriodSanctions(false)))
+        WKHomePKTotal.setText(String(_context.countTotalSanctions(true)))
+        WKAwayPKTotal.setText(String(_context.countTotalSanctions(false)))
+    }
+    
+    func drawSanctions() {
         var homeoff : String = String()
         var awayoff : String = String()
         var homecaution : String = String()
@@ -106,11 +155,9 @@ class MainIC: WKInterfaceController {
         
         for sanctionitem : RefWatchContextSanction in _context.sanctions {
             if sanctionitem.isingraceperiod {
-                
                 if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.sendOff {
-    
                     if sanctionitem.ishometeam {
-                        if homeoff.characters.count != 0 {
+                        if homeoff.count != 0 {
                             homeoff = "\(homeoff),\(sanctionitem.player)"
                         }
                         else {
@@ -118,7 +165,7 @@ class MainIC: WKInterfaceController {
                         }
                     }
                     else {
-                        if awayoff.characters.count != 0 {
+                        if awayoff.count != 0 {
                             awayoff = "\(awayoff),\(sanctionitem.player)"
                         }
                         else {
@@ -126,11 +173,9 @@ class MainIC: WKInterfaceController {
                         }
                     }
                 }
-                
                 if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.caution {
-                    
                     if sanctionitem.ishometeam {
-                        if homecaution.characters.count != 0 {
+                        if homecaution.count != 0 {
                             homecaution = "\(homecaution),\(sanctionitem.player)"
                         }
                         else {
@@ -138,7 +183,7 @@ class MainIC: WKInterfaceController {
                         }
                     }
                     else {
-                        if awaycaution.characters.count != 0 {
+                        if awaycaution.count != 0 {
                             awaycaution = "\(awaycaution),\(sanctionitem.player)"
                         }
                         else {
@@ -148,7 +193,6 @@ class MainIC: WKInterfaceController {
                 }
                 
                 if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.sinBin {
-                    
                     if sanctionitem.ishometeam {
                         if homesinP1 == -1 || sanctionitem.timeremaining < homesinT1 {
                             homesinP2 = homesinP1
@@ -252,47 +296,37 @@ class MainIC: WKInterfaceController {
     }
     
     @IBAction func WKMenuReset() {
-        context.resetAll()
+        _context.resetAll()
         _oldistimeup = false
         draw()
-        
-        for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-            _complicationserver.reloadTimeline(for: complicaationitem)
-        }
+        reloadComplications()
     }
     
     @IBAction func WKMenuHalfTime() {
-        context.resetTime()
+        _context.resetTime()
         _oldistimeup = false
         draw()
-        
-        for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-            _complicationserver.reloadTimeline(for: complicaationitem)
-        }
+        reloadComplications()
     }
 
     @IBAction func WKMenuSettings() {
         presentController(withName: "SettingsCtl" , context: _context)
-        for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-            _complicationserver.reloadTimeline(for: complicaationitem)
-        }
+        reloadComplications()
     }
     
     @IBAction func WKMenuSanction() {
         _context.tmpsanction.player = -1
         presentController(withName: "SanctionTypeCtl", context: _context)
-        
     }
 
     @IBAction func WKHomeScoreGroupButton() {
-        context.ishomeopp = true
+        _context.ishometeam = true
         presentController(withName: "ScoreCtl" , context: _context)
     }
 
     @IBAction func WKAwayScoreGroupButton() {
-        context.ishomeopp=false
+        _context.ishometeam = false
         presentController(withName: "ScoreCtl" , context: _context)
-        WKAwayScore.setText(String(_context.awayscore.score))
     }
     
     var context : RefWatchContext {
@@ -300,49 +334,14 @@ class MainIC: WKInterfaceController {
             return _context
         }
     }
-    
-    var myTimer : Timer?  //internal timer to keep track
-    var TimerInterval : TimeInterval = 1
-    
-    var _context : RefWatchContext
-    var _complicationserver : CLKComplicationServer
-    var _oldistimeup : Bool = false
 
-    override init() {
-        _context=RefWatchContext.sharedInstance
-        _complicationserver=CLKComplicationServer.sharedInstance()
-        super.init()
-    }
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        if context is RefWatchContext {
-            _context = context as! RefWatchContext
-        }
-        draw()
-    }
-    
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        
-        	draw()
-        
-        // Start the timer
-        myTimer = Timer.scheduledTimer(timeInterval: TimerInterval, target: self, selector: #selector(MainIC.timerDone), userInfo: nil, repeats: true)
-
-       WKGameTimer.setDate(_context.logicalperiodend)
-    }
-    
+    // This is called every timer interval (1 sec?) and used to detect when time is up
+    // and then to trigger the notifcations on the watch i.e. to vibrate...
+    // _oldtimeisup is used to make sure this only triggers once.
     @objc func timerDone(){
-        
-        //WKGameTimer.setDate(Date(timeIntervalSinceNow: _context.periodplayedtime ))
-        
         if _context.istimeup && !_oldistimeup {
             WKGameTimer.setTextColor(UIColor.red)
-            for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-                _complicationserver.reloadTimeline(for: complicaationitem)
-            }
+            reloadComplications()
             
             WKInterfaceDevice.current().play(WKHapticType.notification)
             
@@ -361,47 +360,74 @@ class MainIC: WKInterfaceController {
             center.add(request)
             
         }
-        
         _oldistimeup = _context.istimeup
-        
-        drawsanctions()
-        
+        drawSanctions()
+        drawPKTracking()
     }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
-    @IBAction func TimeButtonClick() {
-        
-        if !_context.istimeon {
-            if !_context.isperiodrunning {
-                WKElapsedTimer.setDate(Date(timeIntervalSinceNow: _context.periodelapsedtime))
-                WKElapsedTimer.start()
-            }
+    
+    func drawClock() {
+        // Set the colour of the game-time clock
+        // Grey - clock is paused
+        // White - clock is running normally
+        // Red - time is up
+        if _context.istimeon {
             if _context.istimeup {
                 WKGameTimer.setTextColor(UIColor.red)
             }
             else {
                 WKGameTimer.setTextColor(UIColor.white)
             }
-            _context.istimeon=true
-
-            WKGameTimer.setDate(_context.logicalperiodend)
-            WKGameTimer.start()
-        }
-        else {
+        } else {
             WKGameTimer.setTextColor(UIColor.darkGray)
+        }
+        
+
+        
+        // Set the time on the elapsed-time clock and if the period is running
+        // start it.
+        if _context.isperiodrunning {
+            WKElapsedTimer.setDate(_context.periodstart)
+            WKElapsedTimer.start()
+            
+            // Set the time on the game-time clock based on the time remaining in the
+            // period, and start the counter.
+            WKGameTimer.setDate(_context.logicalperiodend)
+            if _context.istimeon {
+                WKGameTimer.start()
+            } else {
+                WKGameTimer.stop()
+            }
+        } else {
+
+            WKGameTimer.setDate(Date(timeIntervalSinceNow: _context.settings.periodduration))
             WKGameTimer.stop()
-            _context.istimeon=false
+            
+            WKElapsedTimer.setDate(Date(timeIntervalSinceNow: 0))
+            // Run a clock during half-time (but not before play starts)
+            if _context.gameplayedtime > 0 {
+                WKElapsedTimer.start()
+            } else {
+                WKElapsedTimer.stop()
+            }
         }
-        
-        
-        for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-            _complicationserver.reloadTimeline(for: complicaationitem)
+    }
+    
+    func reloadComplications() {
+        if ( nil != _complicationserver.activeComplications ) {
+            for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
+                _complicationserver.reloadTimeline(for: complicaationitem)
+            }
         }
-        
+    }
+    
+    func startComplicationTimer() {
+        myTimer = Timer.scheduledTimer(timeInterval: TimerInterval, target: self, selector: #selector(MainIC.timerDone), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func TimeButtonClick() {
+        _context.istimeon = !_context.istimeon
+        drawClock()
+        reloadComplications()
     }
 
 }

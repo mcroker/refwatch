@@ -48,21 +48,24 @@ class SanctionPlayerIC: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
-        
         _ishometeam = true
         WKTeamButton.setTitle("Home")
-        
     }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         _context = context as? RefWatchContext
-        
+
         _currentno = -1
         
-        WKOKButton.setHidden(true)
+        // For these santion types a player is required.
+        if (_context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.sendOff
+            || _context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.sinBin
+            || _context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.caution
+            ) {
+            WKOKButton.setHidden(true)
+        }
         WKBackButton.setHidden(true)
-        
     }
     
     override func didDeactivate() {
@@ -72,9 +75,8 @@ class SanctionPlayerIC: WKInterfaceController {
 
     @IBAction func WKOKButtonClick() {
         _context?.tmpsanction.player = _currentno
-        //dismissController()
         _context!.addsanction(_ishometeam, player: _currentno, sanctiontype: _context!.tmpsanction.sanctiontype )
-        WKInterfaceController.reloadRootControllers(withNames: ["Main"], contexts: [_context!] )
+        presentController(withName: "Main" , context: _context)
     }
     
     @IBAction func WKTeamButtonClick() {
@@ -102,7 +104,7 @@ class SanctionPlayerIC: WKInterfaceController {
         WKOKButton.setHidden(false)
         WKBackButton.setHidden(false)
         
-        if nextstring.characters.count > 1 {
+        if nextstring.count > 1 {
             WKBut0.setEnabled(false)
             WKBut1.setEnabled(false)
             WKBut2.setEnabled(false)
@@ -118,16 +120,22 @@ class SanctionPlayerIC: WKInterfaceController {
     
     @IBAction func WKBackspaceClick() {
         if _currentno != -1 {
-            var curstring : String = "\(_currentno)"
-            var truncated = curstring.substring(to: curstring.characters.index(before: curstring.endIndex))
+            let curstring : String = "\(_currentno)"
+            let truncated = curstring.substring(to: curstring.index(before: curstring.endIndex))
             WKValue.setText(truncated)
             
-            if truncated.characters.count > 0 {
+            if truncated.count > 0 {
                 _currentno = Int(truncated)!
             }
             else {
                 _currentno = -1
-                WKOKButton.setHidden(true)
+                // For these santion types a player is required.
+                if (_context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.sendOff
+                    || _context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.sinBin
+                    || _context?.tmpsanction.sanctiontype == RefWatchContextSanction.SanctionEnum.caution
+                    ) {
+                    WKOKButton.setHidden(true)
+                }
                 WKBackButton.setHidden(true)
             }
             WKBut0.setEnabled(true)

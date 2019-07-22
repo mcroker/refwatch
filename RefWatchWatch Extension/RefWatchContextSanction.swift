@@ -11,6 +11,7 @@ import Foundation
 class RefWatchContextSanction {
     
     enum SanctionEnum {
+        case penalty
         case caution
         case sinBin
         case sendOff
@@ -26,6 +27,9 @@ class RefWatchContextSanction {
     fileprivate var _istimeon  : Bool = false
     fileprivate var _clockstart : Date = Date(timeIntervalSinceNow: 0)  // The time when the clock started last (ie when the ref last resumed play)
     fileprivate var _priorclocktime : TimeInterval = 0.0                  // The amount of game time in this period/half prior up to when the clock last stopped
+    
+    fileprivate var _sanctionPeriodAwarded: Int = 0
+    fileprivate var _sanctionGameTimeAwarded: TimeInterval = 0.0
     
     var istimeon : Bool {
         get {
@@ -86,6 +90,24 @@ class RefWatchContextSanction {
         }
         set {
             _sanctiontime = newValue
+        }
+    }
+    
+    var sanctionPeriodAwarded : Int {
+        get {
+            return _sanctionPeriodAwarded
+        }
+        set {
+            _sanctionPeriodAwarded = newValue
+        }
+    }
+    
+    var sanctionGameTimeAwarded : TimeInterval {
+        get {
+            return _sanctionGameTimeAwarded
+        }
+        set {
+            _sanctionGameTimeAwarded = newValue
         }
     }
     

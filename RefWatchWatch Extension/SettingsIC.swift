@@ -25,15 +25,19 @@ class SettingsIC: WKInterfaceController {
     @IBOutlet var SinBinDownButton: WKInterfaceButton!
     @IBOutlet var ConvDownButton: WKInterfaceButton!
     @IBOutlet var PenDownButton: WKInterfaceButton!
+    @IBOutlet var RKRecentMins: WKInterfaceLabel!
+    @IBOutlet var PKLimit: WKInterfaceLabel!
+    @IBOutlet var PKRecentMinsDownButton: WKInterfaceButton!
+    @IBOutlet var PKLimitDownButton: WKInterfaceButton!
+    @IBOutlet var PKRecentMinsUpButton: WKInterfaceButton!
     
-       @IBAction func PeriodUp() {
+    @IBAction func PeriodUp() {
         if (_context!.settings.periodduration >= 900) {
           _context!.settings.periodduration+=300
         } else {
           _context!.settings.periodduration+=60
         }
-        PeriodDownButton.setEnabled(true)
-        PeriodDuration.setText(dateFormatter.string(from: _context!.settings.periodduration))
+        draw()
     }
 
     @IBAction func PeriodDown() {
@@ -42,66 +46,82 @@ class SettingsIC: WKInterfaceController {
         } else {
             _context!.settings.periodduration-=60
         }
-        if (_context!.settings.periodduration <= 60) {
-            PeriodDownButton.setEnabled(false)
+        if _context!.settings.pkrecentmins > _context!.settings.periodduration {
+            _context!.settings.pkrecentmins = _context!.settings.periodduration
         }
-        PeriodDuration.setText(dateFormatter.string(from: _context!.settings.periodduration))
+        draw()
     }
     
     @IBAction func TryDown() {
         _context!.settings.trypoints-=1
-        TryPoints.setText(String(_context!.settings.trypoints))
-        if (_context!.settings.trypoints <= 1) {
-            TryDownButton.setEnabled(false)
-        }
+        draw()
     }
     
     @IBAction func TryUp() {
         _context!.settings.trypoints+=1
-        TryPoints.setText(String(_context!.settings.trypoints))
-        TryDownButton.setEnabled(true)
+        draw()
     }
 
     @IBAction func ConvDown() {
         _context!.settings.convpoints-=1
-        ConvPoints.setText(String((_context?.settings.convpoints)!))
-        if ((_context?.settings.convpoints)! <= 0) {
-            ConvDownButton.setEnabled(false)
-        }
+        draw()
     }
 
     @IBAction func ConvUp() {
         _context!.settings.convpoints+=1
-        ConvPoints.setText(String(_context!.settings.convpoints))
-        ConvDownButton.setEnabled(true)
+        draw()
     }
     
     @IBAction func PenDown() {
         _context!.settings.penpoints-=1
-        PenPoints.setText(String(_context!.settings.penpoints))
-        if (_context!.settings.penpoints <= 0) {
-            PenDownButton.setEnabled(false)
-        }
+        draw()
     }
 
     @IBAction func PenUp() {
         _context!.settings.penpoints+=1
-        PenPoints.setText(String(_context!.settings.penpoints))
-        PenDownButton.setEnabled(true)
+        draw()
     }
     
     @IBAction func SinBinDown() {
         _context!.settings.sinbinduration-=60
-        if (_context!.settings.sinbinduration <= 0) {
-            SinBinDownButton.setEnabled(false)
-        }
-        SinBinDuration.setText(dateFormatter.string(from: _context!.settings.sinbinduration))
+        draw()
     }
     
     @IBAction func SinBinUp() {
         _context?.settings.sinbinduration+=60
-        SinBinDownButton.setEnabled(true)
-        SinBinDuration.setText(dateFormatter.string(from: _context!.settings.sinbinduration))
+        draw()
+    }
+    
+    
+    @IBAction func PKMinsDown() {
+        if (_context!.settings.pkrecentmins >= 1200) {
+            _context!.settings.pkrecentmins-=300
+        } else {
+            _context!.settings.pkrecentmins-=60
+        }
+        draw()
+    }
+    
+    @IBAction func PKMinsUp() {
+        if (_context!.settings.pkrecentmins >= 900) {
+            _context!.settings.pkrecentmins+=300
+        } else {
+            _context!.settings.pkrecentmins+=60
+        }
+        if _context!.settings.pkrecentmins > _context!.settings.periodduration {
+             _context!.settings.pkrecentmins = _context!.settings.periodduration
+        }
+        draw()
+    }
+    
+    @IBAction func PKLimitDown() {
+        _context!.settings.pklimit-=1
+        draw()
+    }
+    
+    @IBAction func PKLimitUp() {
+        _context?.settings.pklimit+=1
+        draw()
     }
     
     override func awake(withContext context: Any?) {
@@ -110,29 +130,49 @@ class SettingsIC: WKInterfaceController {
         dateFormatter.allowedUnits = .minute
     }
     
-    override func willActivate() {
-        super.willActivate()
-        // This method is called when watch view controller is about to be visible to user
-        
-        
+    func draw() {
         PeriodDuration.setText(dateFormatter.string(from: _context!.settings.periodduration))
         PeriodDownButton.setEnabled(_context!.settings.periodduration > 60)
         
         TryPoints.setText(String(_context!.settings.trypoints))
         TryDownButton.setEnabled(_context!.settings.trypoints > 1)
-     
         
-        ConvPoints.setText(String(_context!.settings.convpoints))
-        ConvDownButton.setEnabled(_context!.settings.convpoints > 1)
+        if _context!.settings.convpoints > 0 {
+            ConvPoints.setText(String(_context!.settings.convpoints))
+        } else {
+            ConvPoints.setText("Off")
+        }
+        ConvDownButton.setEnabled(_context!.settings.convpoints > 0)
         
+        if _context!.settings.penpoints > 0 {
+            PenPoints.setText(String(_context!.settings.penpoints))
+        } else {
+            PenPoints.setText("Off")
+        }
+        PenDownButton.setEnabled(_context!.settings.penpoints > 0)
         
-        PenPoints.setText(String(_context!.settings.penpoints))
-        PenDownButton.setEnabled(_context!.settings.penpoints > 1)
-        
-        
-        SinBinDuration.setText(dateFormatter.string(from: _context!.settings.sinbinduration))
+        if _context!.settings.sinbinduration > 0 {
+            SinBinDuration.setText(dateFormatter.string(from: _context!.settings.sinbinduration))
+        } else {
+            SinBinDuration.setText("Off")
+        }
         SinBinDownButton.setEnabled(_context!.settings.sinbinduration > 0)
         
+        if _context!.settings.pklimit > 0 {
+            PKLimit.setText(String(_context!.settings.pklimit))
+        } else {
+            PKLimit.setText("Off")
+        }
+        PKLimitDownButton.setEnabled(_context!.settings.pklimit > 0)
+        
+        RKRecentMins.setText(dateFormatter.string(from: _context!.settings.pkrecentmins))
+        PKRecentMinsDownButton.setEnabled(_context!.settings.pkrecentmins > 60)
+        PKRecentMinsUpButton.setEnabled(_context!.settings.pkrecentmins < _context!.settings.periodduration)
+    }
+    
+    override func willActivate() {
+        super.willActivate()
+        draw()
     }
     
     @IBAction func ClkOK() {

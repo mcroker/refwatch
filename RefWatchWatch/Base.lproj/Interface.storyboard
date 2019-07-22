@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="512" identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--Settings-->
@@ -167,6 +167,67 @@
                                 </group>
                             </items>
                         </group>
+                        <label alignment="left" text="Penalty Tracking" id="bEz-Zi-ChR"/>
+                        <group width="1" alignment="left" id="geG-aU-gcI">
+                            <items>
+                                <group width="0.33000000000000002" alignment="left" id="FVI-TZ-SW0">
+                                    <items>
+                                        <button width="1" alignment="left" title="-" id="cPe-tf-qzA">
+                                            <connections>
+                                                <action selector="PKMinsDown" destination="R0e-Ux-2BN" id="L2s-Vc-pJT"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" layout="vertical" id="xKe-ri-JpO">
+                                    <items>
+                                        <label width="1" alignment="left" text="Mins" textAlignment="center" id="kvE-p6-5x7">
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </label>
+                                        <label width="1" height="19.5" alignment="left" text="0" textAlignment="center" id="V0D-5M-jWi" userLabel="PKRecentMins"/>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" id="lik-16-GjG">
+                                    <items>
+                                        <button width="1" alignment="left" title="+" id="Cxz-um-WTW">
+                                            <connections>
+                                                <action selector="PKMinsUp" destination="R0e-Ux-2BN" id="gcO-li-Pic"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="lPP-91-jmb">
+                            <items>
+                                <group width="0.33000000000000002" alignment="left" id="fsa-tZ-Uwf">
+                                    <items>
+                                        <button width="1" alignment="left" title="-" id="qeo-Qf-iCq">
+                                            <connections>
+                                                <action selector="PKLimitDown" destination="R0e-Ux-2BN" id="zvJ-zE-JsS"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" layout="vertical" id="pIS-58-lrd">
+                                    <items>
+                                        <label width="1" alignment="left" text="Warn" textAlignment="center" id="vgh-iz-0d8">
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </label>
+                                        <label width="1" height="19.5" alignment="left" text="0" textAlignment="center" id="sin-hv-IHv" userLabel="PKLimit"/>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" id="1ps-Yz-Qq7">
+                                    <items>
+                                        <button width="1" alignment="left" title="+" id="yOF-H9-xHp">
+                                            <connections>
+                                                <action selector="PKLimitUp" destination="R0e-Ux-2BN" id="qns-8U-Vx6"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                         <button width="1" alignment="left" title="OK" id="QLy-tD-dep">
                             <connections>
                                 <action selector="ClkOK" destination="R0e-Ux-2BN" id="hDz-hE-07a"/>
@@ -177,11 +238,16 @@
                         <outlet property="ConvDownButton" destination="P0K-Db-blP" id="kjj-zm-9Rs"/>
                         <outlet property="ConvPoints" destination="msU-vT-7RB" id="Qr7-p6-VtL"/>
                         <outlet property="ConvUp" destination="1sg-qX-kde" id="B8k-Rx-LZy"/>
+                        <outlet property="PKLimit" destination="sin-hv-IHv" id="ZXL-Go-qYI"/>
+                        <outlet property="PKLimitDownButton" destination="qeo-Qf-iCq" id="rpb-qR-lHO"/>
+                        <outlet property="PKRecentMinsDownButton" destination="cPe-tf-qzA" id="WnI-ou-crp"/>
+                        <outlet property="PKRecentMinsUpButton" destination="Cxz-um-WTW" id="ivw-V9-5RG"/>
                         <outlet property="PenDownButton" destination="NZm-zg-haC" id="AWu-LS-cNr"/>
                         <outlet property="PenPoints" destination="ziN-2Z-S3w" id="feh-jM-NI9"/>
                         <outlet property="PenUp" destination="3CY-Og-Q6J" id="7Ha-mT-icL"/>
                         <outlet property="PeriodDownButton" destination="FkN-W3-s4j" id="fcs-JC-UA4"/>
                         <outlet property="PeriodDuration" destination="vBP-8S-ksC" id="lti-oO-n7I"/>
+                        <outlet property="RKRecentMins" destination="V0D-5M-jWi" id="A0w-sU-5vg"/>
                         <outlet property="SinBinDownButton" destination="6Mp-yA-tBJ" id="cLS-sX-S4G"/>
                         <outlet property="SinBinDuration" destination="1cS-jq-cbm" id="fCu-nP-OHK"/>
                         <outlet property="TryDownButton" destination="gJq-jj-HgA" id="rcl-8q-jam"/>
@@ -226,7 +292,7 @@
                                 <separator width="1" alignment="left" id="z01-W1-iLB"/>
                                 <group width="1" alignment="left" spacing="0.0" id="MOV-p3-JyH">
                                     <items>
-                                        <button alignment="left" id="cxo-Lp-bZI">
+                                        <button alignment="left" id="cxo-Lp-bZI" userLabel="WKHome Score Group Button">
                                             <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="Xm2-Jh-fVl">
                                                 <items>
                                                     <label width="1" alignment="left" text="Home" textAlignment="center" id="Bmq-5u-jxX">
@@ -260,13 +326,27 @@
                                                             </timer>
                                                         </items>
                                                     </group>
-                                                    <group width="1" height="12" alignment="left" id="lVJ-hG-qB8">
+                                                    <group width="1" alignment="left" id="lVJ-hG-qB8">
                                                         <items>
-                                                            <label alignment="center" id="TLd-BL-Saf" userLabel="X">
+                                                            <label alignment="center" id="Il7-8E-pOj" userLabel="WK Home OffP">
                                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                                             </label>
                                                             <label alignment="center" id="FTr-hX-iyO">
+                                                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="1" height="12" alignment="left" spacing="10" id="eCI-Vi-iIV" userLabel="WKGrp Home PKs">
+                                                        <items>
+                                                            <label alignment="center" isAccessibilityElement="NO" text="0" id="W9p-oI-Vwq" userLabel="WK Home RecentPK">
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                            <label alignment="center" accessibilityValue="0" text="0" id="Lzg-n5-F3D" userLabel="WK Home Period PK">
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                            <label alignment="center" accessibilityValue="0" text="0" id="BEg-gx-6Jv" userLabel="WK Home TotalPK">
                                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                                             </label>
                                                         </items>
@@ -277,7 +357,7 @@
                                                 <action selector="WKHomeScoreGroupButton" destination="AgC-eL-Hgc" id="Rfs-BR-0Lu"/>
                                             </connections>
                                         </button>
-                                        <button alignment="left" id="pYY-vU-N0B">
+                                        <button alignment="left" id="pYY-vU-N0B" userLabel="WKAway Score Group Button">
                                             <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="4UW-zk-eQd">
                                                 <items>
                                                     <label width="1" alignment="left" text="Away" textAlignment="center" id="L6m-nn-gZB">
@@ -319,6 +399,20 @@
                                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                                             </label>
                                                             <label alignment="center" id="nXf-bs-6sJ">
+                                                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="1" height="12" alignment="left" spacing="10" id="Wti-Tp-jcI" userLabel="WKGrp Away PKs">
+                                                        <items>
+                                                            <label alignment="center" isAccessibilityElement="NO" text="0" id="9uw-B4-Tbn" userLabel="WK Away RecentPK">
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                            <label alignment="center" accessibilityValue="0" text="0" id="9MJ-fc-hGv" userLabel="WK Away Period PK">
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                            </label>
+                                                            <label alignment="center" accessibilityValue="0" text="0" id="Yz5-56-bA6" userLabel="WK Away TotalPK">
                                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                                             </label>
                                                         </items>
@@ -361,8 +455,10 @@
                     <connections>
                         <outlet property="WKAwayCautionP" destination="nXf-bs-6sJ" id="8d1-bh-fcS"/>
                         <outlet property="WKAwayOffP" destination="30G-bM-Av9" id="5K3-gq-6uG"/>
+                        <outlet property="WKAwayPKPeriod" destination="9MJ-fc-hGv" id="3qY-tg-g8Y"/>
+                        <outlet property="WKAwayPKRecent" destination="9uw-B4-Tbn" id="HFp-rm-Igc"/>
+                        <outlet property="WKAwayPKTotal" destination="Yz5-56-bA6" id="CFy-58-n9p"/>
                         <outlet property="WKAwayScore" destination="e5N-iB-Vzi" id="5Yy-2d-NmN"/>
-                        <outlet property="WKAwayScoreGroupButton" destination="pYY-vU-N0B" id="ibO-az-fRn"/>
                         <outlet property="WKAwaySinP1" destination="snl-P4-T1z" id="DNg-m1-Jz0"/>
                         <outlet property="WKAwaySinP2" destination="1kF-5r-Qu5" id="Zis-ZM-UbW"/>
                         <outlet property="WKAwaySinT1" destination="lJU-eh-LWX" id="y0N-cn-p4m"/>
@@ -376,7 +472,10 @@
                         <outlet property="WKGrpHomeSin1" destination="k3C-fi-aXU" id="Bf6-Jd-D6r"/>
                         <outlet property="WKGrpHomeSin2" destination="r1R-MU-iDE" id="hbb-3f-UQt"/>
                         <outlet property="WKHomeCautionP" destination="FTr-hX-iyO" id="GQh-jE-N9k"/>
-                        <outlet property="WKHomeOffP" destination="TLd-BL-Saf" id="Xeu-0C-NYk"/>
+                        <outlet property="WKHomeOffP" destination="Il7-8E-pOj" id="A7F-Cl-fWd"/>
+                        <outlet property="WKHomePKPeriod" destination="Lzg-n5-F3D" id="Lk6-3Z-J1g"/>
+                        <outlet property="WKHomePKRecent" destination="W9p-oI-Vwq" id="5hK-cM-c4C"/>
+                        <outlet property="WKHomePKTotal" destination="BEg-gx-6Jv" id="B2o-Kh-f6s"/>
                         <outlet property="WKHomeScore" destination="hue-l3-2Q1" id="Sgg-vI-gXn"/>
                         <outlet property="WKHomeSinP1" destination="zto-UN-FaD" id="N5r-U0-YDq"/>
                         <outlet property="WKHomeSinP2" destination="hqD-Bd-DQY" id="xzO-zX-JQI"/>
@@ -393,9 +492,14 @@
             <objects>
                 <controller identifier="SanctionTypeCtl" title="Cancel" id="Njz-gc-GON" customClass="SanctionTypeIC" customModule="RefWatchWatch_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Caution" id="bFe-ly-1uq">
+                        <button width="1" alignment="left" title="Penalty" id="bFe-ly-1uq" userLabel="Penalty">
                             <connections>
-                                <action selector="WKCautionButton" destination="Njz-gc-GON" id="8ra-RP-exT"/>
+                                <action selector="WKPenalityButton" destination="Njz-gc-GON" id="AOz-iV-rs1"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Caution" id="lZF-aA-fAo" userLabel="Caution">
+                            <connections>
+                                <action selector="WKCautionButton" destination="Njz-gc-GON" id="eDz-3g-R5G"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Sin Bin" id="rw2-PT-Pyo">
@@ -411,6 +515,7 @@
                     </items>
                     <connections>
                         <outlet property="WKCautionButton" destination="bFe-ly-1uq" id="s6z-rb-6z9"/>
+                        <outlet property="WKSinBinButtonOutlet" destination="rw2-PT-Pyo" id="DD0-kK-Zoy"/>
                     </connections>
                 </controller>
             </objects>
@@ -594,7 +699,7 @@
             <objects>
                 <controller identifier="ScoreCtl" title="Score" id="BA7-L6-nB4" customClass="ScoreIC" customModule="RefWatchWatch_Extension">
                     <items>
-                        <group width="1" alignment="left" id="mN0-Wx-fF5">
+                        <group width="1" alignment="left" id="mN0-Wx-fF5" userLabel="TryGrp">
                             <items>
                                 <group width="0.33000000000000002" alignment="left" id="Mn9-nH-Pgt">
                                     <items>
@@ -624,7 +729,7 @@
                                 </group>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="wNC-1E-YVy">
+                        <group width="1" alignment="left" id="wNC-1E-YVy" userLabel="ConvGrp">
                             <items>
                                 <group width="0.33000000000000002" alignment="left" id="rEk-BR-UPB">
                                     <items>
@@ -654,7 +759,7 @@
                                 </group>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="jie-z1-Tjt">
+                        <group width="1" alignment="left" id="jie-z1-Tjt" userLabel="PenGrp">
                             <items>
                                 <group width="0.33000000000000002" alignment="left" id="Vas-DK-7xt">
                                     <items>
@@ -693,9 +798,11 @@
                     <connections>
                         <outlet property="WKConv" destination="LoT-FX-jfQ" id="pOx-0h-VRv"/>
                         <outlet property="WKConvDownButton" destination="657-fA-mj4" id="niM-wK-uML"/>
+                        <outlet property="WKConvGrp" destination="wNC-1E-YVy" id="BuY-7S-1fo"/>
                         <outlet property="WKConvUpButton" destination="Xzh-dW-pbb" id="dgO-TU-Ywm"/>
                         <outlet property="WKPen" destination="sDw-0T-4CD" id="gLi-EH-N2S"/>
                         <outlet property="WKPenDownButton" destination="rFG-zS-1Tk" id="0mf-oX-9DR"/>
+                        <outlet property="WKPenGrp" destination="jie-z1-Tjt" id="Ym9-TH-PWb"/>
                         <outlet property="WKTry" destination="7go-gz-d6z" id="IEy-S0-WMg"/>
                         <outlet property="WKTryDownButton" destination="xsr-cl-btF" id="c4U-Jd-3IV"/>
                     </connections>

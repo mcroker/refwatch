@@ -17,12 +17,13 @@ class RefWatchContext {
     fileprivate  var _settings  : RefWatchContextSettings = RefWatchContextSettings.sharedInstance
     
     fileprivate var _istimeon  : Bool = false
-    fileprivate var _ishomeopp : Bool = true
+    fileprivate var _ishometeam : Bool = true
     
     fileprivate var _isperiodrunning : Bool = false
 
     fileprivate var _priorperiodtime : TimeInterval = 0.0                 // The amount of run time in prior periods (i.e. half1)
     fileprivate var _periodstart : Date = Date(timeIntervalSinceNow: 0) // When this period (half) of play started
+    fileprivate var _currentPeriod : Int = 0
     
     fileprivate var _clockstart : Date = Date(timeIntervalSinceNow: 0)  // The time when the clock started last (ie when the ref last resumed play)
     fileprivate var _priorclocktime : TimeInterval = 0.0                  // The amount of game time in this period/half prior up to when the clock last stopped
@@ -42,12 +43,12 @@ class RefWatchContext {
         }
     }
     
-    var ishomeopp : Bool {
+    var ishometeam : Bool {
         get {
-            return _ishomeopp
+            return _ishometeam
         }
         set {
-            _ishomeopp = newValue
+            _ishometeam = newValue
         }
     }
     
@@ -123,6 +124,12 @@ class RefWatchContext {
         }
     }
     
+    var periodstart: Date {
+        get {
+            return _periodstart
+        }
+    }
+    
     var isperiodrunning: Bool {
         get {
             return _isperiodrunning
@@ -159,10 +166,43 @@ class RefWatchContext {
         }
     }
     
+    func countTotalSanctions(_ ishometeam: Bool) -> Int {
+        var count = 0
+        for _sanctionitem : RefWatchContextSanction in _sanctions {
+            if (_sanctionitem.ishometeam == ishometeam) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func countRecentSanctions(_ ishometeam: Bool) -> Int {
+        var count = 0
+        for _sanctionitem : RefWatchContextSanction in _sanctions {
+            if (_sanctionitem.sanctionGameTimeAwarded > (gameplayedtime - settings.pkrecentmins)
+                && _sanctionitem.ishometeam == ishometeam) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func countPeriodSanctions(_ ishometeam: Bool) -> Int {
+        var count = 0
+        for _sanctionitem : RefWatchContextSanction in _sanctions {
+            if (_sanctionitem.sanctionPeriodAwarded == _currentPeriod
+                && _sanctionitem.ishometeam == ishometeam) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
     func resetTime() {
         _priorperiodtime += periodplayedtime
         _priorclocktime=0.0
         _istimeon=false
+        _currentPeriod += 1
         _isperiodrunning=false
     }
     
@@ -171,6 +211,7 @@ class RefWatchContext {
         _priorperiodtime = 0
         _homescore.reset()
         _awayscore.reset()
+        
         _sanctions.removeAll()
         _settings.reset()
     }
@@ -181,6 +222,8 @@ class RefWatchContext {
         newsanction.ishometeam = ishometeam
         newsanction.player = player
         newsanction.sanctiontype = sanctiontype
+        newsanction.sanctionPeriodAwarded = _currentPeriod
+        newsanction.sanctionGameTimeAwarded = gameplayedtime
         newsanction.istimeon = _istimeon
         
         _sanctions.append(newsanction)
