@@ -18,6 +18,8 @@
 		5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */; };
 		5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4769341DD47B8E00636E60 /* SettingsIC.swift */; };
 		5B53C44622E6F5C30081340D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44522E6F5C30081340D /* Media.xcassets */; };
+		5B53C44822E6FC180081340D /* WatchMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44722E6FC180081340D /* WatchMedia.xcassets */; };
+		5B53C44922E6FDFD0081340D /* WatchMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44722E6FC180081340D /* WatchMedia.xcassets */; };
 		5B84F7011D11EC6200516291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84F6FF1D11EC6200516291 /* Interface.storyboard */; };
 		5B84F7031D11EFF600516291 /* RefWatchContextSanction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */; };
 		5BCC69621D0E10C900A21628 /* SanctionTypeIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */; };
@@ -31,20 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5B0EA8731D0D556A003EBBA2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B0EA85D1D0D556A003EBBA2;
-			remoteInfo = RefWatch;
-		};
-		5B0EA87E1D0D556A003EBBA2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B0EA85D1D0D556A003EBBA2;
-			remoteInfo = RefWatch;
-		};
 		5B0EA89F1D0D55FA003EBBA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B0EA8561D0D556A003EBBA2 /* Project object */;
@@ -93,8 +81,6 @@
 		5B0EA8661D0D556A003EBBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B0EA86B1D0D556A003EBBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B0EA86D1D0D556A003EBBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefWatchWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0EA8981D0D55FA003EBBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RefWatchWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +91,7 @@
 		5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMgmtIC.swift; sourceTree = "<group>"; };
 		5B4769341DD47B8E00636E60 /* SettingsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIC.swift; sourceTree = "<group>"; };
 		5B53C44522E6F5C30081340D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		5B53C44722E6FC180081340D /* WatchMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatchMedia.xcassets; sourceTree = "<group>"; };
 		5B84F7001D11EC6200516291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextSanction.swift; sourceTree = "<group>"; };
 		5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionTypeIC.swift; sourceTree = "<group>"; };
@@ -119,20 +106,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5B0EA85B1D0D556A003EBBA2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B0EA86F1D0D556A003EBBA2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B0EA87A1D0D556A003EBBA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */,
-				5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */,
-				5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */,
 				5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */,
 				5B0EA89D1D0D55FA003EBBA2 /* RefWatchWatch Extension.appex */,
 			);
@@ -190,6 +161,7 @@
 				5B84F6FF1D11EC6200516291 /* Interface.storyboard */,
 				5B0EA8981D0D55FA003EBBA2 /* Info.plist */,
 				5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */,
+				5B53C44722E6FC180081340D /* WatchMedia.xcassets */,
 			);
 			path = RefWatchWatch;
 			sourceTree = "<group>";
@@ -245,42 +217,6 @@
 			productReference = 5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5B0EA8711D0D556A003EBBA2 /* RefWatchTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5B0EA8891D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchTests" */;
-			buildPhases = (
-				5B0EA86E1D0D556A003EBBA2 /* Sources */,
-				5B0EA86F1D0D556A003EBBA2 /* Frameworks */,
-				5B0EA8701D0D556A003EBBA2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5B0EA8741D0D556A003EBBA2 /* PBXTargetDependency */,
-			);
-			name = RefWatchTests;
-			productName = RefWatchTests;
-			productReference = 5B0EA8721D0D556A003EBBA2 /* RefWatchTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5B0EA87C1D0D556A003EBBA2 /* RefWatchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5B0EA88C1D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchUITests" */;
-			buildPhases = (
-				5B0EA8791D0D556A003EBBA2 /* Sources */,
-				5B0EA87A1D0D556A003EBBA2 /* Frameworks */,
-				5B0EA87B1D0D556A003EBBA2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5B0EA87F1D0D556A003EBBA2 /* PBXTargetDependency */,
-			);
-			name = RefWatchUITests;
-			productName = RefWatchUITests;
-			productReference = 5B0EA87D1D0D556A003EBBA2 /* RefWatchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		5B0EA8901D0D55FA003EBBA2 /* RefWatchWatch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B0EA8B41D0D55FA003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchWatch" */;
@@ -330,14 +266,6 @@
 						DevelopmentTeam = LD63Y8QQM5;
 						LastSwiftMigration = 1020;
 					};
-					5B0EA8711D0D556A003EBBA2 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 5B0EA85D1D0D556A003EBBA2;
-					};
-					5B0EA87C1D0D556A003EBBA2 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 5B0EA85D1D0D556A003EBBA2;
-					};
 					5B0EA8901D0D55FA003EBBA2 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LD63Y8QQM5;
@@ -370,8 +298,6 @@
 			projectRoot = "";
 			targets = (
 				5B0EA85D1D0D556A003EBBA2 /* RefWatch */,
-				5B0EA8711D0D556A003EBBA2 /* RefWatchTests */,
-				5B0EA87C1D0D556A003EBBA2 /* RefWatchUITests */,
 				5B0EA8901D0D55FA003EBBA2 /* RefWatchWatch */,
 				5B0EA89C1D0D55FA003EBBA2 /* RefWatchWatch Extension */,
 			);
@@ -389,24 +315,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B0EA8701D0D556A003EBBA2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B0EA87B1D0D556A003EBBA2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5B0EA88F1D0D55FA003EBBA2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B53C44822E6FC180081340D /* WatchMedia.xcassets in Resources */,
 				5B84F7011D11EC6200516291 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B53C44922E6FDFD0081340D /* WatchMedia.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,20 +341,6 @@
 			files = (
 				5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */,
 				5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B0EA86E1D0D556A003EBBA2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5B0EA8791D0D556A003EBBA2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,16 +367,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5B0EA8741D0D556A003EBBA2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B0EA85D1D0D556A003EBBA2 /* RefWatch */;
-			targetProxy = 5B0EA8731D0D556A003EBBA2 /* PBXContainerItemProxy */;
-		};
-		5B0EA87F1D0D556A003EBBA2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5B0EA85D1D0D556A003EBBA2 /* RefWatch */;
-			targetProxy = 5B0EA87E1D0D556A003EBBA2 /* PBXContainerItemProxy */;
-		};
 		5B0EA8A01D0D55FA003EBBA2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5B0EA89C1D0D55FA003EBBA2 /* RefWatchWatch Extension */;
@@ -657,52 +547,6 @@
 			};
 			name = Release;
 		};
-		5B0EA88A1D0D556A003EBBA2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RefWatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefWatch.app/RefWatch";
-			};
-			name = Debug;
-		};
-		5B0EA88B1D0D556A003EBBA2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RefWatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefWatch.app/RefWatch";
-			};
-			name = Release;
-		};
-		5B0EA88D1D0D556A003EBBA2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RefWatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = RefWatch;
-			};
-			name = Debug;
-		};
-		5B0EA88E1D0D556A003EBBA2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RefWatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.crokerfamily.RefWatchUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = RefWatch;
-			};
-			name = Release;
-		};
 		5B0EA8B11D0D55FA003EBBA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,24 +644,6 @@
 			buildConfigurations = (
 				5B0EA8871D0D556A003EBBA2 /* Debug */,
 				5B0EA8881D0D556A003EBBA2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5B0EA8891D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B0EA88A1D0D556A003EBBA2 /* Debug */,
-				5B0EA88B1D0D556A003EBBA2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5B0EA88C1D0D556A003EBBA2 /* Build configuration list for PBXNativeTarget "RefWatchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B0EA88D1D0D556A003EBBA2 /* Debug */,
-				5B0EA88E1D0D556A003EBBA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
