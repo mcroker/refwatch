@@ -174,14 +174,14 @@
                                     <items>
                                         <button width="1" alignment="left" title="-" id="cPe-tf-qzA">
                                             <connections>
-                                                <action selector="PKMinsDown" destination="R0e-Ux-2BN" id="L2s-Vc-pJT"/>
+                                                <action selector="PKMins1Down" destination="R0e-Ux-2BN" id="j2r-tA-d0b"/>
                                             </connections>
                                         </button>
                                     </items>
                                 </group>
                                 <group width="0.33000000000000002" alignment="left" layout="vertical" id="xKe-ri-JpO">
                                     <items>
-                                        <label width="1" alignment="left" text="Mins" textAlignment="center" id="kvE-p6-5x7">
+                                        <label width="1" alignment="left" text="Mins 1" textAlignment="center" id="kvE-p6-5x7">
                                             <fontDescription key="font" type="system" pointSize="10"/>
                                         </label>
                                         <label width="1" height="19.5" alignment="left" text="0" textAlignment="center" id="V0D-5M-jWi" userLabel="PKRecentMins"/>
@@ -191,7 +191,37 @@
                                     <items>
                                         <button width="1" alignment="left" title="+" id="Cxz-um-WTW">
                                             <connections>
-                                                <action selector="PKMinsUp" destination="R0e-Ux-2BN" id="gcO-li-Pic"/>
+                                                <action selector="PKMins1Up" destination="R0e-Ux-2BN" id="UfK-Bp-Mha"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="njh-ue-izV">
+                            <items>
+                                <group width="0.33000000000000002" alignment="left" id="LQp-nI-0xE">
+                                    <items>
+                                        <button width="1" alignment="left" title="-" id="PGn-2H-sf2">
+                                            <connections>
+                                                <action selector="PKMins2Down" destination="R0e-Ux-2BN" id="yS9-NQ-aM1"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" layout="vertical" id="Tol-Fa-DW8">
+                                    <items>
+                                        <label width="1" alignment="left" text="Mins 2" textAlignment="center" id="sOJ-lP-hRb">
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                        </label>
+                                        <label width="1" height="19.5" alignment="left" text="0" textAlignment="center" id="anM-ee-BZU" userLabel="PKRecentMins"/>
+                                    </items>
+                                </group>
+                                <group width="0.33000000000000002" alignment="left" id="dvj-os-7oH">
+                                    <items>
+                                        <button width="1" alignment="left" title="+" id="4Nc-gD-dvx">
+                                            <connections>
+                                                <action selector="PKMins2Up" destination="R0e-Ux-2BN" id="OzC-JP-iuu"/>
                                             </connections>
                                         </button>
                                     </items>
@@ -237,22 +267,22 @@
                     <connections>
                         <outlet property="ConvDownButton" destination="P0K-Db-blP" id="kjj-zm-9Rs"/>
                         <outlet property="ConvPoints" destination="msU-vT-7RB" id="Qr7-p6-VtL"/>
-                        <outlet property="ConvUp" destination="1sg-qX-kde" id="B8k-Rx-LZy"/>
                         <outlet property="PKLimit" destination="sin-hv-IHv" id="ZXL-Go-qYI"/>
                         <outlet property="PKLimitDownButton" destination="qeo-Qf-iCq" id="rpb-qR-lHO"/>
-                        <outlet property="PKRecentMinsDownButton" destination="cPe-tf-qzA" id="WnI-ou-crp"/>
-                        <outlet property="PKRecentMinsUpButton" destination="Cxz-um-WTW" id="ivw-V9-5RG"/>
+                        <outlet property="PKRecentMins1" destination="V0D-5M-jWi" id="7IK-kz-2MW"/>
+                        <outlet property="PKRecentMins1DownButton" destination="cPe-tf-qzA" id="37o-Vj-wDe"/>
+                        <outlet property="PKRecentMins1UpButton" destination="Cxz-um-WTW" id="M8d-iO-TJT"/>
+                        <outlet property="PKRecentMins2" destination="anM-ee-BZU" id="HDD-H5-Vwt"/>
+                        <outlet property="PKRecentMins2DownButton" destination="PGn-2H-sf2" id="nCP-wJ-KSs"/>
+                        <outlet property="PKRecentMins2UpButton" destination="4Nc-gD-dvx" id="ZpP-Re-Ubr"/>
                         <outlet property="PenDownButton" destination="NZm-zg-haC" id="AWu-LS-cNr"/>
                         <outlet property="PenPoints" destination="ziN-2Z-S3w" id="feh-jM-NI9"/>
-                        <outlet property="PenUp" destination="3CY-Og-Q6J" id="7Ha-mT-icL"/>
                         <outlet property="PeriodDownButton" destination="FkN-W3-s4j" id="fcs-JC-UA4"/>
                         <outlet property="PeriodDuration" destination="vBP-8S-ksC" id="lti-oO-n7I"/>
-                        <outlet property="RKRecentMins" destination="V0D-5M-jWi" id="A0w-sU-5vg"/>
                         <outlet property="SinBinDownButton" destination="6Mp-yA-tBJ" id="cLS-sX-S4G"/>
                         <outlet property="SinBinDuration" destination="1cS-jq-cbm" id="fCu-nP-OHK"/>
                         <outlet property="TryDownButton" destination="gJq-jj-HgA" id="rcl-8q-jam"/>
                         <outlet property="TryPoints" destination="HX4-O8-gHO" id="h95-iK-gxs"/>
-                        <outlet property="TryUp" destination="WMh-oN-UPt" id="H1h-Kb-Eoy"/>
                     </connections>
                 </controller>
             </objects>
@@ -455,8 +485,8 @@
                     <connections>
                         <outlet property="WKAwayCautionP" destination="nXf-bs-6sJ" id="8d1-bh-fcS"/>
                         <outlet property="WKAwayOffP" destination="30G-bM-Av9" id="5K3-gq-6uG"/>
-                        <outlet property="WKAwayPKPeriod" destination="9MJ-fc-hGv" id="3qY-tg-g8Y"/>
-                        <outlet property="WKAwayPKRecent" destination="9uw-B4-Tbn" id="HFp-rm-Igc"/>
+                        <outlet property="WKAwayPKRecent1" destination="9uw-B4-Tbn" id="4so-Fa-4qU"/>
+                        <outlet property="WKAwayPKRecent2" destination="9MJ-fc-hGv" id="hpL-QE-1vF"/>
                         <outlet property="WKAwayPKTotal" destination="Yz5-56-bA6" id="CFy-58-n9p"/>
                         <outlet property="WKAwayScore" destination="e5N-iB-Vzi" id="5Yy-2d-NmN"/>
                         <outlet property="WKAwaySinP1" destination="snl-P4-T1z" id="DNg-m1-Jz0"/>
@@ -473,8 +503,8 @@
                         <outlet property="WKGrpHomeSin2" destination="r1R-MU-iDE" id="hbb-3f-UQt"/>
                         <outlet property="WKHomeCautionP" destination="FTr-hX-iyO" id="GQh-jE-N9k"/>
                         <outlet property="WKHomeOffP" destination="Il7-8E-pOj" id="A7F-Cl-fWd"/>
-                        <outlet property="WKHomePKPeriod" destination="Lzg-n5-F3D" id="Lk6-3Z-J1g"/>
-                        <outlet property="WKHomePKRecent" destination="W9p-oI-Vwq" id="5hK-cM-c4C"/>
+                        <outlet property="WKHomePKRecent1" destination="W9p-oI-Vwq" id="lTm-61-dTm"/>
+                        <outlet property="WKHomePKRecent2" destination="Lzg-n5-F3D" id="Y8o-Sg-MTc"/>
                         <outlet property="WKHomePKTotal" destination="BEg-gx-6Jv" id="B2o-Kh-f6s"/>
                         <outlet property="WKHomeScore" destination="hue-l3-2Q1" id="Sgg-vI-gXn"/>
                         <outlet property="WKHomeSinP1" destination="zto-UN-FaD" id="N5r-U0-YDq"/>
@@ -514,7 +544,6 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="WKCautionButton" destination="bFe-ly-1uq" id="s6z-rb-6z9"/>
                         <outlet property="WKSinBinButtonOutlet" destination="rw2-PT-Pyo" id="DD0-kK-Zoy"/>
                     </connections>
                 </controller>

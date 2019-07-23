@@ -53,15 +53,15 @@ class MainIC: WKInterfaceController {
     
     @IBOutlet var WKHomeCautionP: WKInterfaceLabel!
     
-    @IBOutlet var WKHomePKRecent: WKInterfaceLabel!
+    @IBOutlet var WKHomePKRecent1: WKInterfaceLabel!
 
-    @IBOutlet var WKHomePKPeriod: WKInterfaceLabel!
+    @IBOutlet var WKHomePKRecent2: WKInterfaceLabel!
     
     @IBOutlet var WKHomePKTotal: WKInterfaceLabel!
     
-    @IBOutlet var WKAwayPKRecent: WKInterfaceLabel!
+    @IBOutlet var WKAwayPKRecent1: WKInterfaceLabel!
     
-    @IBOutlet var WKAwayPKPeriod: WKInterfaceLabel!
+    @IBOutlet var WKAwayPKRecent2: WKInterfaceLabel!
     
     @IBOutlet var WKAwayPKTotal: WKInterfaceLabel!
     
@@ -119,24 +119,46 @@ class MainIC: WKInterfaceController {
     }
     
     func drawPKTracking() {
-        let recentHome = _context.countRecentSanctions(true)
-        let recentAway = _context.countRecentSanctions(false)
-        WKHomePKRecent.setText(String(recentHome))
-        WKAwayPKRecent.setText(String(recentAway))
-        if (recentHome >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKHomePKRecent.setTextColor(UIColor.yellow)
+        let recentHome1 = _context.countRecentSanctions(ishometeam:true, since:_context.settings.pkrecentmins1)
+        let recentAway1 = _context.countRecentSanctions(ishometeam:false, since:_context.settings.pkrecentmins1)
+        var recentHome2: Int = -1
+        var recentAway2: Int = -1
+        // If PKDuration2 = periodduration, show based on period rather than gametime
+        if (_context.settings.pkrecentmins2 != _context.settings.periodduration) {
+            recentHome2 = _context.countRecentSanctions(ishometeam:true, since:_context.settings.pkrecentmins2)
+            recentAway2 = _context.countRecentSanctions(ishometeam:false, since:_context.settings.pkrecentmins2)
         } else {
-            WKHomePKRecent.setTextColor(UIColor.white)
+            recentHome2 = _context.countPeriodSanctions(ishometeam:true)
+            recentAway2 = _context.countPeriodSanctions(ishometeam:false)
         }
-        if (recentAway >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKAwayPKRecent.setTextColor(UIColor.yellow)
+        WKHomePKRecent1.setText(String(recentHome1))
+        WKAwayPKRecent1.setText(String(recentAway1))
+        if (recentHome1 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKHomePKRecent1.setTextColor(UIColor.yellow)
         } else {
-            WKAwayPKRecent.setTextColor(UIColor.white)
+            WKHomePKRecent1.setTextColor(UIColor.white)
         }
-        WKHomePKPeriod.setText(String(_context.countPeriodSanctions(true)))
-        WKAwayPKPeriod.setText(String(_context.countPeriodSanctions(false)))
-        WKHomePKTotal.setText(String(_context.countTotalSanctions(true)))
-        WKAwayPKTotal.setText(String(_context.countTotalSanctions(false)))
+        if (recentAway1 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKAwayPKRecent1.setTextColor(UIColor.yellow)
+        } else {
+            WKAwayPKRecent1.setTextColor(UIColor.white)
+        }
+      
+        WKHomePKRecent2.setText(String(recentHome2))
+        WKAwayPKRecent2.setText(String(recentAway2))
+        if (recentHome2 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKHomePKRecent2.setTextColor(UIColor.yellow)
+        } else {
+            WKHomePKRecent2.setTextColor(UIColor.white)
+        }
+        if (recentAway2 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
+            WKAwayPKRecent2.setTextColor(UIColor.yellow)
+        } else {
+            WKAwayPKRecent2.setTextColor(UIColor.white)
+        }
+        
+        WKHomePKTotal.setText(String(_context.countTotalSanctions(ishometeam:true)))
+        WKAwayPKTotal.setText(String(_context.countTotalSanctions(ishometeam:false)))
     }
     
     func drawSanctions() {

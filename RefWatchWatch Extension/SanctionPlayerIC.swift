@@ -121,7 +121,7 @@ class SanctionPlayerIC: WKInterfaceController {
     @IBAction func WKBackspaceClick() {
         if _currentno != -1 {
             let curstring : String = "\(_currentno)"
-            let truncated = curstring.substring(to: curstring.index(before: curstring.endIndex))
+            let truncated = String(curstring.dropLast())
             WKValue.setText(truncated)
             
             if truncated.count > 0 {

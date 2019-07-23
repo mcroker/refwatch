@@ -166,7 +166,7 @@ class RefWatchContext {
         }
     }
     
-    func countTotalSanctions(_ ishometeam: Bool) -> Int {
+    func countTotalSanctions(ishometeam: Bool) -> Int {
         var count = 0
         for _sanctionitem : RefWatchContextSanction in _sanctions {
             if (_sanctionitem.ishometeam == ishometeam) {
@@ -176,10 +176,10 @@ class RefWatchContext {
         return count
     }
     
-    func countRecentSanctions(_ ishometeam: Bool) -> Int {
+    func countRecentSanctions(ishometeam: Bool, since: TimeInterval) -> Int {
         var count = 0
         for _sanctionitem : RefWatchContextSanction in _sanctions {
-            if (_sanctionitem.sanctionGameTimeAwarded > (gameplayedtime - settings.pkrecentmins)
+            if (_sanctionitem.sanctionGameTimeAwarded > (gameplayedtime - since)
                 && _sanctionitem.ishometeam == ishometeam) {
                 count += 1
             }
@@ -187,7 +187,7 @@ class RefWatchContext {
         return count
     }
     
-    func countPeriodSanctions(_ ishometeam: Bool) -> Int {
+    func countPeriodSanctions(ishometeam: Bool) -> Int {
         var count = 0
         for _sanctionitem : RefWatchContextSanction in _sanctions {
             if (_sanctionitem.sanctionPeriodAwarded == _currentPeriod

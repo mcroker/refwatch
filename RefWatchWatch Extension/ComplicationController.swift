@@ -16,12 +16,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         
         if complication.family == .modularLarge {
-            var dateFormatter = DateFormatter()
+            let dateFormatter = DateFormatter()
             //dateFormatter.dateStyle = .none
             //dateFormatter.timeStyle = .short
             dateFormatter.dateFormat = "mm:ss"
-            
-            let timeString = dateFormatter.string(from: NSDate() as Date)
             
             let template = CLKComplicationTemplateModularLargeTallBody()
 

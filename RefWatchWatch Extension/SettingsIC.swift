@@ -25,11 +25,14 @@ class SettingsIC: WKInterfaceController {
     @IBOutlet var SinBinDownButton: WKInterfaceButton!
     @IBOutlet var ConvDownButton: WKInterfaceButton!
     @IBOutlet var PenDownButton: WKInterfaceButton!
-    @IBOutlet var RKRecentMins: WKInterfaceLabel!
+    @IBOutlet var PKRecentMins1: WKInterfaceLabel!
     @IBOutlet var PKLimit: WKInterfaceLabel!
-    @IBOutlet var PKRecentMinsDownButton: WKInterfaceButton!
+    @IBOutlet var PKRecentMins1DownButton: WKInterfaceButton!
     @IBOutlet var PKLimitDownButton: WKInterfaceButton!
-    @IBOutlet var PKRecentMinsUpButton: WKInterfaceButton!
+    @IBOutlet var PKRecentMins1UpButton: WKInterfaceButton!
+    @IBOutlet var PKRecentMins2: WKInterfaceLabel!
+    @IBOutlet var PKRecentMins2DownButton: WKInterfaceButton!
+    @IBOutlet var PKRecentMins2UpButton: WKInterfaceButton!
     
     @IBAction func PeriodUp() {
         if (_context!.settings.periodduration >= 900) {
@@ -46,8 +49,11 @@ class SettingsIC: WKInterfaceController {
         } else {
             _context!.settings.periodduration-=60
         }
-        if _context!.settings.pkrecentmins > _context!.settings.periodduration {
-            _context!.settings.pkrecentmins = _context!.settings.periodduration
+        if _context!.settings.pkrecentmins1 > _context!.settings.periodduration {
+            _context!.settings.pkrecentmins1 = _context!.settings.periodduration
+        }
+        if _context!.settings.pkrecentmins2 > _context!.settings.periodduration {
+            _context!.settings.pkrecentmins2 = _context!.settings.periodduration
         }
         draw()
     }
@@ -93,23 +99,44 @@ class SettingsIC: WKInterfaceController {
     }
     
     
-    @IBAction func PKMinsDown() {
-        if (_context!.settings.pkrecentmins >= 1200) {
-            _context!.settings.pkrecentmins-=300
+    @IBAction func PKMins1Down() {
+        if (_context!.settings.pkrecentmins1 >= 1200) {
+            _context!.settings.pkrecentmins1-=300
         } else {
-            _context!.settings.pkrecentmins-=60
+            _context!.settings.pkrecentmins1-=60
         }
         draw()
     }
     
-    @IBAction func PKMinsUp() {
-        if (_context!.settings.pkrecentmins >= 900) {
-            _context!.settings.pkrecentmins+=300
+    @IBAction func PKMins1Up() {
+        if (_context!.settings.pkrecentmins1 >= 900) {
+            _context!.settings.pkrecentmins1+=300
         } else {
-            _context!.settings.pkrecentmins+=60
+            _context!.settings.pkrecentmins1+=60
         }
-        if _context!.settings.pkrecentmins > _context!.settings.periodduration {
-             _context!.settings.pkrecentmins = _context!.settings.periodduration
+        if _context!.settings.pkrecentmins1 > _context!.settings.periodduration {
+             _context!.settings.pkrecentmins1 = _context!.settings.periodduration
+        }
+        draw()
+    }
+    
+    @IBAction func PKMins2Down() {
+        if (_context!.settings.pkrecentmins2 >= 1200) {
+            _context!.settings.pkrecentmins2-=300
+        } else {
+            _context!.settings.pkrecentmins2-=60
+        }
+        draw()
+    }
+    
+    @IBAction func PKMins2Up() {
+        if (_context!.settings.pkrecentmins2 >= 900) {
+            _context!.settings.pkrecentmins2+=300
+        } else {
+            _context!.settings.pkrecentmins2+=60
+        }
+        if _context!.settings.pkrecentmins2 > _context!.settings.periodduration {
+            _context!.settings.pkrecentmins2 = _context!.settings.periodduration
         }
         draw()
     }
@@ -165,9 +192,17 @@ class SettingsIC: WKInterfaceController {
         }
         PKLimitDownButton.setEnabled(_context!.settings.pklimit > 0)
         
-        RKRecentMins.setText(dateFormatter.string(from: _context!.settings.pkrecentmins))
-        PKRecentMinsDownButton.setEnabled(_context!.settings.pkrecentmins > 60)
-        PKRecentMinsUpButton.setEnabled(_context!.settings.pkrecentmins < _context!.settings.periodduration)
+        PKRecentMins1.setText(dateFormatter.string(from: _context!.settings.pkrecentmins1))
+        PKRecentMins1DownButton.setEnabled(_context!.settings.pkrecentmins1 > 60)
+        PKRecentMins1UpButton.setEnabled(_context!.settings.pkrecentmins1 < _context!.settings.periodduration)
+        
+        if (_context!.settings.pkrecentmins2 == _context!.settings.periodduration) {
+            PKRecentMins2.setText("Period")
+        } else {
+            PKRecentMins2.setText(dateFormatter.string(from: _context!.settings.pkrecentmins2))
+        }
+        PKRecentMins2DownButton.setEnabled(_context!.settings.pkrecentmins1 > 60)
+        PKRecentMins2UpButton.setEnabled(_context!.settings.pkrecentmins1 < _context!.settings.periodduration)
     }
     
     override func willActivate() {

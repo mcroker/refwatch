@@ -22,7 +22,8 @@ class RefWatchContextSettings {
     fileprivate var _sinbinduration : TimeInterval = 600
     fileprivate var _displaygraceperiod : TimeInterval = 120
     
-    fileprivate var _pkrecentmins: TimeInterval = 600
+    fileprivate var _pkrecentmins1: TimeInterval = 600
+    fileprivate var _pkrecentmins2: TimeInterval = 40 * 60
     fileprivate var _pklimit: Int = 3
     
     fileprivate init() {}
@@ -44,12 +45,21 @@ class RefWatchContextSettings {
         }
     }
     
-    var pkrecentmins : TimeInterval {
+    var pkrecentmins1 : TimeInterval {
         get {
-            return _pkrecentmins
+            return _pkrecentmins1
         }
         set {
-            _pkrecentmins = newValue
+            _pkrecentmins1 = newValue
+        }
+    }
+    
+    var pkrecentmins2 : TimeInterval {
+        get {
+            return _pkrecentmins2
+        }
+        set {
+            _pkrecentmins2 = newValue
         }
     }
     
