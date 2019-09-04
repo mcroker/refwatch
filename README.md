@@ -10,8 +10,8 @@ If you do find it of any use, I'd love to hear from you mcroker@gmail.com:
 All contributions welcome - get in touch with mcroker@gmail.com
 
 ## Contributors
-Martin Croker
-Jason Weir
+* Martin Croker
+* Jason Weir
 
 ## Usage
 it's fairly self-explanatory, but the below may help
