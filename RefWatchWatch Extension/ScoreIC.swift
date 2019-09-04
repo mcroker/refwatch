@@ -67,13 +67,17 @@ class ScoreIC: WKInterfaceController {
             WKPenGrp.setHidden(false)
         }
         if _context!.ishometeam {
-            if _context!.homescore.trys > 0 {
-                WKTryDownButton.setEnabled(true)
-                WKConvUpButton.setEnabled(true)
+            if _context!.homescore.trys > 0 { // Trys recorded
+                if _context!.homescore.conv < _context!.homescore.trys {
+                    WKTryDownButton.setEnabled(true)
+                    WKConvUpButton.setEnabled(true)
+                }
+                else if _context!.homescore.conv == _context!.homescore.trys {
+                    WKTryDownButton.setEnabled(true)
+                    WKConvUpButton.setEnabled(false)
+                }
             }
-            else {
-                _context!.homescore.conv=0
-                WKConv.setText(String(_context!.homescore.conv))
+            else { // No trys recorded
                 WKTryDownButton.setEnabled(false)
                 WKConvUpButton.setEnabled(false)
             }
@@ -93,17 +97,21 @@ class ScoreIC: WKInterfaceController {
             }
         }
         else {
-            if _context!.awayscore.trys > 0 {
-                WKTryDownButton.setEnabled(true)
-                WKConvUpButton.setEnabled(true)
+            if _context!.awayscore.trys > 0 { // Trys recorded
+                if _context!.awayscore.conv < _context!.awayscore.trys {
+                    WKTryDownButton.setEnabled(true)
+                    WKConvUpButton.setEnabled(true)
+                }
+                else if _context!.awayscore.conv >= _context!.awayscore.trys {
+                    WKTryDownButton.setEnabled(true)
+                    WKConvUpButton.setEnabled(false)
+                }
             }
-            else {
-                _context!.awayscore.conv=0
-                WKConv.setText(String(_context!.awayscore.conv))
+            else { // No trys recorded
                 WKTryDownButton.setEnabled(false)
                 WKConvUpButton.setEnabled(false)
             }
-                
+            
             if _context!.awayscore.conv > 0 {
                 WKConvDownButton.setEnabled(true)
             }
@@ -141,10 +149,20 @@ class ScoreIC: WKInterfaceController {
         if _context!.ishometeam {
             _context?.homescore.trys-=1
             WKTry.setText(String(_context!.homescore.trys))
+            // Check if we now have more conversions than tries, if so decrease conv by 1
+            if (_context!.homescore.conv > _context!.homescore.trys) {
+                _context?.homescore.conv-=1
+                WKConv.setText(String(_context!.homescore.conv))
+            }
         }
         else {
             _context?.awayscore.trys-=1
             WKTry.setText(String(_context!.awayscore.trys))
+            // Check if we now have more conversions than tries, if so decrease conv by 1
+            if (_context!.awayscore.conv > _context!.awayscore.trys) {
+                _context?.awayscore.conv-=1
+                WKConv.setText(String(_context!.awayscore.conv))
+            }
         }
         setEnabled()
     }
