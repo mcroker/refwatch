@@ -11,7 +11,7 @@ All contributions welcome - get in touch with mcroker@gmail.com
 
 ## Contributors
 * Martin Croker
-* Jason Weir
+* Jason Roseweir
 
 ## Usage
 it's fairly self-explanatory, but the below may help
