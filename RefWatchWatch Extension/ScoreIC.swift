@@ -199,7 +199,7 @@ class ScoreIC: WKInterfaceController {
     }
     
     @IBAction func WKOKButton() {
-        dismiss()
+                presentController(withName: "Main" , context: _context)
     }
     
 }

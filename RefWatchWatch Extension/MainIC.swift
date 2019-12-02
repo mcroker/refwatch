@@ -343,12 +343,12 @@ class MainIC: WKInterfaceController {
 
     @IBAction func WKHomeScoreGroupButton() {
         _context.ishometeam = true
-        presentController(withName: "ScoreCtl" , context: _context)
+        presentController(withName: "TeamUpdateCtl" , context: _context)
     }
 
     @IBAction func WKAwayScoreGroupButton() {
         _context.ishometeam = false
-        presentController(withName: "ScoreCtl" , context: _context)
+        presentController(withName: "TeamUpdateCtl" , context: _context)
     }
     
     var context : RefWatchContext {

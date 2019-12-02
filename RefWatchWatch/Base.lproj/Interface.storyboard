@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
         <deployment version="512" identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Settings-->
@@ -286,12 +284,12 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="278" y="-34.5"/>
+            <point key="canvasLocation" x="192" y="-101"/>
         </scene>
         <!--RefWatch-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="Main" title="RefWatch" id="AgC-eL-Hgc" customClass="MainIC" customModule="RefWatchWatch_Extension">
+                <controller identifier="Main" title="RefWatch" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="MainIC" customModule="RefWatchWatch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="0.0" id="qYP-rm-9BT">
                             <items>
@@ -300,7 +298,7 @@
                                         <items>
                                             <group width="1" alignment="left" spacing="0.0" id="ph2-Cf-Lso">
                                                 <items>
-                                                    <timer width="133" alignment="center" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="SAr-sh-36U">
+                                                    <timer width="1" alignment="center" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="SAr-sh-36U">
                                                         <fontDescription key="font" type="system" pointSize="40"/>
                                                         <calendarUnit key="units" minute="YES" second="YES"/>
                                                     </timer>
@@ -308,7 +306,7 @@
                                             </group>
                                             <group width="1" alignment="left" spacing="0.0" id="ETS-e6-w6g">
                                                 <items>
-                                                    <timer width="136" alignment="center" textAlignment="center" id="p7Y-w5-MoB">
+                                                    <timer width="1" alignment="center" textAlignment="center" id="p7Y-w5-MoB">
                                                         <fontDescription key="font" type="system" pointSize="12"/>
                                                     </timer>
                                                 </items>
@@ -323,7 +321,7 @@
                                 <group width="1" alignment="left" spacing="0.0" id="MOV-p3-JyH">
                                     <items>
                                         <button alignment="left" id="cxo-Lp-bZI" userLabel="WKHome Score Group Button">
-                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="Xm2-Jh-fVl">
+                                            <group key="contentGroup" width="0.5" height="1" alignment="left" layout="vertical" spacing="0.0" id="Xm2-Jh-fVl">
                                                 <items>
                                                     <label width="1" alignment="left" text="Home" textAlignment="center" id="Bmq-5u-jxX">
                                                         <fontDescription key="font" type="system" pointSize="10"/>
@@ -388,7 +386,7 @@
                                             </connections>
                                         </button>
                                         <button alignment="left" id="pYY-vU-N0B" userLabel="WKAway Score Group Button">
-                                            <group key="contentGroup" width="0.5" alignment="left" layout="vertical" spacing="0.0" id="4UW-zk-eQd">
+                                            <group key="contentGroup" width="0.5" height="1" alignment="left" layout="vertical" spacing="0.0" id="4UW-zk-eQd">
                                                 <items>
                                                     <label width="1" alignment="left" text="Away" textAlignment="center" id="L6m-nn-gZB">
                                                         <fontDescription key="font" type="system" pointSize="10"/>
@@ -475,11 +473,6 @@
                                     <action selector="WKMenuSettings" destination="AgC-eL-Hgc" id="4Zf-T7-m9y"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Sanction" icon="block" id="5vI-hR-JbA">
-                                <connections>
-                                    <action selector="WKMenuSanction" destination="AgC-eL-Hgc" id="N4K-4W-Qns"/>
-                                </connections>
-                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -515,21 +508,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="192" y="354"/>
+            <point key="canvasLocation" x="84" y="364"/>
         </scene>
-        <!--Cancel-->
+        <!--Update Team-->
         <scene sceneID="XB2-MG-FiP">
             <objects>
-                <controller identifier="SanctionTypeCtl" title="Cancel" id="Njz-gc-GON" customClass="SanctionTypeIC" customModule="RefWatchWatch_Extension">
+                <controller identifier="TeamUpdateCtl" title="Update Team" id="Njz-gc-GON" customClass="TeamUpdateTypeIC" customModule="RefWatchWatch_Extension">
                     <items>
+                        <button width="1" alignment="left" title="Score" id="lZF-aA-fAo" userLabel="Score">
+                            <connections>
+                                <action selector="WKScoreButton" destination="Njz-gc-GON" id="Sdc-X5-sUG"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="left" title="Penalty" id="bFe-ly-1uq" userLabel="Penalty">
                             <connections>
                                 <action selector="WKPenalityButton" destination="Njz-gc-GON" id="AOz-iV-rs1"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Caution" id="lZF-aA-fAo" userLabel="Caution">
-                            <connections>
-                                <action selector="WKCautionButton" destination="Njz-gc-GON" id="eDz-3g-R5G"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Sin Bin" id="rw2-PT-Pyo">
@@ -548,12 +541,12 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="412" y="359"/>
+            <point key="canvasLocation" x="386" y="319"/>
         </scene>
-        <!--Cancel-->
+        <!--Sanction-->
         <scene sceneID="B49-wg-MSb">
             <objects>
-                <controller identifier="SanctionPlayer" title="Cancel" id="gXX-SD-E21" customClass="SanctionPlayerIC" customModule="RefWatchWatch_Extension">
+                <controller identifier="SanctionPlayer" title="Sanction" id="gXX-SD-E21" customClass="SanctionPlayerIC" customModule="RefWatchWatch_Extension">
                     <items>
                         <group width="1" height="1" alignment="left" layout="vertical" spacing="1" id="AZI-ew-ifL">
                             <items>
@@ -566,11 +559,7 @@
                                         </group>
                                         <group width="0.66000000000000003" height="1" alignment="left" id="hBS-BI-d3T">
                                             <items>
-                                                <button width="1" height="1" alignment="left" title="Home" id="BKV-E1-kDf">
-                                                    <connections>
-                                                        <action selector="WKTeamButtonClick" destination="gXX-SD-E21" id="EYv-Ah-zNy"/>
-                                                    </connections>
-                                                </button>
+                                                <label width="1" alignment="left" text="Home" textAlignment="center" id="mca-tF-CPc" userLabel="WKTeam"/>
                                             </items>
                                         </group>
                                     </items>
@@ -716,7 +705,7 @@
                         <outlet property="WKBut8" destination="kpM-fj-45K" id="MS8-6p-GQI"/>
                         <outlet property="WKBut9" destination="Aqv-Kw-OuZ" id="3fS-gx-rOq"/>
                         <outlet property="WKOKButton" destination="BOl-wK-ej4" id="7Q6-YS-g5B"/>
-                        <outlet property="WKTeamButton" destination="BKV-E1-kDf" id="mSk-1e-zmm"/>
+                        <outlet property="WKTeam" destination="mca-tF-CPc" id="iYY-da-MLe"/>
                         <outlet property="WKValue" destination="e8I-Ui-8cb" id="Ic2-s3-BVW"/>
                     </connections>
                 </controller>

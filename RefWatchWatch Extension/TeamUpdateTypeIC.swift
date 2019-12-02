@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class SanctionTypeIC: WKInterfaceController {
+class TeamUpdateTypeIC: WKInterfaceController {
     
     @IBOutlet var WKSinBinButtonOutlet: WKInterfaceButton!
     
@@ -35,14 +35,14 @@ class SanctionTypeIC: WKInterfaceController {
         super.didDeactivate()
     }
     
-   @IBAction func WKCautionButton() {
+   @IBAction func WKScoreButton() {
         _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.caution
-        presentController(withName: "SanctionPlayer", context: _context)
+        presentController(withName: "ScoreCtl", context: _context)
     }
     
     @IBAction func WKPenalityButton() {
-        _context?.tmpsanction.sanctiontype = RefWatchContextSanction.SanctionEnum.penalty
-        presentController(withName: "SanctionPlayer", context: _context)
+        _context!.addsanction(_context!.ishometeam, player: 0, sanctiontype: RefWatchContextSanction.SanctionEnum.penalty )
+        presentController(withName: "Main" , context: _context)
     }
     
     @IBAction func WKSinBinButton() {

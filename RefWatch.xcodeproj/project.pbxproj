@@ -22,7 +22,7 @@
 		5B53C44922E6FDFD0081340D /* WatchMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44722E6FC180081340D /* WatchMedia.xcassets */; };
 		5B84F7011D11EC6200516291 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84F6FF1D11EC6200516291 /* Interface.storyboard */; };
 		5B84F7031D11EFF600516291 /* RefWatchContextSanction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */; };
-		5BCC69621D0E10C900A21628 /* SanctionTypeIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */; };
+		5BCC69621D0E10C900A21628 /* TeamUpdateTypeIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69611D0E10C900A21628 /* TeamUpdateTypeIC.swift */; };
 		5BCC69641D0E156100A21628 /* RefWatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69631D0E156100A21628 /* RefWatchContext.swift */; };
 		5BCC69661D0E184F00A21628 /* RefWatchContextScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69651D0E184F00A21628 /* RefWatchContextScore.swift */; };
 		5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69671D0E208600A21628 /* ScoreIC.swift */; };
@@ -94,7 +94,7 @@
 		5B53C44722E6FC180081340D /* WatchMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatchMedia.xcassets; sourceTree = "<group>"; };
 		5B84F7001D11EC6200516291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5B84F7021D11EFF600516291 /* RefWatchContextSanction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextSanction.swift; sourceTree = "<group>"; };
-		5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionTypeIC.swift; sourceTree = "<group>"; };
+		5BCC69611D0E10C900A21628 /* TeamUpdateTypeIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamUpdateTypeIC.swift; sourceTree = "<group>"; };
 		5BCC69631D0E156100A21628 /* RefWatchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContext.swift; sourceTree = "<group>"; };
 		5BCC69651D0E184F00A21628 /* RefWatchContextScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContextScore.swift; sourceTree = "<group>"; };
 		5BCC69671D0E208600A21628 /* ScoreIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreIC.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				5B0EA8A21D0D55FA003EBBA2 /* Supporting Files */,
 				5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */,
 				5B4769341DD47B8E00636E60 /* SettingsIC.swift */,
-				5BCC69611D0E10C900A21628 /* SanctionTypeIC.swift */,
+				5BCC69611D0E10C900A21628 /* TeamUpdateTypeIC.swift */,
 				5BF67FA91D0EAC7A00B4641A /* SanctionConfirmIC.swift */,
 				5BCC69691D0E99D600A21628 /* SanctionPlayerIC.swift */,
 				5BCC69631D0E156100A21628 /* RefWatchContext.swift */,
@@ -285,10 +285,9 @@
 			};
 			buildConfigurationList = 5B0EA8591D0D556A003EBBA2 /* Build configuration list for PBXProject "RefWatch" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -356,7 +355,7 @@
 				5BCC696A1D0E99D600A21628 /* SanctionPlayerIC.swift in Sources */,
 				5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */,
 				5BF67FAA1D0EAC7A00B4641A /* SanctionConfirmIC.swift in Sources */,
-				5BCC69621D0E10C900A21628 /* SanctionTypeIC.swift in Sources */,
+				5BCC69621D0E10C900A21628 /* TeamUpdateTypeIC.swift in Sources */,
 				5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */,
 				5BF7DBD41DD7B4B800E7D4E0 /* ComplicationController.swift in Sources */,
 				5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */,
@@ -519,9 +518,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = IosIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = RefWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -536,9 +537,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = IosIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = RefWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -552,6 +555,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -571,6 +575,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -592,6 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				IBSC_MODULE = RefWatchWatch_Extension;
 				INFOPLIST_FILE = RefWatchWatch/Info.plist;
@@ -602,7 +608,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Debug;
 		};
@@ -613,6 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				IBSC_MODULE = RefWatchWatch_Extension;
 				INFOPLIST_FILE = RefWatchWatch/Info.plist;
@@ -623,7 +630,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
 			name = Release;
 		};

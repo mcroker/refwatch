@@ -18,7 +18,8 @@ class SanctionPlayerIC: WKInterfaceController {
     
     var _ishometeam : Bool = true
 
-    @IBOutlet var WKTeamButton: WKInterfaceButton!
+
+    @IBOutlet var WKTeam: WKInterfaceLabel!
     
     @IBOutlet var WKOKButton: WKInterfaceButton!
 
@@ -48,8 +49,13 @@ class SanctionPlayerIC: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
-        _ishometeam = true
-        WKTeamButton.setTitle("Home")
+        _ishometeam = _context!.ishometeam
+        if (_ishometeam) {
+             WKTeam.setText("Home")
+         } else {
+             WKTeam.setText("Away")
+         }
+        //WKTeamButton.setTitle("Home")
     }
     
     override func awake(withContext context: Any?) {
@@ -77,17 +83,6 @@ class SanctionPlayerIC: WKInterfaceController {
         _context?.tmpsanction.player = _currentno
         _context!.addsanction(_ishometeam, player: _currentno, sanctiontype: _context!.tmpsanction.sanctiontype )
         presentController(withName: "Main" , context: _context)
-    }
-    
-    @IBAction func WKTeamButtonClick() {
-        if _ishometeam {
-            _ishometeam = false
-            WKTeamButton.setTitle("Away")
-        }
-        else {
-            _ishometeam = true
-            WKTeamButton.setTitle("Home")
-        }
     }
     
     func buttonClick(_ number: Int) {
