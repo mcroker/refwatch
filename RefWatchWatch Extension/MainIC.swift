@@ -11,445 +11,213 @@ import Foundation
 import UIKit
 import UserNotifications
 
-class MainIC: WKInterfaceController {
+class MainIC: RefWatchSuperIC {
     
     @IBOutlet var WKGameTimer: WKInterfaceTimer!
-    
     @IBOutlet var WKElapsedTimer: WKInterfaceTimer!
-    
     @IBOutlet var WKTimeButton: WKInterfaceButton!
-    
     @IBOutlet var WKHomeScore: WKInterfaceLabel!
-    
     @IBOutlet var WKAwayScore: WKInterfaceLabel!
-
-    @IBOutlet var WKGrpHomeSin1: WKInterfaceGroup!
-    
-    @IBOutlet var WKHomeSinP1: WKInterfaceLabel!
-    
-    @IBOutlet var WKHomeSinT1: WKInterfaceTimer!
-    
-    @IBOutlet var WKGrpAwaySin1: WKInterfaceGroup!
-    
-    @IBOutlet var WKAwaySinP1: WKInterfaceLabel!
-    
-    @IBOutlet var WKAwaySinT1: WKInterfaceTimer!
-    
-    @IBOutlet var WKGrpHomeSin2: WKInterfaceGroup!
-    
-    @IBOutlet var WKHomeSinP2: WKInterfaceLabel!
-    
-    @IBOutlet var WKHomeSinT2: WKInterfaceTimer!
-    
-    @IBOutlet var WKGrpAwaySin2: WKInterfaceGroup!
-    
-    @IBOutlet var WKAwaySinP2: WKInterfaceLabel!
-    
-    @IBOutlet var WKAwaySinT2: WKInterfaceTimer!
-    
     @IBOutlet var WKGrpHomeOff: WKInterfaceGroup!
-    
     @IBOutlet var WKHomeOffP: WKInterfaceLabel!
-    
     @IBOutlet var WKHomeCautionP: WKInterfaceLabel!
     
-    @IBOutlet var WKHomePKRecent1: WKInterfaceLabel!
-
-    @IBOutlet var WKHomePKRecent2: WKInterfaceLabel!
-    
-    @IBOutlet var WKHomePKTotal: WKInterfaceLabel!
-    
-    @IBOutlet var WKAwayPKRecent1: WKInterfaceLabel!
-    
-    @IBOutlet var WKAwayPKRecent2: WKInterfaceLabel!
-    
-    @IBOutlet var WKAwayPKTotal: WKInterfaceLabel!
-    
-    @IBOutlet var WKGrpAwayOff: WKInterfaceGroup!
+    @IBOutlet weak var homeOuterGroup: WKInterfaceGroup!
+    @IBOutlet weak var awayOuterGroup: WKInterfaceGroup!
     
     @IBOutlet var WKAwayOffP: WKInterfaceLabel!
-    
     @IBOutlet var WKAwayCautionP: WKInterfaceLabel!
+    
+    @IBOutlet var homePKRecent1: WKInterfaceLabel!
+    @IBOutlet var homePKRecent2: WKInterfaceLabel!
+    @IBOutlet var homePKTotal: WKInterfaceLabel!
+    @IBOutlet var awayPKRecent1: WKInterfaceLabel!
+    @IBOutlet var awayPKRecent2: WKInterfaceLabel!
+    @IBOutlet var awayPKTotal: WKInterfaceLabel!
+    
+    @IBOutlet weak var homeCurrentSanctions: WKInterfaceTable!
+    @IBOutlet weak var awayCurrentSanctions: WKInterfaceTable!
+    
     
     var myTimer : Timer?  //internal timer to keep track
     var TimerInterval : TimeInterval = 1
     
-    var _context : RefWatchContext
-    var _complicationserver : CLKComplicationServer
-    var _oldistimeup : Bool = false
+    var _oldIsTimeUp : Bool = false;
+    
+    private let match : Match = Match.getCurrentMatch();
+    private let settings : MatchSettings = Match.getCurrentMatch().settings;
+    private let clock : MatchClock = Match.getCurrentMatch().clock;
     
     override init() {
-        _context=RefWatchContext.sharedInstance
-        _complicationserver=CLKComplicationServer.sharedInstance()
-        super.init()
+        super.init();
+        NotificationCenter.default.addObserver(self, selector: #selector(timeEventHandler(notification:)), name: .timeOn, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(timeEventHandler(notification:)), name: .timeOff, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(timeEventHandler(notification:)), name: .timeIsUp, object: nil);
+        // NotificationCenter.default.addObserver(self, selector: #selector(periodStartEventHandler(notification:)), name: .periodStart, object: nil);
+        // NotificationCenter.default.addObserver(self, selector: #selector(periodEndEventHandler(notification:)), name: .periodEnd, object: nil);
+        // NotificationCenter.default.addObserver(self, selector: #selector(matchEndEventHandler(notification:)), name: .matchStart, object: nil);
+        // NotificationCenter.default.addObserver(self, selector: #selector(matchEndEventHandler(notification:)), name: .matchEnd, object: nil);
     }
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        if context is RefWatchContext {
-            _context = context as! RefWatchContext
-        }
-        draw()
-    }
-    
+        
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        // Start the timer
-        startComplicationTimer()
-        
-        draw()
+        self.draw()
     }
     
-    override func didDeactivate() {
-        super.didDeactivate()
+    @objc public func timeEventHandler(notification: NSNotification) {
+        debugPrint("Processing Time Notification", notification)
+        self.drawClock()
+        self.drawContextMenu()
+    }
+    
+    @objc public func periodStartEventHandler(notification: NSNotification) {
+        debugPrint("Processing Period Start Notification", notification)
+    }
+    
+    @objc public func periodEndEventHandler(notification: NSNotification) {
+        debugPrint("Processing Period End Notification", notification)
+    }
+    
+    @objc public func matchEndEventHandler(notification: NSNotification) {
+        debugPrint("Processing Match End Notification", notification)
+    }
+    
+    @objc public func matchStartEventHandler(notification: NSNotification) {
+        debugPrint("Processing Match Start Notification", notification)
     }
     
     func draw() {
+        homeOuterGroup.setBackgroundColor(settings.homeColor)
+        awayOuterGroup.setBackgroundColor(settings.awayColor)
         drawSanctions()
         drawPKTracking()
-        drawClock()
         drawScores()
+        drawClock()
+        drawContextMenu()
     }
     
     func drawScores() {
-        WKAwayScore.setText(String(_context.awayscore.score))
-        WKHomeScore.setText(String(_context.homescore.score))
+        WKAwayScore.setText(String(match.awayTeam.score))
+        WKHomeScore.setText(String(match.homeTeam.score))
     }
     
     func drawPKTracking() {
-        let recentHome1 = _context.countRecentSanctions(ishometeam:true, since:_context.settings.pkrecentmins1)
-        let recentAway1 = _context.countRecentSanctions(ishometeam:false, since:_context.settings.pkrecentmins1)
-        var recentHome2: Int = -1
-        var recentAway2: Int = -1
-        // If PKDuration2 = periodduration, show based on period rather than gametime
-        if (_context.settings.pkrecentmins2 != _context.settings.periodduration) {
-            recentHome2 = _context.countRecentSanctions(ishometeam:true, since:_context.settings.pkrecentmins2)
-            recentAway2 = _context.countRecentSanctions(ishometeam:false, since:_context.settings.pkrecentmins2)
-        } else {
-            recentHome2 = _context.countPeriodSanctions(ishometeam:true)
-            recentAway2 = _context.countPeriodSanctions(ishometeam:false)
-        }
-        WKHomePKRecent1.setText(String(recentHome1))
-        WKAwayPKRecent1.setText(String(recentAway1))
-        if (recentHome1 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKHomePKRecent1.setTextColor(UIColor.yellow)
-        } else {
-            WKHomePKRecent1.setTextColor(UIColor.white)
-        }
-        if (recentAway1 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKAwayPKRecent1.setTextColor(UIColor.yellow)
-        } else {
-            WKAwayPKRecent1.setTextColor(UIColor.white)
-        }
-      
-        WKHomePKRecent2.setText(String(recentHome2))
-        WKAwayPKRecent2.setText(String(recentAway2))
-        if (recentHome2 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKHomePKRecent2.setTextColor(UIColor.yellow)
-        } else {
-            WKHomePKRecent2.setTextColor(UIColor.white)
-        }
-        if (recentAway2 >= _context.settings.pklimit && _context.settings.pklimit != 0 ) {
-            WKAwayPKRecent2.setTextColor(UIColor.yellow)
-        } else {
-            WKAwayPKRecent2.setTextColor(UIColor.white)
-        }
+        let homePen = match.homeTeam.getPenStats()
+        let awayPen = match.awayTeam.getPenStats()
         
-        WKHomePKTotal.setText(String(_context.countTotalSanctions(ishometeam:true)))
-        WKAwayPKTotal.setText(String(_context.countTotalSanctions(ishometeam:false)))
+        homePKRecent1.setText(String(homePen.count1));
+        awayPKRecent1.setText(String(awayPen.count1));
+        homePKRecent1.setTextColor((homePen.inWarn1) ? .penCountWarn : .penCountOK )
+        awayPKRecent1.setTextColor((awayPen.inWarn1) ? .penCountWarn : .penCountOK )
+        
+        // If PKDuration2 = periodduration, show based on period rather than gametime
+        if (settings.pkRecent2Mins != settings.periodDuration) {
+            homePKRecent2.setText(String(homePen.count2))
+            awayPKRecent2.setText(String(awayPen.count2))
+            homePKRecent1.setTextColor((homePen.inWarn2) ? .penCountWarn : .penCountOK )
+            awayPKRecent1.setTextColor((awayPen.inWarn2) ? .penCountWarn : .penCountOK )
+        } else {
+            homePKRecent2.setText(String(homePen.countPeriod))
+            awayPKRecent2.setText(String(awayPen.countPeriod))
+            homePKRecent1.setTextColor((homePen.inWarnPeriod) ? .penCountWarn : .penCountOK )
+            awayPKRecent1.setTextColor((awayPen.inWarnPeriod) ? .penCountWarn : .penCountOK )
+        }
+
+        homePKTotal.setText(String(homePen.countTotal))
+        awayPKTotal.setText(String(awayPen.countTotal))
     }
     
     func drawSanctions() {
-        var homeoff : String = String()
-        var awayoff : String = String()
-        var homecaution : String = String()
-        var awaycaution : String = String()
-        var homesinP1 : Int = -1
-        var homesinP2 : Int = -1
-        var homesinT1 : TimeInterval = 0
-        var homesinT2 : TimeInterval = 0
-        var awaysinP1 : Int = -1
-        var awaysinP2 : Int = -1
-        var awaysinT1 : TimeInterval = 0
-        var awaysinT2 : TimeInterval = 0
+        WKHomeOffP.setText(match.homeTeam.redCardedPlayers().joined(separator: ","))
+        WKAwayOffP.setText(match.awayTeam.redCardedPlayers().joined(separator: ","))
+        WKHomeCautionP.setText(match.homeTeam.cautionedPlayers().joined(separator: ","))
+        WKAwayCautionP.setText(match.awayTeam.cautionedPlayers().joined(separator: ","))
         
-        for sanctionitem : RefWatchContextSanction in _context.sanctions {
-            if sanctionitem.isingraceperiod {
-                if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.sendOff {
-                    if sanctionitem.ishometeam {
-                        if homeoff.count != 0 {
-                            homeoff = "\(homeoff),\(sanctionitem.player)"
-                        }
-                        else {
-                            homeoff = "\(sanctionitem.player)"
-                        }
-                    }
-                    else {
-                        if awayoff.count != 0 {
-                            awayoff = "\(awayoff),\(sanctionitem.player)"
-                        }
-                        else {
-                            awayoff = "\(sanctionitem.player)"
-                        }
-                    }
-                }
-                if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.caution {
-                    if sanctionitem.ishometeam {
-                        if homecaution.count != 0 {
-                            homecaution = "\(homecaution),\(sanctionitem.player)"
-                        }
-                        else {
-                            homecaution = "\(sanctionitem.player)"
-                        }
-                    }
-                    else {
-                        if awaycaution.count != 0 {
-                            awaycaution = "\(awaycaution),\(sanctionitem.player)"
-                        }
-                        else {
-                            awaycaution = "\(sanctionitem.player)"
-                        }
-                    }
-                }
-                
-                if sanctionitem.sanctiontype == RefWatchContextSanction.SanctionEnum.sinBin {
-                    if sanctionitem.ishometeam {
-                        if homesinP1 == -1 || sanctionitem.timeremaining < homesinT1 {
-                            homesinP2 = homesinP1
-                            homesinT2 = homesinT1
-                            homesinP1 = sanctionitem.player
-                            homesinT1 = sanctionitem.timeremaining
-                        } else if homesinP2 == -1 || sanctionitem.timeremaining < homesinT2 {
-                            homesinP2 = sanctionitem.player
-                            homesinT2 = sanctionitem.timeremaining
-                        }
-                    }
-                    else {
-                        if awaysinP1 == -1 || sanctionitem.timeremaining < awaysinT1 {
-                            awaysinP2 = awaysinP1
-                            awaysinT2 = awaysinT1
-                            awaysinP1 = sanctionitem.player
-                            awaysinT1 = sanctionitem.timeremaining
-
-                        } else if awaysinP2 == -1 || sanctionitem.timeremaining < awaysinT2 {
-                            awaysinP2 = sanctionitem.player
-                            awaysinT2 = sanctionitem.timeremaining
-                        }
-                    }
-                }
-                
-            }
-        }
-
-        WKHomeOffP.setText(homeoff)
-        WKAwayOffP.setText(awayoff)
-        WKHomeCautionP.setText(homecaution)
-        WKAwayCautionP.setText(awaycaution)
-        
-        if homesinP1 != -1 {
-            WKHomeSinP1.setText("\(homesinP1) ")
-            WKHomeSinT1.setDate(Date(timeIntervalSinceNow: homesinT1 ))
-            WKGrpHomeSin1.setHidden(false)
-            if homesinT1 == 0 {
-                WKHomeSinP1.setTextColor(UIColor.green)
-                WKHomeSinT1.setTextColor(UIColor.green)	
-            }
-            else {
-                WKHomeSinP1.setTextColor(UIColor.yellow)
-                WKHomeSinT1.setTextColor(UIColor.yellow)
-            }
-            if homesinP2 != -1 {
-                WKHomeSinP2.setText("\(homesinP2) ")
-                WKHomeSinT2.setDate(Date(timeIntervalSinceNow: homesinT2 ))
-                WKGrpHomeSin2.setHidden(false)
-                if homesinT2 == 0 {
-                    WKHomeSinP2.setTextColor(UIColor.green)
-                    WKHomeSinT2.setTextColor(UIColor.green)
-                }
-                else {
-                    WKHomeSinP2.setTextColor(UIColor.yellow)
-                    WKHomeSinT2.setTextColor(UIColor.yellow)
-                }
-            }
-            else {
-                WKGrpHomeSin2.setHidden(true)
-            }
-        }
-        else {
-            WKGrpHomeSin1.setHidden(true)
-            WKGrpHomeSin2.setHidden(true)
+        let homeYCs = match.homeTeam.currentSanctions(type: YellowCardPlayerEvent.self, max: 2)
+        homeCurrentSanctions.setNumberOfRows(homeYCs.count, withRowType: "YC")
+        for (index, event) in homeYCs.enumerated() {
+            let row = homeCurrentSanctions.rowController(at: index) as! YCRowCtl
+            row.event = event
         }
         
-        if awaysinP1 != -1 {
-            WKAwaySinP1.setText("\(awaysinP1) ")
-            WKAwaySinT1.setDate(Date(timeIntervalSinceNow: awaysinT1 ))
-            WKGrpAwaySin1.setHidden(false)
-            if awaysinT1 == 0 {
-                WKAwaySinP1.setTextColor(UIColor.green)
-                WKAwaySinT1.setTextColor(UIColor.green)
-            }
-            else {
-                WKAwaySinP1.setTextColor(UIColor.yellow)
-                WKAwaySinT1.setTextColor(UIColor.yellow)
-            }
-            if awaysinP2 != -1 {
-                WKAwaySinP2.setText("\(awaysinP2) ")
-                WKAwaySinT2.setDate(Date(timeIntervalSinceNow: awaysinT2 ))
-                WKGrpAwaySin2.setHidden(false)
-                if awaysinT2 == 0 {
-                    WKAwaySinP2.setTextColor(UIColor.green)
-                    WKAwaySinT2.setTextColor(UIColor.green)
-                }
-                else {
-                    WKAwaySinP2.setTextColor(UIColor.yellow)
-                    WKAwaySinT2.setTextColor(UIColor.yellow)
-                }
-            }
-            else {
-                WKGrpAwaySin2.setHidden(true)
-            }
-        }
-        else {
-            WKGrpAwaySin1.setHidden(true)
-            WKGrpAwaySin2.setHidden(true)
+        let awayYCs = match.awayTeam.currentSanctions(type: YellowCardPlayerEvent.self, max: 2)
+        awayCurrentSanctions.setNumberOfRows(awayYCs.count, withRowType: "YC")
+        for (index, event) in awayYCs.enumerated() {
+            let row = awayCurrentSanctions.rowController(at: index) as! YCRowCtl
+            row.event = event
         }
     }
     
-    @IBAction func WKMenuReset() {
-        _context.resetAll()
-        _oldistimeup = false
-        draw()
-        reloadComplications()
-    }
-    
-    @IBAction func WKMenuHalfTime() {
-        _context.resetTime()
-        _oldistimeup = false
-        draw()
-        reloadComplications()
-    }
-
-    @IBAction func WKMenuSettings() {
-        presentController(withName: "SettingsCtl" , context: _context)
-        reloadComplications()
-    }
-    
-    @IBAction func WKMenuSanction() {
-        _context.tmpsanction.player = -1
-        presentController(withName: "SanctionTypeCtl", context: _context)
-    }
-
-    @IBAction func WKHomeScoreGroupButton() {
-        _context.ishometeam = true
-        presentController(withName: "TeamUpdateCtl" , context: _context)
-    }
-
-    @IBAction func WKAwayScoreGroupButton() {
-        _context.ishometeam = false
-        presentController(withName: "TeamUpdateCtl" , context: _context)
-    }
-    
-    var context : RefWatchContext {
-        get {
-            return _context
-        }
-    }
-
-    // This is called every timer interval (1 sec?) and used to detect when time is up
-    // and then to trigger the notifcations on the watch i.e. to vibrate...
-    // _oldtimeisup is used to make sure this only triggers once.
-    @objc func timerDone(){
-        if _context.istimeup && !_oldistimeup {
-            WKGameTimer.setTextColor(UIColor.red)
-            reloadComplications()
-            
-            WKInterfaceDevice.current().play(WKHapticType.notification)
-            
-            // Create the content
-            let content = UNMutableNotificationContent()
-            content.title = NSString.localizedUserNotificationString(forKey: "RefWatch", arguments: nil)
-            content.body = NSString.localizedUserNotificationString(forKey: "Time Up", arguments: nil)
-            content.sound = UNNotificationSound.default
-            
-            // Deliver the notification in five seconds.
-            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest.init(identifier: "TimeUp", content: content, trigger:trigger)
-            
-            // Schedule the notification.
-            let center = UNUserNotificationCenter.current()
-            center.add(request)
-            
-        }
-        _oldistimeup = _context.istimeup
-        drawSanctions()
-        drawPKTracking()
-    }
-    
-    func drawClock() {
-        // Set the colour of the game-time clock
-        // Grey - clock is paused
-        // White - clock is running normally
-        // Red - time is up
-        if _context.istimeon {
-            if _context.istimeup {
-                WKGameTimer.setTextColor(UIColor.red)
-            }
-            else {
-                WKGameTimer.setTextColor(UIColor.white)
-            }
-        } else {
-            WKGameTimer.setTextColor(UIColor.darkGray)
-        }
-        
-
-        
-        // Set the time on the elapsed-time clock and if the period is running
-        // start it.
-        if _context.isperiodrunning {
-            WKElapsedTimer.setDate(_context.periodstart)
+    private func drawClock() {
+        WKElapsedTimer.setTextColor(clock.elapsedClockTextColor)
+        WKElapsedTimer.setDate(clock.elapsedWKTimerDate)
+        if clock.isMatchActive {
             WKElapsedTimer.start()
-            
-            // Set the time on the game-time clock based on the time remaining in the
-            // period, and start the counter.
-            WKGameTimer.setDate(_context.logicalperiodend)
-            if _context.istimeon {
-                WKGameTimer.start()
-            } else {
-                WKGameTimer.stop()
-            }
         } else {
-
-            WKGameTimer.setDate(Date(timeIntervalSinceNow: _context.settings.periodduration))
+            WKElapsedTimer.stop()
+        }
+        WKTimeButton.setEnabled(clock.isPeriodActive)
+        WKGameTimer.setTextColor(clock.gameClockTextColor)
+        WKGameTimer.setDate(clock.gameWKTimerDate)
+        if clock.isTimeOn {
+            WKGameTimer.start()
+        } else {
             WKGameTimer.stop()
-            
-            WKElapsedTimer.setDate(Date(timeIntervalSinceNow: 0))
-            // Run a clock during half-time (but not before play starts)
-            if _context.gameplayedtime > 0 {
-                WKElapsedTimer.start()
+        }
+    }
+    
+    func drawContextMenu() {
+        self.clearAllMenuItems();
+        if clock.isMatchActive {
+            if clock.isPeriodActive {
+                if ((2 * clock.currentPeriod!.periodNo) == settings.periodsInMatch) {
+                    self.addMenuItem(with: WKMenuItemIcon.shuffle, title: "Half-Time", action: #selector(endPeriod))
+                } else if (clock.currentPeriod!.periodNo == settings.periodsInMatch) {
+                    self.addMenuItem( with: WKMenuItemIcon.decline, title: "Full-Time", action: #selector(endPeriod))
+                } else {
+                    self.addMenuItem(with: WKMenuItemIcon.shuffle, title: "End Period", action:  #selector(endPeriod))
+                }
             } else {
-                WKElapsedTimer.stop()
+               self.addMenuItem(with: WKMenuItemIcon.play, title: "Restart",action: #selector(startClock))
             }
+        } else if !clock.isMatchEnded {
+            self.addMenuItem(with: WKMenuItemIcon.play, title: "Kick-Off",action: #selector(startClock))
         }
     }
     
-    func reloadComplications() {
-        if ( nil != _complicationserver.activeComplications ) {
-            for complicaationitem : CLKComplication in _complicationserver.activeComplications! {
-                _complicationserver.reloadTimeline(for: complicaationitem)
-            }
-        }
+    @IBAction func eventsMenuClick() {
+        goEventList()
     }
     
-    func startComplicationTimer() {
-        myTimer = Timer.scheduledTimer(timeInterval: TimerInterval, target: self, selector: #selector(MainIC.timerDone), userInfo: nil, repeats: true)
+    @objc func endPeriod() {
+        clock.endCurrentPeriod()
+        draw()
     }
     
-    @IBAction func TimeButtonClick() {
-        _context.istimeon = !_context.istimeon
-        drawClock()
-        reloadComplications()
+    @objc func startClock() {
+        clock.timeOn()
+        draw()
+    }
+
+    @IBAction func settingsMenuClick() {
+        presentController(withName: "SettingsCtl" , context: nil)
+    }
+    
+    @IBAction func startNewMatch() {
+        Match.startNewMatch();
+    }
+
+    @IBAction func timeButtonClick() {
+        clock.isTimeOn = !clock.isTimeOn;
+    }
+
+    @IBAction func homeScoreButtonClick() {
+        goTeamMenuPage(team: match.homeTeam);
+    }
+
+    @IBAction func awayScoreButtonClick() {
+        goTeamMenuPage(team: match.awayTeam);
     }
 
 }

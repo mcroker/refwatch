@@ -9,197 +9,39 @@
 import WatchKit
 import Foundation
 
+struct ScorePageContext {
+    var team: MatchTeam
+}
 
-class ScoreIC: WKInterfaceController {
+class ScoreIC: RefWatchSuperIC {
     
+    private var context : ScorePageContext?;
+    private let match : Match = Match.getCurrentMatch();
     
-    @IBOutlet var WKConvGrp: WKInterfaceGroup!
-    @IBOutlet var WKPenGrp: WKInterfaceGroup!
-    
-    @IBOutlet var WKTry: WKInterfaceLabel!
-    @IBOutlet var WKConv: WKInterfaceLabel!
-    @IBOutlet var WKPen: WKInterfaceLabel!
-    
-    @IBOutlet var WKTryDownButton: WKInterfaceButton!
-    @IBOutlet var WKConvDownButton: WKInterfaceButton!
-    @IBOutlet var WKPenDownButton: WKInterfaceButton!
-    @IBOutlet var WKConvUpButton: WKInterfaceButton!
-    
-    var _context : RefWatchContext?
-    
-    override func awake(withContext context: Any?) {
-       
-        super.awake(withContext: context)
-        
-        _context = context as? RefWatchContext
-
-        if _context!.ishometeam {
-            WKTry.setText(String(_context!.homescore.trys))
-            WKPen.setText(String(_context!.homescore.pen))
-            WKConv.setText(String(_context!.homescore.conv))
-            self.setTitle("Home Score")
-        }
-        else {
-            WKTry.setText(String(_context!.awayscore.trys))
-            WKPen.setText(String(_context!.awayscore.pen))
-            WKConv.setText(String(_context!.awayscore.conv))
-            self.setTitle("Away Score")
-        }
-        
-         // Configure interface objects here.
+    override func awake(withContext: Any?) {
+        self.context = (withContext as! ScorePageContext);
+        super.awake(withContext: withContext);
+        self.setTitle("\(context!.team.title) Score");
     }
     
-    override func willActivate() {
-        super.willActivate()
-        // This method is called when watch view controller is about to be visible to user
-        setEnabled()
+    @IBAction func tryButtonClicked() {
+        match.addEvent(TryScoredEvent(team: context!.team));
+        goShotPage(team: context!.team, shotType: .conv);
     }
     
-    func setEnabled() {
-        if _context!.settings.convpoints == 0 {
-            WKConvGrp.setHidden(true)
-        } else {
-            WKConvGrp.setHidden(false)
-        }
-        if _context!.settings.penpoints == 0 {
-            WKPenGrp.setHidden(true)
-        } else {
-            WKPenGrp.setHidden(false)
-        }
-        if _context!.ishometeam {
-            if _context!.homescore.trys > 0 {
-                WKTryDownButton.setEnabled(true)
-                WKConvUpButton.setEnabled(true)
-            }
-            else {
-                _context!.homescore.conv=0
-                WKConv.setText(String(_context!.homescore.conv))
-                WKTryDownButton.setEnabled(false)
-                WKConvUpButton.setEnabled(false)
-            }
-            
-            if _context!.homescore.conv > 0 {
-                WKConvDownButton.setEnabled(true)
-            }
-            else {
-                WKConvDownButton.setEnabled(false)
-            }
-            
-            if _context!.homescore.pen > 0 {
-                WKPenDownButton.setEnabled(true)
-            }
-            else {
-                WKPenDownButton.setEnabled(false)
-            }
-        }
-        else {
-            if _context!.awayscore.trys > 0 {
-                WKTryDownButton.setEnabled(true)
-                WKConvUpButton.setEnabled(true)
-            }
-            else {
-                _context!.awayscore.conv=0
-                WKConv.setText(String(_context!.awayscore.conv))
-                WKTryDownButton.setEnabled(false)
-                WKConvUpButton.setEnabled(false)
-            }
-                
-            if _context!.awayscore.conv > 0 {
-                WKConvDownButton.setEnabled(true)
-            }
-            else {
-                WKConvDownButton.setEnabled(false)
-            }
-            
-            if _context!.awayscore.pen > 0 {
-                WKPenDownButton.setEnabled(true)
-            }
-            else {
-                WKPenDownButton.setEnabled(false)
-            }
-        }
+    @IBAction func penalityGoalButtonClicked() {
+        match.addEvent(PenGoalScoredEvent(team: context!.team));
+        goHomePage();
     }
     
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+    @IBAction func dropGoalButtonClicked() {
+        match.addEvent(DropKickScoredEvent(team: context!.team));
+        goHomePage();
     }
     
-    @IBAction func WKTryAdd() {
-        if _context!.ishometeam {
-            _context!.homescore.trys+=1
-            WKTry.setText(String(_context!.homescore.trys))
-        }
-        else {
-            _context!.awayscore.trys+=1
-            WKTry.setText(String(_context!.awayscore.trys))
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKTryDown() {
-        if _context!.ishometeam {
-            _context?.homescore.trys-=1
-            WKTry.setText(String(_context!.homescore.trys))
-        }
-        else {
-            _context?.awayscore.trys-=1
-            WKTry.setText(String(_context!.awayscore.trys))
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKConvUp() {
-        if _context!.ishometeam {
-            _context!.homescore.conv+=1
-            WKConv.setText(String(_context!.homescore.conv))
-        }
-        else {
-            _context!.awayscore.conv+=1
-            WKConv.setText(String(_context!.awayscore.conv))
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKConvDown() {
-        if _context!.ishometeam {
-            _context!.homescore.conv-=1
-            WKConv.setText(String(_context!.homescore.conv))
-        }
-        else {
-            _context!.awayscore.conv-=1
-            WKConv.setText(String(_context!.awayscore.conv))
-
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKPenUp() {
-        if _context!.ishometeam {
-            _context!.homescore.pen+=1
-            WKPen.setText(String(_context!.homescore.pen))
-        }
-        else {
-            _context!.awayscore.pen+=1
-            WKPen.setText(String(_context!.awayscore.pen))
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKPenDown() {
-        if _context!.ishometeam {
-            _context!.homescore.pen-=1
-            WKPen.setText(String(_context!.homescore.pen))
-        }
-        else {
-            _context!.awayscore.pen-=1
-            WKPen.setText(String(_context!.awayscore.pen))
-        }
-        setEnabled()
-    }
-    
-    @IBAction func WKOKButton() {
-                presentController(withName: "Main" , context: _context)
+    @IBAction func penltyTryButtonClocked() {
+        match.addEvent(PenTryScoredEvent(team: context!.team));
+        goSanctionPage(team: (context!.team.teamKey == .home) ? match.awayTeam : match.homeTeam );
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ClockKit
 
 class ViewController: UIViewController {
 
