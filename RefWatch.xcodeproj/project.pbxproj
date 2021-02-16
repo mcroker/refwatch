@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B09A8C123CD434600C1EA97 /* RefWatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C023CD434600C1EA97 /* RefWatchContext.swift */; };
 		5B09A8C323CDCD4600C1EA97 /* CautionPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C223CDCD4600C1EA97 /* CautionPlayerEvent.swift */; };
 		5B09A8C523CDCDE000C1EA97 /* YellowCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C423CDCDE000C1EA97 /* YellowCardPlayerEvent.swift */; };
 		5B09A8C723CDD04000C1EA97 /* RedCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C623CDD04000C1EA97 /* RedCardPlayerEvent.swift */; };
@@ -104,7 +103,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B09A8C023CD434600C1EA97 /* RefWatchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefWatchContext.swift; sourceTree = "<group>"; };
 		5B09A8C223CDCD4600C1EA97 /* CautionPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionPlayerEvent.swift; sourceTree = "<group>"; };
 		5B09A8C423CDCDE000C1EA97 /* YellowCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowCardPlayerEvent.swift; sourceTree = "<group>"; };
 		5B09A8C623CDD04000C1EA97 /* RedCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCardPlayerEvent.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				5BEE183A258FAE7D0028868D /* Info.plist */,
 				5B09A8C923CDECD500C1EA97 /* Controllers */,
 				5B9BB7C523D0614100D36680 /* Match */,
-				5B09A8C023CD434600C1EA97 /* RefWatchContext.swift */,
 				5B89A31A23CF3AE00039762A /* Events */,
 			);
 			path = "RefWatchWatch Extension";
@@ -479,7 +476,6 @@
 				5B0EA8A51D0D55FA003EBBA2 /* MainIC.swift in Sources */,
 				5B6971AB23CE5A5A008F3093 /* ShotIC.swift in Sources */,
 				5B9BB7C223D0516500D36680 /* EventRowCtl.swift in Sources */,
-				5B09A8C123CD434600C1EA97 /* RefWatchContext.swift in Sources */,
 				5B09A8C723CDD04000C1EA97 /* RedCardPlayerEvent.swift in Sources */,
 				5B9BB7DF23D1DC4D00D36680 /* SharedTeamState.swift in Sources */,
 				5B89A31C23CF42EA0039762A /* TryScoredEvent.swift in Sources */,
