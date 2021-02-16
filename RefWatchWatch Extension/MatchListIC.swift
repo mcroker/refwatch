@@ -11,8 +11,6 @@ import Foundation
 
 class MatchListIC: WKInterfaceController {
     
-    private let context : RefWatchContext = RefWatchContext.getInstance();
-
     override init() {
         super.init();
     }

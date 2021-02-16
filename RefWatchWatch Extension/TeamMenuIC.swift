@@ -65,7 +65,8 @@ class TeamMenuIC: RefWatchSuperIC {
     }
     
     @IBAction func colorButtonClick() {
-        presentController(withName: "TeamColor", context: context);
+        let contextObj : TeamOptionsPageContext = TeamOptionsPageContext( team: context!.team );
+        presentController(withName: "TeamColor", context: contextObj);
     }
     
 }

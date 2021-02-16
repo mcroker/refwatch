@@ -463,7 +463,7 @@
                                                             <label width="1" alignment="left" text="Home" textAlignment="center" id="Bmq-5u-jxX">
                                                                 <fontDescription key="font" type="system" pointSize="10"/>
                                                             </label>
-                                                            <label width="1" alignment="center" text="0" textAlignment="center" numberOfLines="0" id="hue-l3-2Q1">
+                                                            <label width="1" height="0.34999999999999998" alignment="center" text="0" textAlignment="center" numberOfLines="0" id="hue-l3-2Q1">
                                                                 <fontDescription key="font" type="system" pointSize="28"/>
                                                             </label>
                                                             <group width="1" height="12" alignment="left" spacing="10" id="eCI-Vi-iIV" userLabel="Pen Count">
@@ -484,7 +484,7 @@
                                                                     <tableRow identifier="YC" id="IuJ-bH-mb6" userLabel="YCRow" customClass="YCRowCtl" customModule="RefWatchWatch_Extension">
                                                                         <group key="rootItem" width="1" height="0.0" alignment="left" id="v9n-Rb-h5Q">
                                                                             <items>
-                                                                                <group width="0.80000000000000004" alignment="center" id="XlG-wU-7xJ">
+                                                                                <group width="0.84999999999999998" alignment="center" id="XlG-wU-7xJ">
                                                                                     <items>
                                                                                         <label alignment="left" text="12" textAlignment="right" id="zto-UN-FaD" userLabel="Player">
                                                                                             <fontDescription key="font" type="system" pointSize="12"/>
@@ -497,6 +497,7 @@
                                                                                     </items>
                                                                                 </group>
                                                                             </items>
+                                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </group>
                                                                         <connections>
                                                                             <outlet property="binTimer" destination="s8Z-8e-iLV" id="eUL-8W-Qrc"/>
@@ -535,7 +536,7 @@
                                                             <label width="1" alignment="left" text="Away" textAlignment="center" id="L6m-nn-gZB">
                                                                 <fontDescription key="font" type="system" pointSize="10"/>
                                                             </label>
-                                                            <label width="1" alignment="center" text="0" textAlignment="center" id="e5N-iB-Vzi">
+                                                            <label width="1" height="0.34999999999999998" alignment="center" text="0" textAlignment="center" id="e5N-iB-Vzi">
                                                                 <fontDescription key="font" type="system" pointSize="28"/>
                                                             </label>
                                                             <group width="1" height="12" alignment="left" spacing="10" id="Wti-Tp-jcI" userLabel="Pen Count">
@@ -556,7 +557,7 @@
                                                                     <tableRow identifier="YC" id="dBw-OZ-wBm" userLabel="YCRow" customClass="YCRowCtl" customModule="RefWatchWatch_Extension">
                                                                         <group key="rootItem" width="1" height="0.0" alignment="left" id="w6a-8g-QPU">
                                                                             <items>
-                                                                                <group width="0.80000000000000004" alignment="center" id="2Jl-6w-eZA">
+                                                                                <group width="0.84999999999999998" alignment="center" id="2Jl-6w-eZA">
                                                                                     <items>
                                                                                         <label alignment="left" text="12" textAlignment="right" id="fEb-AL-0Rt" userLabel="Player">
                                                                                             <fontDescription key="font" type="system" pointSize="12"/>
@@ -1209,10 +1210,14 @@
             <objects>
                 <controller identifier="TeamColor" title="Team Color" fullScreen="YES" id="x3F-3B-dnW" userLabel="TeamColor" customClass="TeamOptionsIC" customModule="RefWatchWatch_Extension">
                     <items>
-                        <picker height="100" alignment="left" id="S4G-ry-K5R" userLabel="ColorPicker"/>
+                        <picker height="100" alignment="left" id="S4G-ry-K5R" userLabel="ColorPicker">
+                            <connections>
+                                <action selector="pickerDidChange:" destination="x3F-3B-dnW" id="WVJ-jj-YcX"/>
+                            </connections>
+                        </picker>
                         <button width="1" alignment="left" title="OK" id="nYE-RS-IFb">
                             <connections>
-                                <action selector="ClkOK" destination="x3F-3B-dnW" id="L9V-0U-4SH"/>
+                                <action selector="okButtonClick" destination="x3F-3B-dnW" id="yPB-ac-D3v"/>
                             </connections>
                         </button>
                     </items>

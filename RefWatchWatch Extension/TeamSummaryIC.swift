@@ -11,8 +11,6 @@ import Foundation
 
 class TeamSummaryIC: RefWatchSuperIC {
     
-    var _context : RefWatchContext = RefWatchContext.getInstance();
-
     override init() {
         super.init();
     }

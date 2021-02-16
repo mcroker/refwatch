@@ -12,7 +12,6 @@ import Foundation
 class SettingsIC: WKInterfaceController {
     
     let settings : MatchSettings = Match.getCurrentMatch().settings;
-    var _context : RefWatchContext?;
     
     var dateFormatter : DateComponentsFormatter = DateComponentsFormatter();
 
@@ -155,7 +154,6 @@ class SettingsIC: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        _context = context as? RefWatchContext
         dateFormatter.allowedUnits = .minute
     }
     

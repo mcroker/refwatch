@@ -9,16 +9,25 @@
 import WatchKit
 import Foundation
 
+struct PenCountICContext {
+    var team: MatchTeam;
+}
+
 class PenCountIC: WKInterfaceController {
     
-    var _context : RefWatchContext = RefWatchContext.getInstance();
+    var context : PenCountICContext?;
 
     override init() {
         super.init();
     }
     
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context);
+        self.context = context as? PenCountICContext;
+    }
+    
     override func willActivate() {
-        super.willActivate()
+        super.willActivate();
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10), execute: {
             self.okButtonClick();
         })
@@ -29,11 +38,14 @@ class PenCountIC: WKInterfaceController {
     }
     
     @IBAction func okButtonClick() {
-        presentController(withName: "Main", context: _context);
+        presentController(withName: "Main", context: context);
     }
     
     @IBAction func shotAtGoalButtonClick() {
-        _context.state = .shotAtGoalAttemptInProgress;
-        presentController(withName: "Shot", context: _context);
+        let context = ShotPageContext(
+            team: self.context!.team,
+            shotType: .pen
+        );
+        presentController(withName: "Shot", context: context);
     }
 }

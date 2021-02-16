@@ -22,12 +22,12 @@ enum RefWatchStates {
     case showSummary;
 }
 
-class RefWatchContext {
+class XRefWatchContext {
 
-    fileprivate static var _instance: RefWatchContext = RefWatchContext();
+    fileprivate static var _instance: XRefWatchContext = XRefWatchContext();
     
-    static func getInstance() -> RefWatchContext {
-        return RefWatchContext._instance;
+    static func getInstance() -> XRefWatchContext {
+        return XRefWatchContext._instance;
     }
     
     var team : MatchTeam?;

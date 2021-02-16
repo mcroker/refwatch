@@ -23,41 +23,6 @@ class MatchEventLog {
         self._events.append(newEvent);
     }
     
-    /*
-    func getEvents() -> [MatchEvent] {
-        return self._events.map { $0 as! MatchEvent }.sorted { $0.realTime < $1.realTime };
-    }
-    
-    func getEventsByType<T: MatchEvent>(_ type : T.Type, max: Int? = nil) -> [T] {
-        let matchingEvents = self.getEvents().filter { $0 is T }.map { $0 as! T };
-        if (nil == max) {
-            return matchingEvents;
-        } else {
-            return Array(matchingEvents.prefix(max!));
-        }
-    }
-
-    func getPeriodStartEvent(_ periodNo: Int) -> ClockPeriodEvent? {
-        let startEvents = self.getEvents(type: ClockPeriodEvent.self)
-            .filter { $0.periodNo == periodNo && $0.startsClock };
-        if startEvents.count > 0 {
-            return startEvents[0];
-        } else {
-            return nil;
-        }
-    }
-    
-    func getPeriodEndEvent(_ periodNo: Int) -> ClockPeriodEvent? {
-        let stopEvents = self.getEvents(type: ClockPeriodEvent.self)
-            .filter { $0.periodNo == periodNo && $0.stopsClock };
-        if stopEvents.count > 0 {
-            return stopEvents[stopEvents.count - 1];
-        } else {
-            return nil;
-        }
-    }
-     */
-    
     func getEvents<T : MatchEvent>(_ type: T.Type,
                                    period: Int? = nil,
                                    team: MatchTeam? = nil,
