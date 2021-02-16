@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
+
 
 class RedCardPlayerEvent : SanctionEvent {
     
@@ -20,10 +25,11 @@ class RedCardPlayerEvent : SanctionEvent {
             }
         }
     }
-        
+    
     override var barColor : UIColor {
         get {
             return UIColor.sanctionC
         }
     }
+        
 }

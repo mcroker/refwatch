@@ -6,7 +6,6 @@
 //  Copyright © 2016 Martin Croker. All rights reserved.
 //
 import Foundation
-import WatchKit
 
 class MatchClockPeriod {
     

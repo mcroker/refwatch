@@ -6,7 +6,11 @@
 //  Copyright © 2016 Martin Croker. All rights reserved.
 //
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
 
 /*
  We have:
@@ -173,26 +177,7 @@ class MatchClock {
         return gameTime;
     }
     
-    var gameClockTextColor : UIColor {
-        get {
-            if self.isTimeOn {
-                if self.isTimeUp ?? false {
-                    return .clockExpired
-                }
-                else {
-                    return .clockActive
-                }
-            } else {
-                return .clockPaused
-            }
-        }
-    }
-    
-    var elapsedClockTextColor : UIColor {
-        get {
-            return (self.isMatchActive) ? .clockActive : .clockPaused
-        }
-    }
+
     
     func getGameWKTimerDate(gameTime : GameTime? = nil) -> Date {
         if self.isPeriodActive {
@@ -218,5 +203,25 @@ class MatchClock {
         }
     }
     
+    var gameClockTextColor : UIColor {
+        get {
+            if self.isTimeOn {
+                if self.isTimeUp ?? false {
+                    return .clockExpired
+                }
+                else {
+                    return .clockActive
+                }
+            } else {
+                return .clockPaused
+            }
+        }
+    }
+    
+    var elapsedClockTextColor : UIColor {
+        get {
+            return (self.isMatchActive) ? .clockActive : .clockPaused
+        }
+    }
     
 }

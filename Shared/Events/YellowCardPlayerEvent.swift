@@ -7,19 +7,27 @@
 //
 
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
 
-class CautionPlayerEvent : SanctionEvent {
+class YellowCardPlayerEvent : SanctionEvent {
     
-    override var timeRemaining : TimeInterval {
+    override var timeRemaining : GameTime {
         get {
-            let tmpTime: TimeInterval = settings.cautionDuration - self.gameTimeSince;
+            let tmpTime: TimeInterval = settings.sinBinDuration - self.gameTimeSince;
             if tmpTime > 0 {
-                return tmpTime
+                return tmpTime;
             } else {
                 return 0;
             }
         }
+    }
+    
+    var expiresAt : RealTime {
+        return Date(timeIntervalSinceNow: self.timeRemaining);
     }
     
     override var isActive : Bool {
@@ -30,23 +38,24 @@ class CautionPlayerEvent : SanctionEvent {
     
     override var isCurrent : Bool {
         get {
-            return isActive;
+            return self.gameTimeSince <= settings.sinBinDuration + settings.displayGracePeriod;
         }
     }
     
     override var title : String {
         get {
             if (nil != self.offenceIndex) {
-                return "P! \(super.title)";
+                return "YC \(super.title)";
             } else {
-                return "P! Caution Player";
+                return "Yellow Card";
             }
         }
     }
-        
+    
     override var barColor : UIColor {
         get {
-            return UIColor.sanctionC
+            return UIColor.sanctionYC
         }
     }
+        
 }

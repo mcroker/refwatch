@@ -7,7 +7,11 @@
 //
 
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
 
 extension UIColor {
     class var clockActive:UIColor {

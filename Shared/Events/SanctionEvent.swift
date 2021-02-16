@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
+
 
 // If not subclassed - this is a pen-only
 class SanctionEvent : TeamEvent {
@@ -26,12 +31,6 @@ class SanctionEvent : TeamEvent {
             } else {
                 return "Penalty";
             }
-        }
-    }
-    
-    override var barColor : UIColor {
-        get {
-            return UIColor.sanctionOther
         }
     }
     
@@ -60,6 +59,12 @@ class SanctionEvent : TeamEvent {
     var isCurrent : Bool {  // Active or in grace-period
         get {
             return true;
+        }
+    }
+    
+    override var barColor : UIColor {
+        get {
+            return UIColor.sanctionOther
         }
     }
     

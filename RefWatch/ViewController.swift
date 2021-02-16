@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import ClockKit
+import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     @IBOutlet weak var IPLbMins: UILabel!
     
@@ -24,7 +24,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: WCSession Methods
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+        // Code
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+        // Code
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+        // Code
+        
+    }
 
 }
 

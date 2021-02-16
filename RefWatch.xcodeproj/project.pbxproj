@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B09A8C323CDCD4600C1EA97 /* CautionPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C223CDCD4600C1EA97 /* CautionPlayerEvent.swift */; };
-		5B09A8C523CDCDE000C1EA97 /* YellowCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C423CDCDE000C1EA97 /* YellowCardPlayerEvent.swift */; };
-		5B09A8C723CDD04000C1EA97 /* RedCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09A8C623CDD04000C1EA97 /* RedCardPlayerEvent.swift */; };
 		5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */; };
 		5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8631D0D556A003EBBA2 /* ViewController.swift */; };
 		5B0EA8671D0D556A003EBBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0EA8651D0D556A003EBBA2 /* Main.storyboard */; };
@@ -19,45 +16,73 @@
 		5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */; };
 		5B0EA8AF1D0D55FA003EBBA2 /* RefWatchWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */; };
 		5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */; };
-		5B28C0AC23CBD59C00CA7A88 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C0AB23CBD59C00CA7A88 /* MatchEvent.swift */; };
-		5B28C0AE23CBD7BB00CA7A88 /* SanctionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C0AD23CBD7BB00CA7A88 /* SanctionEvent.swift */; };
-		5B28C0B023CBDA7800CA7A88 /* ClockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C0AF23CBDA7800CA7A88 /* ClockEvent.swift */; };
-		5B28C0B223CBDC4700CA7A88 /* MatchClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C0B123CBDC4700CA7A88 /* MatchClock.swift */; };
-		5B28C0B623CBE35F00CA7A88 /* MatchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28C0B523CBE35F00CA7A88 /* MatchTeam.swift */; };
 		5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4769341DD47B8E00636E60 /* SettingsIC.swift */; };
 		5B53C44622E6F5C30081340D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44522E6F5C30081340D /* Media.xcassets */; };
 		5B6971A923CE55C0008F3093 /* SanctionIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6971A823CE55C0008F3093 /* SanctionIC.swift */; };
 		5B6971AB23CE5A5A008F3093 /* ShotIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6971AA23CE5A5A008F3093 /* ShotIC.swift */; };
+		5B80E48B25DC026F00CB1202 /* EventRowCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E48A25DC026F00CB1202 /* EventRowCtl.swift */; };
+		5B80E49725DC060400CB1202 /* SanctionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E49625DC060400CB1202 /* SanctionEvent.swift */; };
+		5B80E49825DC060400CB1202 /* SanctionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E49625DC060400CB1202 /* SanctionEvent.swift */; };
+		5B80E49E25DC064B00CB1202 /* TeamEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E49C25DC064B00CB1202 /* TeamEvent.swift */; };
+		5B80E4BB25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */; };
+		5B80E4BC25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */; };
+		5B80E4BD25DC07D400CB1202 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B225DC07D400CB1202 /* MatchEvent.swift */; };
+		5B80E4BE25DC07D400CB1202 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B225DC07D400CB1202 /* MatchEvent.swift */; };
+		5B80E4BF25DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */; };
+		5B80E4C025DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */; };
+		5B80E4C125DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B425DC07D400CB1202 /* PenGoalScoredEvent.swift */; };
+		5B80E4C225DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B425DC07D400CB1202 /* PenGoalScoredEvent.swift */; };
+		5B80E4C325DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B525DC07D400CB1202 /* ConversionScoredEvent.swift */; };
+		5B80E4C425DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B525DC07D400CB1202 /* ConversionScoredEvent.swift */; };
+		5B80E4C525DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B625DC07D400CB1202 /* PenTryScoredEvent.swift */; };
+		5B80E4C625DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B625DC07D400CB1202 /* PenTryScoredEvent.swift */; };
+		5B80E4C725DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B725DC07D400CB1202 /* RedCardPlayerEvent.swift */; };
+		5B80E4C825DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B725DC07D400CB1202 /* RedCardPlayerEvent.swift */; };
+		5B80E4C925DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B825DC07D400CB1202 /* DropKickScoredEvent.swift */; };
+		5B80E4CA25DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B825DC07D400CB1202 /* DropKickScoredEvent.swift */; };
+		5B80E4CB25DC07D400CB1202 /* ClockMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B925DC07D400CB1202 /* ClockMatchEvent.swift */; };
+		5B80E4CC25DC07D400CB1202 /* ClockMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B925DC07D400CB1202 /* ClockMatchEvent.swift */; };
+		5B80E4CD25DC07D400CB1202 /* TryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4BA25DC07D400CB1202 /* TryScoredEvent.swift */; };
+		5B80E4CE25DC07D400CB1202 /* TryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4BA25DC07D400CB1202 /* TryScoredEvent.swift */; };
+		5B80E4DD25DC08D900CB1202 /* ClockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4D925DC08D900CB1202 /* ClockEvent.swift */; };
+		5B80E4DE25DC08D900CB1202 /* ClockEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4D925DC08D900CB1202 /* ClockEvent.swift */; };
+		5B80E4DF25DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DA25DC08D900CB1202 /* CautionPlayerEvent.swift */; };
+		5B80E4E025DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DA25DC08D900CB1202 /* CautionPlayerEvent.swift */; };
+		5B80E4E125DC08D900CB1202 /* ScoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DB25DC08D900CB1202 /* ScoreEvent.swift */; };
+		5B80E4E225DC08D900CB1202 /* ScoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DB25DC08D900CB1202 /* ScoreEvent.swift */; };
+		5B80E4E325DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DC25DC08D900CB1202 /* YellowCardPlayerEvent.swift */; };
+		5B80E4E425DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4DC25DC08D900CB1202 /* YellowCardPlayerEvent.swift */; };
+		5B80E52B25DC0E8200CB1202 /* TeamEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E49C25DC064B00CB1202 /* TeamEvent.swift */; };
+		5B80E53525DC0F0800CB1202 /* MatchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E52F25DC0F0800CB1202 /* MatchTeam.swift */; };
+		5B80E53625DC0F0800CB1202 /* MatchTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E52F25DC0F0800CB1202 /* MatchTeam.swift */; };
+		5B80E53725DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53025DC0F0800CB1202 /* MatchClockPeriod.swift */; };
+		5B80E53825DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53025DC0F0800CB1202 /* MatchClockPeriod.swift */; };
+		5B80E53925DC0F0800CB1202 /* MatchClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53125DC0F0800CB1202 /* MatchClock.swift */; };
+		5B80E53A25DC0F0800CB1202 /* MatchClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53125DC0F0800CB1202 /* MatchClock.swift */; };
+		5B80E53B25DC0F0800CB1202 /* MatchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53225DC0F0800CB1202 /* MatchSettings.swift */; };
+		5B80E53C25DC0F0800CB1202 /* MatchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53225DC0F0800CB1202 /* MatchSettings.swift */; };
+		5B80E53D25DC0F0800CB1202 /* MatchEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */; };
+		5B80E53E25DC0F0800CB1202 /* MatchEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */; };
+		5B80E53F25DC0F0800CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* Match.swift */; };
+		5B80E54025DC0F0800CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* Match.swift */; };
+		5B80E55125DC0F9B00CB1202 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */; };
+		5B80E55225DC0F9B00CB1202 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */; };
+		5B80E55825DC10B700CB1202 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Colour.swift */; };
+		5B80E55925DC10B700CB1202 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Colour.swift */; };
 		5B8614F724CF073E00E00D8B /* TeamOptionsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8614F624CF073E00E00D8B /* TeamOptionsIC.swift */; };
 		5B89A30F23CEAC710039762A /* PenCountIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A30E23CEAC710039762A /* PenCountIC.swift */; };
 		5B89A31123CEBCF50039762A /* TeamSummaryIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31023CEBCF50039762A /* TeamSummaryIC.swift */; };
 		5B89A31323CF2BC80039762A /* MatchListIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31223CF2BC80039762A /* MatchListIC.swift */; };
-		5B89A31523CF357E0039762A /* MatchEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31423CF357E0039762A /* MatchEventLog.swift */; };
-		5B89A31923CF3ACF0039762A /* TeamEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31823CF3ACF0039762A /* TeamEvent.swift */; };
-		5B89A31C23CF42EA0039762A /* TryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31B23CF42EA0039762A /* TryScoredEvent.swift */; };
-		5B89A31E23CF434D0039762A /* DropKickScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31D23CF434D0039762A /* DropKickScoredEvent.swift */; };
 		5B89A32123CF7F4A0039762A /* YCRowCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31F23CF6E750039762A /* YCRowCtl.swift */; };
 		5B9BB7C023CFAEBB00D36680 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B84F6FF1D11EC6200516291 /* Interface.storyboard */; };
 		5B9BB7C223D0516500D36680 /* EventRowCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7C123D0516500D36680 /* EventRowCtl.swift */; };
 		5B9BB7C423D0571100D36680 /* EventListIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7C323D0571100D36680 /* EventListIC.swift */; };
-		5B9BB7C923D0736B00D36680 /* ScoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7C823D0736B00D36680 /* ScoreEvent.swift */; };
-		5B9BB7CD23D08B1C00D36680 /* ClockPeriodEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7CC23D08B1C00D36680 /* ClockPeriodEvent.swift */; };
-		5B9BB7CF23D08B6B00D36680 /* ClockMatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7CE23D08B6B00D36680 /* ClockMatchEvent.swift */; };
-		5B9BB7D123D09FE200D36680 /* MatchClockPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7D023D09FE200D36680 /* MatchClockPeriod.swift */; };
-		5B9BB7D323D15AD900D36680 /* ReplacePlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7D223D15AD900D36680 /* ReplacePlayerEvent.swift */; };
-		5B9BB7D523D15F6000D36680 /* PenGoalScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7D423D15F6000D36680 /* PenGoalScoredEvent.swift */; };
-		5B9BB7D723D15FA000D36680 /* PenTryScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7D623D15FA000D36680 /* PenTryScoredEvent.swift */; };
-		5B9BB7D923D162E200D36680 /* ConversionScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7D823D162E200D36680 /* ConversionScoredEvent.swift */; };
-		5B9BB7DB23D1C34900D36680 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7DA23D1C34900D36680 /* Notification.Name.swift */; };
 		5B9BB7DD23D1CCEF00D36680 /* RefWatchSuperIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7DC23D1CCEF00D36680 /* RefWatchSuperIC.swift */; };
 		5B9BB7DF23D1DC4D00D36680 /* SharedTeamState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7DE23D1DC4D00D36680 /* SharedTeamState.swift */; };
-		5B9BB7E123D1F00A00D36680 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB7E023D1F00A00D36680 /* UIColor.swift */; };
 		5BCC69621D0E10C900A21628 /* TeamMenuIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69611D0E10C900A21628 /* TeamMenuIC.swift */; };
-		5BCC69641D0E156100A21628 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69631D0E156100A21628 /* Match.swift */; };
 		5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69671D0E208600A21628 /* ScoreIC.swift */; };
 		5BCC696A1D0E99D600A21628 /* PlayerIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC69691D0E99D600A21628 /* PlayerIC.swift */; };
 		5BEE1848258FAEC40028868D /* WatchMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44722E6FC180081340D /* WatchMedia.xcassets */; };
-		5BF67FAC1D0EB5FE00B4641A /* MatchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF67FAB1D0EB5FE00B4641A /* MatchSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +128,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B09A8C223CDCD4600C1EA97 /* CautionPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionPlayerEvent.swift; sourceTree = "<group>"; };
-		5B09A8C423CDCDE000C1EA97 /* YellowCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowCardPlayerEvent.swift; sourceTree = "<group>"; };
-		5B09A8C623CDD04000C1EA97 /* RedCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCardPlayerEvent.swift; sourceTree = "<group>"; };
 		5B0EA85E1D0D556A003EBBA2 /* RefWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B0EA8631D0D556A003EBBA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,47 +139,51 @@
 		5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainIC.swift; path = "RefWatchWatch Extension/MainIC.swift"; sourceTree = SOURCE_ROOT; };
 		5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMgmtIC.swift; sourceTree = "<group>"; };
-		5B28C0AB23CBD59C00CA7A88 /* MatchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEvent.swift; sourceTree = "<group>"; };
-		5B28C0AD23CBD7BB00CA7A88 /* SanctionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionEvent.swift; sourceTree = "<group>"; };
-		5B28C0AF23CBDA7800CA7A88 /* ClockEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockEvent.swift; sourceTree = "<group>"; };
-		5B28C0B123CBDC4700CA7A88 /* MatchClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchClock.swift; sourceTree = "<group>"; };
-		5B28C0B523CBE35F00CA7A88 /* MatchTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeam.swift; sourceTree = "<group>"; };
 		5B4769341DD47B8E00636E60 /* SettingsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIC.swift; sourceTree = "<group>"; };
 		5B53C44522E6F5C30081340D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		5B53C44722E6FC180081340D /* WatchMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatchMedia.xcassets; sourceTree = "<group>"; };
 		5B6971A823CE55C0008F3093 /* SanctionIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionIC.swift; sourceTree = "<group>"; };
 		5B6971AA23CE5A5A008F3093 /* ShotIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotIC.swift; sourceTree = "<group>"; };
+		5B80E48A25DC026F00CB1202 /* EventRowCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowCtl.swift; sourceTree = "<group>"; };
+		5B80E49625DC060400CB1202 /* SanctionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SanctionEvent.swift; sourceTree = "<group>"; };
+		5B80E49C25DC064B00CB1202 /* TeamEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamEvent.swift; sourceTree = "<group>"; };
+		5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplacePlayerEvent.swift; sourceTree = "<group>"; };
+		5B80E4B225DC07D400CB1202 /* MatchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEvent.swift; sourceTree = "<group>"; };
+		5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPeriodEvent.swift; sourceTree = "<group>"; };
+		5B80E4B425DC07D400CB1202 /* PenGoalScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenGoalScoredEvent.swift; sourceTree = "<group>"; };
+		5B80E4B525DC07D400CB1202 /* ConversionScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionScoredEvent.swift; sourceTree = "<group>"; };
+		5B80E4B625DC07D400CB1202 /* PenTryScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenTryScoredEvent.swift; sourceTree = "<group>"; };
+		5B80E4B725DC07D400CB1202 /* RedCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCardPlayerEvent.swift; sourceTree = "<group>"; };
+		5B80E4B825DC07D400CB1202 /* DropKickScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropKickScoredEvent.swift; sourceTree = "<group>"; };
+		5B80E4B925DC07D400CB1202 /* ClockMatchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockMatchEvent.swift; sourceTree = "<group>"; };
+		5B80E4BA25DC07D400CB1202 /* TryScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryScoredEvent.swift; sourceTree = "<group>"; };
+		5B80E4D925DC08D900CB1202 /* ClockEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockEvent.swift; sourceTree = "<group>"; };
+		5B80E4DA25DC08D900CB1202 /* CautionPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CautionPlayerEvent.swift; sourceTree = "<group>"; };
+		5B80E4DB25DC08D900CB1202 /* ScoreEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreEvent.swift; sourceTree = "<group>"; };
+		5B80E4DC25DC08D900CB1202 /* YellowCardPlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowCardPlayerEvent.swift; sourceTree = "<group>"; };
+		5B80E52F25DC0F0800CB1202 /* MatchTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeam.swift; sourceTree = "<group>"; };
+		5B80E53025DC0F0800CB1202 /* MatchClockPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchClockPeriod.swift; sourceTree = "<group>"; };
+		5B80E53125DC0F0800CB1202 /* MatchClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchClock.swift; sourceTree = "<group>"; };
+		5B80E53225DC0F0800CB1202 /* MatchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSettings.swift; sourceTree = "<group>"; };
+		5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEventLog.swift; sourceTree = "<group>"; };
+		5B80E53425DC0F0800CB1202 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
+		5B80E55725DC10B700CB1202 /* Colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 		5B84F7001D11EC6200516291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5B8614F624CF073E00E00D8B /* TeamOptionsIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOptionsIC.swift; sourceTree = "<group>"; };
 		5B89A30E23CEAC710039762A /* PenCountIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenCountIC.swift; sourceTree = "<group>"; };
 		5B89A31023CEBCF50039762A /* TeamSummaryIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamSummaryIC.swift; sourceTree = "<group>"; };
 		5B89A31223CF2BC80039762A /* MatchListIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchListIC.swift; sourceTree = "<group>"; };
-		5B89A31423CF357E0039762A /* MatchEventLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEventLog.swift; sourceTree = "<group>"; };
-		5B89A31823CF3ACF0039762A /* TeamEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamEvent.swift; sourceTree = "<group>"; };
-		5B89A31B23CF42EA0039762A /* TryScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryScoredEvent.swift; sourceTree = "<group>"; };
-		5B89A31D23CF434D0039762A /* DropKickScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropKickScoredEvent.swift; sourceTree = "<group>"; };
 		5B89A31F23CF6E750039762A /* YCRowCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCRowCtl.swift; sourceTree = "<group>"; };
 		5B9BB7C123D0516500D36680 /* EventRowCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRowCtl.swift; sourceTree = "<group>"; };
 		5B9BB7C323D0571100D36680 /* EventListIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListIC.swift; sourceTree = "<group>"; };
-		5B9BB7C823D0736B00D36680 /* ScoreEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreEvent.swift; sourceTree = "<group>"; };
-		5B9BB7CC23D08B1C00D36680 /* ClockPeriodEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockPeriodEvent.swift; sourceTree = "<group>"; };
-		5B9BB7CE23D08B6B00D36680 /* ClockMatchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockMatchEvent.swift; sourceTree = "<group>"; };
-		5B9BB7D023D09FE200D36680 /* MatchClockPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchClockPeriod.swift; sourceTree = "<group>"; };
-		5B9BB7D223D15AD900D36680 /* ReplacePlayerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplacePlayerEvent.swift; sourceTree = "<group>"; };
-		5B9BB7D423D15F6000D36680 /* PenGoalScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenGoalScoredEvent.swift; sourceTree = "<group>"; };
-		5B9BB7D623D15FA000D36680 /* PenTryScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenTryScoredEvent.swift; sourceTree = "<group>"; };
-		5B9BB7D823D162E200D36680 /* ConversionScoredEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionScoredEvent.swift; sourceTree = "<group>"; };
-		5B9BB7DA23D1C34900D36680 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		5B9BB7DC23D1CCEF00D36680 /* RefWatchSuperIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefWatchSuperIC.swift; sourceTree = "<group>"; };
 		5B9BB7DE23D1DC4D00D36680 /* SharedTeamState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedTeamState.swift; sourceTree = "<group>"; };
-		5B9BB7E023D1F00A00D36680 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5BCC69611D0E10C900A21628 /* TeamMenuIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMenuIC.swift; sourceTree = "<group>"; };
-		5BCC69631D0E156100A21628 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		5BCC69671D0E208600A21628 /* ScoreIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreIC.swift; sourceTree = "<group>"; };
 		5BCC69691D0E99D600A21628 /* PlayerIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerIC.swift; sourceTree = "<group>"; };
 		5BEE1835258FAE330028868D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BEE183A258FAE7D0028868D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BF67FAB1D0EB5FE00B4641A /* MatchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +223,6 @@
 				5B89A31F23CF6E750039762A /* YCRowCtl.swift */,
 				5B9BB7C123D0516500D36680 /* EventRowCtl.swift */,
 				5B9BB7DE23D1DC4D00D36680 /* SharedTeamState.swift */,
-				5B9BB7E023D1F00A00D36680 /* UIColor.swift */,
 				5B8614F624CF073E00E00D8B /* TeamOptionsIC.swift */,
 			);
 			name = Controllers;
@@ -206,6 +231,7 @@
 		5B0EA8551D0D556A003EBBA2 = {
 			isa = PBXGroup;
 			children = (
+				5B80E49325DC04F100CB1202 /* Shared */,
 				5B0EA8601D0D556A003EBBA2 /* RefWatch */,
 				5B0EA8921D0D55FA003EBBA2 /* RefWatchWatch */,
 				5B0EA8A11D0D55FA003EBBA2 /* RefWatchWatch Extension */,
@@ -226,6 +252,7 @@
 		5B0EA8601D0D556A003EBBA2 /* RefWatch */ = {
 			isa = PBXGroup;
 			children = (
+				5B80E48F25DC028500CB1202 /* Controllers */,
 				5B0EA8611D0D556A003EBBA2 /* AppDelegate.swift */,
 				5B0EA8631D0D556A003EBBA2 /* ViewController.swift */,
 				5B0EA8651D0D556A003EBBA2 /* Main.storyboard */,
@@ -252,47 +279,71 @@
 				5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */,
 				5BEE183A258FAE7D0028868D /* Info.plist */,
 				5B09A8C923CDECD500C1EA97 /* Controllers */,
-				5B9BB7C523D0614100D36680 /* Match */,
-				5B89A31A23CF3AE00039762A /* Events */,
 			);
 			path = "RefWatchWatch Extension";
 			sourceTree = "<group>";
 		};
-		5B89A31A23CF3AE00039762A /* Events */ = {
+		5B80E48F25DC028500CB1202 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5B28C0AD23CBD7BB00CA7A88 /* SanctionEvent.swift */,
-				5B9BB7C823D0736B00D36680 /* ScoreEvent.swift */,
-				5B9BB7D223D15AD900D36680 /* ReplacePlayerEvent.swift */,
-				5B89A31B23CF42EA0039762A /* TryScoredEvent.swift */,
-				5B89A31D23CF434D0039762A /* DropKickScoredEvent.swift */,
-				5B9BB7D423D15F6000D36680 /* PenGoalScoredEvent.swift */,
-				5B9BB7D823D162E200D36680 /* ConversionScoredEvent.swift */,
-				5B9BB7D623D15FA000D36680 /* PenTryScoredEvent.swift */,
-				5B09A8C223CDCD4600C1EA97 /* CautionPlayerEvent.swift */,
-				5B09A8C423CDCDE000C1EA97 /* YellowCardPlayerEvent.swift */,
-				5B09A8C623CDD04000C1EA97 /* RedCardPlayerEvent.swift */,
-				5B28C0AB23CBD59C00CA7A88 /* MatchEvent.swift */,
-				5B89A31823CF3ACF0039762A /* TeamEvent.swift */,
-				5B28C0AF23CBDA7800CA7A88 /* ClockEvent.swift */,
-				5B9BB7CC23D08B1C00D36680 /* ClockPeriodEvent.swift */,
-				5B9BB7CE23D08B6B00D36680 /* ClockMatchEvent.swift */,
+				5B80E48A25DC026F00CB1202 /* EventRowCtl.swift */,
 			);
-			name = Events;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		5B9BB7C523D0614100D36680 /* Match */ = {
+		5B80E49325DC04F100CB1202 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5BCC69631D0E156100A21628 /* Match.swift */,
-				5B28C0B123CBDC4700CA7A88 /* MatchClock.swift */,
-				5B9BB7D023D09FE200D36680 /* MatchClockPeriod.swift */,
-				5B89A31423CF357E0039762A /* MatchEventLog.swift */,
-				5B28C0B523CBE35F00CA7A88 /* MatchTeam.swift */,
-				5BF67FAB1D0EB5FE00B4641A /* MatchSettings.swift */,
-				5B9BB7DA23D1C34900D36680 /* Notification.Name.swift */,
+				5B80E55625DC10A200CB1202 /* Types */,
+				5B80E49525DC05D900CB1202 /* Match */,
+				5B80E49425DC05D000CB1202 /* Events */,
 			);
-			name = Match;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5B80E49425DC05D000CB1202 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5B80E4DA25DC08D900CB1202 /* CautionPlayerEvent.swift */,
+				5B80E4D925DC08D900CB1202 /* ClockEvent.swift */,
+				5B80E4DB25DC08D900CB1202 /* ScoreEvent.swift */,
+				5B80E4DC25DC08D900CB1202 /* YellowCardPlayerEvent.swift */,
+				5B80E4B925DC07D400CB1202 /* ClockMatchEvent.swift */,
+				5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */,
+				5B80E4B525DC07D400CB1202 /* ConversionScoredEvent.swift */,
+				5B80E4B825DC07D400CB1202 /* DropKickScoredEvent.swift */,
+				5B80E4B225DC07D400CB1202 /* MatchEvent.swift */,
+				5B80E4B425DC07D400CB1202 /* PenGoalScoredEvent.swift */,
+				5B80E4B625DC07D400CB1202 /* PenTryScoredEvent.swift */,
+				5B80E4B725DC07D400CB1202 /* RedCardPlayerEvent.swift */,
+				5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */,
+				5B80E4BA25DC07D400CB1202 /* TryScoredEvent.swift */,
+				5B80E49C25DC064B00CB1202 /* TeamEvent.swift */,
+				5B80E49625DC060400CB1202 /* SanctionEvent.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		5B80E49525DC05D900CB1202 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				5B80E53425DC0F0800CB1202 /* Match.swift */,
+				5B80E53125DC0F0800CB1202 /* MatchClock.swift */,
+				5B80E53025DC0F0800CB1202 /* MatchClockPeriod.swift */,
+				5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */,
+				5B80E53225DC0F0800CB1202 /* MatchSettings.swift */,
+				5B80E52F25DC0F0800CB1202 /* MatchTeam.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		5B80E55625DC10A200CB1202 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */,
+				5B80E55725DC10B700CB1202 /* Colour.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +487,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B80E53925DC0F0800CB1202 /* MatchClock.swift in Sources */,
+				5B80E4C325DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */,
+				5B80E4C925DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */,
+				5B80E4C125DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */,
+				5B80E52B25DC0E8200CB1202 /* TeamEvent.swift in Sources */,
+				5B80E4BB25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */,
+				5B80E55125DC0F9B00CB1202 /* Notification.Name.swift in Sources */,
+				5B80E4CD25DC07D400CB1202 /* TryScoredEvent.swift in Sources */,
+				5B80E4E125DC08D900CB1202 /* ScoreEvent.swift in Sources */,
+				5B80E53B25DC0F0800CB1202 /* MatchSettings.swift in Sources */,
+				5B80E4C725DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */,
+				5B80E4DD25DC08D900CB1202 /* ClockEvent.swift in Sources */,
+				5B80E55825DC10B700CB1202 /* Colour.swift in Sources */,
 				5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */,
+				5B80E53525DC0F0800CB1202 /* MatchTeam.swift in Sources */,
+				5B80E4BF25DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */,
+				5B80E48B25DC026F00CB1202 /* EventRowCtl.swift in Sources */,
+				5B80E4C525DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */,
 				5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */,
+				5B80E49725DC060400CB1202 /* SanctionEvent.swift in Sources */,
+				5B80E53F25DC0F0800CB1202 /* Match.swift in Sources */,
+				5B80E4E325DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */,
+				5B80E53725DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */,
+				5B80E4BD25DC07D400CB1202 /* MatchEvent.swift in Sources */,
+				5B80E4DF25DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */,
+				5B80E4CB25DC07D400CB1202 /* ClockMatchEvent.swift in Sources */,
+				5B80E53D25DC0F0800CB1202 /* MatchEventLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,47 +522,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B89A32123CF7F4A0039762A /* YCRowCtl.swift in Sources */,
-				5B9BB7E123D1F00A00D36680 /* UIColor.swift in Sources */,
-				5B28C0AC23CBD59C00CA7A88 /* MatchEvent.swift in Sources */,
-				5B9BB7D523D15F6000D36680 /* PenGoalScoredEvent.swift in Sources */,
+				5B80E4CA25DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */,
+				5B80E49825DC060400CB1202 /* SanctionEvent.swift in Sources */,
+				5B80E4CC25DC07D400CB1202 /* ClockMatchEvent.swift in Sources */,
+				5B80E54025DC0F0800CB1202 /* Match.swift in Sources */,
 				5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */,
-				5B28C0B623CBE35F00CA7A88 /* MatchTeam.swift in Sources */,
-				5B9BB7D323D15AD900D36680 /* ReplacePlayerEvent.swift in Sources */,
-				5B9BB7D723D15FA000D36680 /* PenTryScoredEvent.swift in Sources */,
-				5B28C0AE23CBD7BB00CA7A88 /* SanctionEvent.swift in Sources */,
-				5BF67FAC1D0EB5FE00B4641A /* MatchSettings.swift in Sources */,
-				5B9BB7D923D162E200D36680 /* ConversionScoredEvent.swift in Sources */,
-				5B28C0B023CBDA7800CA7A88 /* ClockEvent.swift in Sources */,
-				5B89A31523CF357E0039762A /* MatchEventLog.swift in Sources */,
+				5B80E4C825DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */,
+				5B80E53C25DC0F0800CB1202 /* MatchSettings.swift in Sources */,
+				5B80E4C425DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */,
+				5B80E49E25DC064B00CB1202 /* TeamEvent.swift in Sources */,
 				5B6971A923CE55C0008F3093 /* SanctionIC.swift in Sources */,
-				5B9BB7C923D0736B00D36680 /* ScoreEvent.swift in Sources */,
+				5B80E4BE25DC07D400CB1202 /* MatchEvent.swift in Sources */,
+				5B80E53A25DC0F0800CB1202 /* MatchClock.swift in Sources */,
+				5B80E53625DC0F0800CB1202 /* MatchTeam.swift in Sources */,
 				5B8614F724CF073E00E00D8B /* TeamOptionsIC.swift in Sources */,
+				5B80E4E425DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */,
+				5B80E4BC25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */,
 				5B89A31323CF2BC80039762A /* MatchListIC.swift in Sources */,
-				5BCC69641D0E156100A21628 /* Match.swift in Sources */,
 				5BCC696A1D0E99D600A21628 /* PlayerIC.swift in Sources */,
 				5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */,
-				5B9BB7CD23D08B1C00D36680 /* ClockPeriodEvent.swift in Sources */,
-				5B89A31E23CF434D0039762A /* DropKickScoredEvent.swift in Sources */,
-				5B9BB7D123D09FE200D36680 /* MatchClockPeriod.swift in Sources */,
+				5B80E4CE25DC07D400CB1202 /* TryScoredEvent.swift in Sources */,
+				5B80E4C225DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */,
 				5B9BB7DD23D1CCEF00D36680 /* RefWatchSuperIC.swift in Sources */,
+				5B80E55225DC0F9B00CB1202 /* Notification.Name.swift in Sources */,
+				5B80E4DE25DC08D900CB1202 /* ClockEvent.swift in Sources */,
 				5BCC69621D0E10C900A21628 /* TeamMenuIC.swift in Sources */,
+				5B80E4E025DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */,
+				5B80E55925DC10B700CB1202 /* Colour.swift in Sources */,
 				5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */,
-				5B89A31923CF3ACF0039762A /* TeamEvent.swift in Sources */,
+				5B80E4C625DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */,
+				5B80E53825DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */,
 				5BCC69681D0E208600A21628 /* ScoreIC.swift in Sources */,
+				5B80E4C025DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */,
 				5B0EA8A51D0D55FA003EBBA2 /* MainIC.swift in Sources */,
 				5B6971AB23CE5A5A008F3093 /* ShotIC.swift in Sources */,
 				5B9BB7C223D0516500D36680 /* EventRowCtl.swift in Sources */,
-				5B09A8C723CDD04000C1EA97 /* RedCardPlayerEvent.swift in Sources */,
+				5B80E4E225DC08D900CB1202 /* ScoreEvent.swift in Sources */,
+				5B80E53E25DC0F0800CB1202 /* MatchEventLog.swift in Sources */,
 				5B9BB7DF23D1DC4D00D36680 /* SharedTeamState.swift in Sources */,
-				5B89A31C23CF42EA0039762A /* TryScoredEvent.swift in Sources */,
 				5B89A30F23CEAC710039762A /* PenCountIC.swift in Sources */,
-				5B9BB7DB23D1C34900D36680 /* Notification.Name.swift in Sources */,
-				5B09A8C523CDCDE000C1EA97 /* YellowCardPlayerEvent.swift in Sources */,
-				5B9BB7CF23D08B6B00D36680 /* ClockMatchEvent.swift in Sources */,
 				5B9BB7C423D0571100D36680 /* EventListIC.swift in Sources */,
-				5B28C0B223CBDC4700CA7A88 /* MatchClock.swift in Sources */,
 				5B89A31123CEBCF50039762A /* TeamSummaryIC.swift in Sources */,
-				5B09A8C323CDCD4600C1EA97 /* CautionPlayerEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

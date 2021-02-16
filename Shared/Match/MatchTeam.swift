@@ -7,7 +7,11 @@
 //
 
 import Foundation
-import WatchKit
+#if os(iOS)
+    import UIKit
+#elseif os(watchOS)
+    import WatchKit
+#endif
 
 typealias PenStats = (
     count1: Int,
@@ -56,6 +60,7 @@ class MatchTeam {
         }
     }
     
+    #if os(watchOS)
     public var barAlignment : WKInterfaceObjectHorizontalAlignment {
         get {
             switch self.teamKey {
@@ -66,6 +71,7 @@ class MatchTeam {
             }
         }
     }
+    #endif
     
     init(eventLog: MatchEventLog, team: TeamKey, clock: MatchClock, settings: MatchSettings) {
         self.eventLog = eventLog;
