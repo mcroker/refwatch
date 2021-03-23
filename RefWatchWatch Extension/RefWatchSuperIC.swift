@@ -33,7 +33,7 @@ class RefWatchSuperIC : WKInterfaceController {
     }
     
     func goReplacePlayerPage(team: MatchTeam) {
-        // SharedTeamState.getInstance().reset(team: team, action: .replacePlayer);
+        SharedTeamState.getInstance().reset(team: team, action: .replacePlayer);
         WKInterfaceController.reloadRootPageControllers(withNames: ["Player"], contexts: nil, orientation: .horizontal, pageIndex: 0);
     }
     
