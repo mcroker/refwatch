@@ -26,7 +26,7 @@ class PlayerIC: RefWatchSuperIC {
     @IBOutlet weak var num0Button: WKInterfaceButton!
     
     private var sharedState : SharedTeamState = SharedTeamState.getInstance();
-    private var match: Match = Match.getCurrentMatch();
+    private var match: Match = MatchFactory.getCurrentMatch();
     
     override init() {
         super.init();

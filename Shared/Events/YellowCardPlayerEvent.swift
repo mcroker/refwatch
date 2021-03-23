@@ -7,11 +7,6 @@
 //
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#elseif os(watchOS)
-    import WatchKit
-#endif
 
 class YellowCardPlayerEvent : SanctionEvent {
     
@@ -52,9 +47,9 @@ class YellowCardPlayerEvent : SanctionEvent {
         }
     }
     
-    override var barColor : UIColor {
+    override var barColor : Color {
         get {
-            return UIColor.sanctionYC
+            return Color.sanctionYC
         }
     }
         

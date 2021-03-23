@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DoEvent" representedClassName="DoEvent" syncable="YES">
+        <attribute name="gameTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="offence" optional="YES" attributeType="String"/>
+        <attribute name="periodTimePeriod" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <attribute name="periodTimeTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="player" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="realTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="team" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoMatch" inverseName="events" inverseEntity="DoMatch"/>
+    </entity>
+    <entity name="DoMatch" representedClassName="DoMatch" syncable="YES" codeGenerationType="class">
+        <attribute name="currentPeriodNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="elapsedTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lastElapsedEpoch" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="matchID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="periodDuration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="periodNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="periodsInMatch" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DoEvent" inverseName="match" inverseEntity="DoEvent"/>
+        <relationship name="periods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DoPeriod" inverseName="match" inverseEntity="DoPeriod"/>
+        <relationship name="teams" optional="YES" toMany="YES" minCount="2" maxCount="2" deletionRule="Nullify" destinationEntity="DoTeam" inverseName="match" inverseEntity="DoTeam"/>
+    </entity>
+    <entity name="DoPeriod" representedClassName="DoPeriod" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="periodNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoMatch" inverseName="periods" inverseEntity="DoMatch"/>
+    </entity>
+    <entity name="DoTeam" representedClassName="DoTeam" syncable="YES" codeGenerationType="class">
+        <attribute name="teamCode" optional="YES" attributeType="String"/>
+        <relationship name="match" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoMatch" inverseName="teams" inverseEntity="DoMatch"/>
+    </entity>
+    <elements>
+        <element name="DoEvent" positionX="-351" positionY="63" width="128" height="178"/>
+        <element name="DoMatch" positionX="-485.015625" positionY="-13.0546875" width="128" height="193"/>
+        <element name="DoPeriod" positionX="-225" positionY="72" width="128" height="103"/>
+        <element name="DoTeam" positionX="-234" positionY="63" width="128" height="73"/>
+    </elements>
+</model>

@@ -8,25 +8,23 @@
 
 import Foundation
 
-//class MatchEvent : Hashable {
 class MatchEvent {
-
-    /*
-    static func == (lhs: MatchEvent, rhs: MatchEvent) -> Bool {
-        return (lhs.realTime == rhs.realTime);
-    } */
-
+    
     public private(set) var realTime: RealTime;
     public private(set) var gameTime: GameTime;
     public private(set) var periodTime: PeriodTime;
     
-    public let match : Match = Match.getCurrentMatch();
-    public let settings : MatchSettings = Match.getCurrentMatch().settings;
-    public let clock : MatchClock = Match.getCurrentMatch().clock;
+    public let match : Match = MatchFactory.getCurrentMatch();
+    public let settings : MatchSettings = MatchFactory.getCurrentMatch().settings;
+    public let clock : MatchClock = MatchFactory.getCurrentMatch().clock;
     
-    /* func hash(into hasher: inout Hasher) {
-        hasher.combine(self.timeAwarded)
-    } */
+    #if os(iOS)
+    init(doEvent: DoEvent) {
+        self.realTime = doEvent.realTime!;
+        self.gameTime = doEvent.gameTime;
+        self.periodTime = ( period: Int(doEvent.periodTimePeriod), time: doEvent.periodTimeTime);
+    }
+    #endif
     
     init() {
         self.realTime = clock.realTime;

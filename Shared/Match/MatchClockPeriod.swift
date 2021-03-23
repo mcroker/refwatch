@@ -11,13 +11,13 @@ class MatchClockPeriod {
     
     private let eventLog : MatchEventLog
     private let settings: MatchSettings
-    public private(set) var periodNo: Int
+    public private(set) var periodNo: PeriodNum
     public private(set) var periodStartTime: RealTime?
     public private(set) var periodEndTime: RealTime?
     private var tickTimer : Timer?
     private var alreadySentTimeUpEvent : Bool = false;
     
-    init(periodNo: Int, eventLog: MatchEventLog, settings: MatchSettings) {
+    init(periodNo: PeriodNum, eventLog: MatchEventLog, settings: MatchSettings) {
         self.periodNo = periodNo
         self.eventLog = eventLog
         self.settings = settings

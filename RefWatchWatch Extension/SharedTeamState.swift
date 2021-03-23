@@ -43,16 +43,16 @@ class SharedTeamState {
         case .sanctionPlayer:
             switch self.escalation {
             case .redCard:
-                return RedCardPlayerEvent(team: self.team!, player: self.player, offenceIndex : offenceIndex);
+                return RedCardPlayerEvent(team: self.team!.teamKey, player: self.player, offenceIndex : offenceIndex);
             case .yellowCard:
-                return YellowCardPlayerEvent(team: self.team!, player: self.player, offenceIndex : offenceIndex);
+                return YellowCardPlayerEvent(team: self.team!.teamKey, player: self.player, offenceIndex : offenceIndex);
             case .caution:
-                return CautionPlayerEvent(team: self.team!, player: self.player, offenceIndex : offenceIndex);
+                return CautionPlayerEvent(team: self.team!.teamKey, player: self.player, offenceIndex : offenceIndex);
             default:
-                return SanctionEvent(team: self.team!, player: self.player, offenceIndex : offenceIndex);
+                return SanctionEvent(team: self.team!.teamKey, player: self.player, offenceIndex : offenceIndex);
             }
         case .replacePlayer:
-            return ReplacePlayerEvent(team: self.team!, player: self.player);
+            return ReplacePlayerEvent(team: self.team!.teamKey, player: self.player);
         }
     }
     

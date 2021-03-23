@@ -24,7 +24,7 @@ class TeamMenuIC: RefWatchSuperIC {
     
     
     var context : TeamMenuPageContext?
-    var clock : MatchClock = Match.getCurrentMatch().clock;
+    var clock : MatchClock = MatchFactory.getCurrentMatch().clock;
     
     override func awake(withContext: Any?) {
         self.context = (withContext as! TeamMenuPageContext)

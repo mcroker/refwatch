@@ -7,18 +7,21 @@
 //
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#elseif os(watchOS)
-    import WatchKit
-#endif
 
 class TeamEvent : MatchEvent {
 
     public var player : Int?;
-    public var team: MatchTeam;
+    public var team: Teams;
     
-    init(team: MatchTeam, player: Int? = nil) {
+    #if os(iOS)
+    override init(doEvent: DoEvent) {
+        self.team = doEvent.teamEnum;
+        self.player = Int(doEvent.player);
+        super.init(doEvent: doEvent);
+    }
+    #endif
+    
+    init(team: Teams, player: Int? = nil) {
         self.team = team;
         self.player = player;
         super.init();
@@ -30,9 +33,9 @@ class TeamEvent : MatchEvent {
         }
     }
     
-    var barColor : UIColor {
+    var barColor : Color {
         get {
-            return UIColor.unspecifiedTeamEvent
+            return Color.unspecifiedTeamEvent
         }
     }
     

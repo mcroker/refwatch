@@ -18,7 +18,7 @@ class EventRowCtl : NSObject {
     @IBOutlet weak var sideBarSeperator: WKInterfaceSeparator!
     @IBOutlet weak var scoreLabel: WKInterfaceLabel!
     
-    let match : Match = Match.getCurrentMatch();
+    let match : Match = MatchFactory.getCurrentMatch();
     
     var event: MatchEvent? {
         didSet {
@@ -57,10 +57,14 @@ class EventRowCtl : NSObject {
                 self.sideBarSeperator.setHidden(false);
                 self.sideBarSeperator.setColor(teamEvent.barColor);
                 self.teamLabel.setHidden(false);
-                self.sideBarSeperator.setHorizontalAlignment(teamEvent.team.barAlignment);
-                self.teamLabel.setText(teamEvent.team.shortTitle);
-                
-                
+                switch teamEvent.team {
+                    case .home:
+                        self.sideBarSeperator.setHorizontalAlignment(.left);
+                        self.teamLabel.setText("H");
+                    case .away:
+                        self.sideBarSeperator.setHorizontalAlignment(.right);
+                        self.teamLabel.setText("A");
+                }
             } else {
                 self.sideBarSeperator.setHidden(true);
                 self.teamLabel.setHidden(true);

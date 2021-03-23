@@ -9,8 +9,10 @@
 import Foundation
 #if os(iOS)
     import UIKit
+    typealias Color = UIColor;
 #elseif os(watchOS)
     import WatchKit
+    typealias Color = UIColor;
 #endif
 
 extension UIColor {
@@ -38,7 +40,7 @@ extension UIColor {
     class var sanctionYC:UIColor {
         return UIColor.yellow;
     }
-    class var sanctionC:UIColor {
+    class var sanctionCaution:UIColor {
         return UIColor.white;
     }
     class var sanctionOther:UIColor {

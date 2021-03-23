@@ -16,7 +16,7 @@ struct ScorePageContext {
 class ScoreIC: RefWatchSuperIC {
     
     private var context : ScorePageContext?;
-    private let match : Match = Match.getCurrentMatch();
+    private let match : Match = MatchFactory.getCurrentMatch();
     
     override func awake(withContext: Any?) {
         self.context = (withContext as! ScorePageContext);
@@ -25,23 +25,23 @@ class ScoreIC: RefWatchSuperIC {
     }
     
     @IBAction func tryButtonClicked() {
-        match.addEvent(TryScoredEvent(team: context!.team));
+        match.addEvent(TryScoredEvent(team: context!.team.teamKey));
         goShotPage(team: context!.team, shotType: .conv);
     }
     
     @IBAction func penalityGoalButtonClicked() {
-        match.addEvent(PenGoalScoredEvent(team: context!.team));
+        match.addEvent(PenGoalScoredEvent(team: context!.team.teamKey));
         goHomePage();
     }
     
     @IBAction func dropGoalButtonClicked() {
-        match.addEvent(DropKickScoredEvent(team: context!.team));
+        match.addEvent(DropKickScoredEvent(team: context!.team.teamKey));
         goHomePage();
     }
     
     @IBAction func penltyTryButtonClocked() {
-        match.addEvent(PenTryScoredEvent(team: context!.team));
-        goSanctionPage(team: (context!.team.teamKey == .home) ? match.awayTeam : match.homeTeam );
+        match.addEvent(PenTryScoredEvent(team: context!.team.teamKey));
+        goSanctionPage(team: context!.team);
     }
     
 }

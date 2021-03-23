@@ -8,27 +8,33 @@
 
 import Foundation
 
+enum DoSanction: Int16 {
+    case unspecified = 0
+    case timeOff = 2
+    case periodStart = 3
+    case periodEnd = 4
+    case matchStart = 5
+    case matchEnd = 6
+}
+
 // If not subclassed - this is a pen-only
-class SanctionEvent : TeamEvent {
+extension DoSanctionEvent {
     
-    var offenceIndex : Int?;
-    
-    #if os(iOS)
-    override init(doEvent: DoEvent) {
-        self.offenceIndex = 0; // TODO
-        super.init(doEvent: doEvent);
-    }
-    #endif
-    
-    init(team: Teams, player: Int? = nil, offenceIndex: Int? = nil) {
-        self.offenceIndex = offenceIndex;
-        super.init(team: team, player: player);
+    convenience init(team: DoTeamCode, player: DoPlayer = 0, offence: DoSanction = .unspecified) {
+        self.init();
+        self.initTeam(team: team, player: player);
+        self.offence = offence;
     }
     
-    override var title : String {
+    var offence:DoSanction {
+        get { return DoSanction(rawValue: self.offenceCode)! }
+        set { self.offenceCode = newValue.rawValue }
+    }
+    
+    public var title : String {
         get {
-            if (nil != self.offenceIndex) {
-                return AppSettings.sanctionList[Int(self.offenceIndex!)].title;
+            if (nil != self.offence) {
+                return settings.sanctionList[self.offenceIndex!].title;
             } else {
                 return "Penalty";
             }
@@ -37,8 +43,8 @@ class SanctionEvent : TeamEvent {
     
     var caption : String {
         get {
-            if (nil != self.offenceIndex) {
-                return AppSettings.sanctionList[Int(self.offenceIndex!)].caption;
+            if (nil != self.offence) {
+                return settings.sanctionList[self.offenceIndex!].caption;
             } else {
                 return "Penalty";
             }
@@ -63,7 +69,7 @@ class SanctionEvent : TeamEvent {
         }
     }
     
-    override var barColor : Color {
+    var barColor : Color {
         get {
             return Color.sanctionOther
         }

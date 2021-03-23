@@ -7,11 +7,6 @@
 //
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#elseif os(watchOS)
-    import WatchKit
-#endif
 
 typealias PenStats = (
     count1: Int,
@@ -26,15 +21,10 @@ typealias PenStats = (
     countTotal: Int
 );
 
-enum TeamKey {
-    case home;
-    case away;
-}
-
 class MatchTeam {
     
     private var eventLog : MatchEventLog;
-    public private(set) var teamKey : TeamKey;
+    public private(set) var teamKey : Teams;
     private var clock : MatchClock;
     private let settings : MatchSettings;
     
@@ -49,31 +39,7 @@ class MatchTeam {
         }
     }
     
-    public var shortTitle : String {
-        get {
-            switch self.teamKey {
-            case .home:
-                return "H"
-            case .away:
-                return "A"
-            }
-        }
-    }
-    
-    #if os(watchOS)
-    public var barAlignment : WKInterfaceObjectHorizontalAlignment {
-        get {
-            switch self.teamKey {
-            case .home:
-                return .left
-            case .away:
-                return .right
-            }
-        }
-    }
-    #endif
-    
-    init(eventLog: MatchEventLog, team: TeamKey, clock: MatchClock, settings: MatchSettings) {
+    init(eventLog: MatchEventLog, team: Teams, clock: MatchClock, settings: MatchSettings) {
         self.eventLog = eventLog;
         self.teamKey = team;
         self.clock = clock;
@@ -81,7 +47,7 @@ class MatchTeam {
     }
     
     func getScoreEvents() -> [ScoreEvent] {
-        return self.eventLog.getEvents(ScoreEvent.self, team: self);
+        return self.eventLog.getEvents(ScoreEvent.self, team: self.teamKey);
     }
     
     func reset() {
@@ -100,7 +66,7 @@ class MatchTeam {
     };
     
     func currentSanctions<T: SanctionEvent>(type:T.Type, max: Int? = nil) -> [T] {
-        let sanctions: [T] = self.eventLog.getEvents(type, team: self).filter { $0.isCurrent };
+        let sanctions: [T] = self.eventLog.getEvents(type, team: self.teamKey).filter { $0.isCurrent };
         let sortedSanctions: [T] = sanctions.sorted { $0.realTime < $1.realTime };
         if ( nil == max ) {
             return sortedSanctions;
@@ -125,8 +91,8 @@ class MatchTeam {
         return (currentSanctionedPlayers(type: CautionPlayerEvent.self, max: max));
     }
     
-    func getSanctions(since: GameTime? = nil, period: Int? = nil) -> [SanctionEvent] {
-        return self.eventLog.getEvents(SanctionEvent.self, period: period, team: self, since: since);
+    func getSanctions(since: GameTime? = nil, period: PeriodNum? = nil) -> [SanctionEvent] {
+        return self.eventLog.getEvents(SanctionEvent.self, period: period, team: self.teamKey, since: since);
     }
     
     func getPenStats() -> PenStats {

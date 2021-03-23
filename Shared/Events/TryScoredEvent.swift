@@ -10,6 +10,12 @@ import Foundation
 
 class TryScoredEvent : ScoreEvent {
     
+    #if os(iOS)
+    override init(doEvent: DoEvent) {
+        super.init(doEvent: doEvent);
+    }
+    #endif
+    
     override var points: Int {
         get {
             return settings.tryPoints;

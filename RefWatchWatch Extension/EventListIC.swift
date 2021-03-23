@@ -13,7 +13,7 @@ class EventList: WKInterfaceController {
     
     @IBOutlet weak var eventTable: WKInterfaceTable!
     
-    var match : Match = Match.getCurrentMatch();
+    var match : Match = MatchFactory.getCurrentMatch();
     
     override func willActivate() {
         let displayEvents : [MatchEvent] = match.getEvents()

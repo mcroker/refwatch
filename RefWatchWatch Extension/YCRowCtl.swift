@@ -14,7 +14,7 @@ class YCRowCtl : NSObject {
     @IBOutlet weak var playerLabel: WKInterfaceLabel!
     @IBOutlet weak var binTimer: WKInterfaceTimer!
     
-    private let clock : MatchClock = Match.getCurrentMatch().clock;
+    private let clock : MatchClock = MatchFactory.getCurrentMatch().clock;
     
     override init() {
         self.isTimeOn = clock.isTimeOn;

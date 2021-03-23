@@ -24,12 +24,12 @@ class SanctionIC: RefWatchSuperIC {
     @IBOutlet weak var redCardButton: WKInterfaceButton!
     
     private var sharedState : SharedTeamState = SharedTeamState.getInstance();
-    private let match : Match = Match.getCurrentMatch();
-    private let settings : MatchSettings = Match.getCurrentMatch().settings;
+    private let match : Match = MatchFactory.getCurrentMatch();
+    private let settings : MatchSettings = MatchFactory.getCurrentMatch().settings;
     
     override func awake(withContext: Any?) {
         super.awake(withContext: withContext);
-        let pickerItems: [WKPickerItem] = settings.sanctionList.map {
+        let pickerItems: [WKPickerItem] = AppSettings.sanctionList.map {
             let pickerItem = WKPickerItem();
             pickerItem.caption = $0.caption;
             pickerItem.title = $0.title;

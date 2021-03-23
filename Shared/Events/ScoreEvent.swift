@@ -7,13 +7,14 @@
 //
 
 import Foundation
-#if os(iOS)
-    import UIKit
-#elseif os(watchOS)
-    import WatchKit
-#endif
 
 class ScoreEvent : TeamEvent {
+    
+    #if os(iOS)
+    override init(doEvent: DoEvent) {
+        super.init(doEvent: doEvent);
+    }
+    #endif
     
     var points: Int {
         get {
@@ -25,9 +26,9 @@ class ScoreEvent : TeamEvent {
         return "Score"
     }
     
-    override var barColor : UIColor {
+    override var barColor : Color {
         get {
-            return UIColor.score
+            return Color.score
         }
     }
     

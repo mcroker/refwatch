@@ -16,6 +16,13 @@
 		5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */; };
 		5B0EA8AF1D0D55FA003EBBA2 /* RefWatchWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B0EA8911D0D55FA003EBBA2 /* RefWatchWatch.app */; };
 		5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */; };
+		5B40CEE125DCA5DE0019BA9E /* DoEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CEDF25DCA5DE0019BA9E /* DoEvent+CoreDataClass.swift */; };
+		5B40CEE225DCA5DE0019BA9E /* DoEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CEE025DCA5DE0019BA9E /* DoEvent+CoreDataProperties.swift */; };
+		5B40CF1125DCAD0B0019BA9E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CF1025DCAD0B0019BA9E /* AppSettings.swift */; };
+		5B40CF4225DCBAA60019BA9E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CF4125DCBAA60019BA9E /* Enums.swift */; };
+		5B40CF4625DCBAC00019BA9E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CF4125DCBAA60019BA9E /* Enums.swift */; };
+		5B40CF5D25DCBBE10019BA9E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CF1025DCAD0B0019BA9E /* AppSettings.swift */; };
+		5B40CF6625DCC20C0019BA9E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B40CF6425DCC20C0019BA9E /* Model.xcdatamodeld */; };
 		5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4769341DD47B8E00636E60 /* SettingsIC.swift */; };
 		5B53C44622E6F5C30081340D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B53C44522E6F5C30081340D /* Media.xcassets */; };
 		5B6971A923CE55C0008F3093 /* SanctionIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6971A823CE55C0008F3093 /* SanctionIC.swift */; };
@@ -27,7 +34,6 @@
 		5B80E4BB25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */; };
 		5B80E4BC25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B125DC07D400CB1202 /* ReplacePlayerEvent.swift */; };
 		5B80E4BD25DC07D400CB1202 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B225DC07D400CB1202 /* MatchEvent.swift */; };
-		5B80E4BE25DC07D400CB1202 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B225DC07D400CB1202 /* MatchEvent.swift */; };
 		5B80E4BF25DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */; };
 		5B80E4C025DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B325DC07D400CB1202 /* ClockPeriodEvent.swift */; };
 		5B80E4C125DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B425DC07D400CB1202 /* PenGoalScoredEvent.swift */; };
@@ -63,12 +69,16 @@
 		5B80E53C25DC0F0800CB1202 /* MatchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53225DC0F0800CB1202 /* MatchSettings.swift */; };
 		5B80E53D25DC0F0800CB1202 /* MatchEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */; };
 		5B80E53E25DC0F0800CB1202 /* MatchEventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */; };
-		5B80E53F25DC0F0800CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* Match.swift */; };
-		5B80E54025DC0F0800CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* Match.swift */; };
+		5B80E53F25DC0F0800CB1202 /* MatchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* MatchFactory.swift */; };
 		5B80E55125DC0F9B00CB1202 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */; };
 		5B80E55225DC0F9B00CB1202 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */; };
-		5B80E55825DC10B700CB1202 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Colour.swift */; };
-		5B80E55925DC10B700CB1202 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Colour.swift */; };
+		5B80E55825DC10B700CB1202 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Color.swift */; };
+		5B80E55925DC10B700CB1202 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E55725DC10B700CB1202 /* Color.swift */; };
+		5B80E5A325DC365C00CB1202 /* MatchEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E5A225DC365C00CB1202 /* MatchEventFactory.swift */; };
+		5B80E5B125DC523B00CB1202 /* MatchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E4B225DC07D400CB1202 /* MatchEvent.swift */; };
+		5B80E5BC25DC592000CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E5BB25DC592000CB1202 /* Match.swift */; };
+		5B80E5C725DC59B100CB1202 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E5BB25DC592000CB1202 /* Match.swift */; };
+		5B80E5CB25DC59C500CB1202 /* MatchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B80E53425DC0F0800CB1202 /* MatchFactory.swift */; };
 		5B8614F724CF073E00E00D8B /* TeamOptionsIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8614F624CF073E00E00D8B /* TeamOptionsIC.swift */; };
 		5B89A30F23CEAC710039762A /* PenCountIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A30E23CEAC710039762A /* PenCountIC.swift */; };
 		5B89A31123CEBCF50039762A /* TeamSummaryIC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89A31023CEBCF50039762A /* TeamSummaryIC.swift */; };
@@ -139,6 +149,11 @@
 		5B0EA8A41D0D55FA003EBBA2 /* MainIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainIC.swift; path = "RefWatchWatch Extension/MainIC.swift"; sourceTree = SOURCE_ROOT; };
 		5B0EA8A61D0D55FA003EBBA2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		5B0EA8B81D0DF398003EBBA2 /* GameMgmtIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMgmtIC.swift; sourceTree = "<group>"; };
+		5B40CEDF25DCA5DE0019BA9E /* DoEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5B40CEE025DCA5DE0019BA9E /* DoEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5B40CF1025DCAD0B0019BA9E /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5B40CF4125DCBAA60019BA9E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5B40CF6525DCC20C0019BA9E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		5B4769341DD47B8E00636E60 /* SettingsIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIC.swift; sourceTree = "<group>"; };
 		5B53C44522E6F5C30081340D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		5B53C44722E6FC180081340D /* WatchMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatchMedia.xcassets; sourceTree = "<group>"; };
@@ -166,9 +181,11 @@
 		5B80E53125DC0F0800CB1202 /* MatchClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchClock.swift; sourceTree = "<group>"; };
 		5B80E53225DC0F0800CB1202 /* MatchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchSettings.swift; sourceTree = "<group>"; };
 		5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchEventLog.swift; sourceTree = "<group>"; };
-		5B80E53425DC0F0800CB1202 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		5B80E53425DC0F0800CB1202 /* MatchFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchFactory.swift; sourceTree = "<group>"; };
 		5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
-		5B80E55725DC10B700CB1202 /* Colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
+		5B80E55725DC10B700CB1202 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5B80E5A225DC365C00CB1202 /* MatchEventFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEventFactory.swift; sourceTree = "<group>"; };
+		5B80E5BB25DC592000CB1202 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		5B84F7001D11EC6200516291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5B8614F624CF073E00E00D8B /* TeamOptionsIC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamOptionsIC.swift; sourceTree = "<group>"; };
 		5B89A30E23CEAC710039762A /* PenCountIC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenCountIC.swift; sourceTree = "<group>"; };
@@ -283,6 +300,16 @@
 			path = "RefWatchWatch Extension";
 			sourceTree = "<group>";
 		};
+		5B40CF5925DCBB870019BA9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B40CF6425DCC20C0019BA9E /* Model.xcdatamodeld */,
+				5B40CEE025DCA5DE0019BA9E /* DoEvent+CoreDataProperties.swift */,
+				5B40CEDF25DCA5DE0019BA9E /* DoEvent+CoreDataClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5B80E48F25DC028500CB1202 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +321,8 @@
 		5B80E49325DC04F100CB1202 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5B80E55625DC10A200CB1202 /* Types */,
+				5B40CF5925DCBB870019BA9E /* Model */,
+				5B80E55625DC10A200CB1202 /* Extensions */,
 				5B80E49525DC05D900CB1202 /* Match */,
 				5B80E49425DC05D000CB1202 /* Events */,
 			);
@@ -320,6 +348,7 @@
 				5B80E4BA25DC07D400CB1202 /* TryScoredEvent.swift */,
 				5B80E49C25DC064B00CB1202 /* TeamEvent.swift */,
 				5B80E49625DC060400CB1202 /* SanctionEvent.swift */,
+				5B80E5A225DC365C00CB1202 /* MatchEventFactory.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -327,23 +356,26 @@
 		5B80E49525DC05D900CB1202 /* Match */ = {
 			isa = PBXGroup;
 			children = (
-				5B80E53425DC0F0800CB1202 /* Match.swift */,
+				5B80E53425DC0F0800CB1202 /* MatchFactory.swift */,
 				5B80E53125DC0F0800CB1202 /* MatchClock.swift */,
 				5B80E53025DC0F0800CB1202 /* MatchClockPeriod.swift */,
 				5B80E53325DC0F0800CB1202 /* MatchEventLog.swift */,
 				5B80E53225DC0F0800CB1202 /* MatchSettings.swift */,
 				5B80E52F25DC0F0800CB1202 /* MatchTeam.swift */,
+				5B80E5BB25DC592000CB1202 /* Match.swift */,
 			);
 			path = Match;
 			sourceTree = "<group>";
 		};
-		5B80E55625DC10A200CB1202 /* Types */ = {
+		5B80E55625DC10A200CB1202 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				5B80E55025DC0F9B00CB1202 /* Notification.Name.swift */,
-				5B80E55725DC10B700CB1202 /* Colour.swift */,
+				5B80E55725DC10B700CB1202 /* Color.swift */,
+				5B40CF4125DCBAA60019BA9E /* Enums.swift */,
+				5B40CF1025DCAD0B0019BA9E /* AppSettings.swift */,
 			);
-			path = Types;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,15 +523,21 @@
 				5B80E4C325DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */,
 				5B80E4C925DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */,
 				5B80E4C125DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */,
+				5B40CF4225DCBAA60019BA9E /* Enums.swift in Sources */,
 				5B80E52B25DC0E8200CB1202 /* TeamEvent.swift in Sources */,
 				5B80E4BB25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */,
 				5B80E55125DC0F9B00CB1202 /* Notification.Name.swift in Sources */,
+				5B40CF6625DCC20C0019BA9E /* Model.xcdatamodeld in Sources */,
+				5B40CEE225DCA5DE0019BA9E /* DoEvent+CoreDataProperties.swift in Sources */,
 				5B80E4CD25DC07D400CB1202 /* TryScoredEvent.swift in Sources */,
+				5B40CF1125DCAD0B0019BA9E /* AppSettings.swift in Sources */,
+				5B40CEE125DCA5DE0019BA9E /* DoEvent+CoreDataClass.swift in Sources */,
 				5B80E4E125DC08D900CB1202 /* ScoreEvent.swift in Sources */,
 				5B80E53B25DC0F0800CB1202 /* MatchSettings.swift in Sources */,
 				5B80E4C725DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */,
 				5B80E4DD25DC08D900CB1202 /* ClockEvent.swift in Sources */,
-				5B80E55825DC10B700CB1202 /* Colour.swift in Sources */,
+				5B80E55825DC10B700CB1202 /* Color.swift in Sources */,
+				5B80E5A325DC365C00CB1202 /* MatchEventFactory.swift in Sources */,
 				5B0EA8641D0D556A003EBBA2 /* ViewController.swift in Sources */,
 				5B80E53525DC0F0800CB1202 /* MatchTeam.swift in Sources */,
 				5B80E4BF25DC07D400CB1202 /* ClockPeriodEvent.swift in Sources */,
@@ -507,8 +545,9 @@
 				5B80E4C525DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */,
 				5B0EA8621D0D556A003EBBA2 /* AppDelegate.swift in Sources */,
 				5B80E49725DC060400CB1202 /* SanctionEvent.swift in Sources */,
-				5B80E53F25DC0F0800CB1202 /* Match.swift in Sources */,
+				5B80E53F25DC0F0800CB1202 /* MatchFactory.swift in Sources */,
 				5B80E4E325DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */,
+				5B80E5BC25DC592000CB1202 /* Match.swift in Sources */,
 				5B80E53725DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */,
 				5B80E4BD25DC07D400CB1202 /* MatchEvent.swift in Sources */,
 				5B80E4DF25DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */,
@@ -525,30 +564,33 @@
 				5B80E4CA25DC07D400CB1202 /* DropKickScoredEvent.swift in Sources */,
 				5B80E49825DC060400CB1202 /* SanctionEvent.swift in Sources */,
 				5B80E4CC25DC07D400CB1202 /* ClockMatchEvent.swift in Sources */,
-				5B80E54025DC0F0800CB1202 /* Match.swift in Sources */,
 				5B0EA8B91D0DF398003EBBA2 /* GameMgmtIC.swift in Sources */,
+				5B80E5C725DC59B100CB1202 /* Match.swift in Sources */,
 				5B80E4C825DC07D400CB1202 /* RedCardPlayerEvent.swift in Sources */,
 				5B80E53C25DC0F0800CB1202 /* MatchSettings.swift in Sources */,
 				5B80E4C425DC07D400CB1202 /* ConversionScoredEvent.swift in Sources */,
 				5B80E49E25DC064B00CB1202 /* TeamEvent.swift in Sources */,
+				5B80E5CB25DC59C500CB1202 /* MatchFactory.swift in Sources */,
 				5B6971A923CE55C0008F3093 /* SanctionIC.swift in Sources */,
-				5B80E4BE25DC07D400CB1202 /* MatchEvent.swift in Sources */,
 				5B80E53A25DC0F0800CB1202 /* MatchClock.swift in Sources */,
+				5B80E5B125DC523B00CB1202 /* MatchEvent.swift in Sources */,
 				5B80E53625DC0F0800CB1202 /* MatchTeam.swift in Sources */,
 				5B8614F724CF073E00E00D8B /* TeamOptionsIC.swift in Sources */,
 				5B80E4E425DC08D900CB1202 /* YellowCardPlayerEvent.swift in Sources */,
 				5B80E4BC25DC07D400CB1202 /* ReplacePlayerEvent.swift in Sources */,
 				5B89A31323CF2BC80039762A /* MatchListIC.swift in Sources */,
+				5B40CF4625DCBAC00019BA9E /* Enums.swift in Sources */,
 				5BCC696A1D0E99D600A21628 /* PlayerIC.swift in Sources */,
 				5B0EA8A71D0D55FA003EBBA2 /* ExtensionDelegate.swift in Sources */,
 				5B80E4CE25DC07D400CB1202 /* TryScoredEvent.swift in Sources */,
+				5B40CF5D25DCBBE10019BA9E /* AppSettings.swift in Sources */,
 				5B80E4C225DC07D400CB1202 /* PenGoalScoredEvent.swift in Sources */,
 				5B9BB7DD23D1CCEF00D36680 /* RefWatchSuperIC.swift in Sources */,
 				5B80E55225DC0F9B00CB1202 /* Notification.Name.swift in Sources */,
 				5B80E4DE25DC08D900CB1202 /* ClockEvent.swift in Sources */,
 				5BCC69621D0E10C900A21628 /* TeamMenuIC.swift in Sources */,
 				5B80E4E025DC08D900CB1202 /* CautionPlayerEvent.swift in Sources */,
-				5B80E55925DC10B700CB1202 /* Colour.swift in Sources */,
+				5B80E55925DC10B700CB1202 /* Color.swift in Sources */,
 				5B4769351DD47B8E00636E60 /* SettingsIC.swift in Sources */,
 				5B80E4C625DC07D400CB1202 /* PenTryScoredEvent.swift in Sources */,
 				5B80E53825DC0F0800CB1202 /* MatchClockPeriod.swift in Sources */,
@@ -726,7 +768,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = RefWatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -734,7 +776,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -753,7 +795,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = RefWatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -761,7 +803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -779,7 +821,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -787,7 +829,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -806,7 +848,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				INFOPLIST_FILE = "RefWatchWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -814,7 +856,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -835,11 +877,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				IBSC_MODULE = RefWatchWatch_Extension;
 				INFOPLIST_FILE = RefWatchWatch/Info.plist;
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -861,11 +903,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = LD63Y8QQM5;
 				IBSC_MODULE = RefWatchWatch_Extension;
 				INFOPLIST_FILE = RefWatchWatch/Info.plist;
-				MARKETING_VERSION = 0.0.4;
+				MARKETING_VERSION = 0.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ltd.croker.refwatch.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -920,6 +962,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5B40CF6425DCC20C0019BA9E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5B40CF6525DCC20C0019BA9E /* Model.xcdatamodel */,
+			);
+			currentVersion = 5B40CF6525DCC20C0019BA9E /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Shared/Model.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5B0EA8561D0D556A003EBBA2 /* Project object */;
 }

@@ -8,7 +8,6 @@
 
 import WatchKit
 import Foundation
-import UIKit
 import UserNotifications
 
 class MainIC: RefWatchSuperIC {
@@ -44,9 +43,9 @@ class MainIC: RefWatchSuperIC {
     
     var _oldIsTimeUp : Bool = false;
     
-    private let match : Match = Match.getCurrentMatch();
-    private let settings : MatchSettings = Match.getCurrentMatch().settings;
-    private let clock : MatchClock = Match.getCurrentMatch().clock;
+    private let match : Match = MatchFactory.getCurrentMatch();
+    private let settings : MatchSettings = MatchFactory.getCurrentMatch().settings;
+    private let clock : MatchClock = MatchFactory.getCurrentMatch().clock;
     
     override init() {
         super.init();
@@ -205,7 +204,7 @@ class MainIC: RefWatchSuperIC {
     }
     
     @IBAction func startNewMatch() {
-        Match.startNewMatch();
+        MatchFactory.startNewMatch();
     }
 
     @IBAction func timeButtonClick() {

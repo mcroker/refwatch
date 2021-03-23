@@ -25,7 +25,7 @@ class MatchEventLog {
     
     func getEvents<T : MatchEvent>(_ type: T.Type,
                                    period: Int? = nil,
-                                   team: MatchTeam? = nil,
+                                   team: Teams? = nil,
                                    max: Int? = nil,
                                    latest: GameTime? = nil,
                                    since: GameTime? = nil
@@ -49,7 +49,7 @@ class MatchEventLog {
         }
         
         if nil != team {
-            matchingEvents = matchingEvents.filter { ($0 is TeamEvent) && (($0 as! TeamEvent).team.teamKey == team!.teamKey) };
+            matchingEvents = matchingEvents.filter { ($0 is TeamEvent) && (($0 as! TeamEvent).team == team!) };
         }
         
         if nil == max {

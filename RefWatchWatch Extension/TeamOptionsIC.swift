@@ -15,7 +15,7 @@ struct TeamOptionsPageContext {
 
 class TeamOptionsIC: RefWatchSuperIC {
     
-    private let settings : MatchSettings = Match.getCurrentMatch().settings;
+    private let settings : MatchSettings = MatchFactory.getCurrentMatch().settings;
     private var pickerValue: UIColor?;
     var context : TeamOptionsPageContext?;
 
@@ -26,7 +26,7 @@ class TeamOptionsIC: RefWatchSuperIC {
     @IBOutlet weak var colorPicker: WKInterfacePicker!
     
     @IBAction func pickerDidChange(_ value: Int) {
-        pickerValue = settings.colorsList[value].colour;
+        pickerValue = AppSettings.colorsList[value].colour;
     }
     
     @IBAction func okButtonClick() {
@@ -41,7 +41,7 @@ class TeamOptionsIC: RefWatchSuperIC {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context);
         self.context = (context as! TeamOptionsPageContext);
-        let pickerItems: [WKPickerItem] = settings.colorsList.map {
+        let pickerItems: [WKPickerItem] = AppSettings.colorsList.map {
                 let pickerItem = WKPickerItem();
                 pickerItem.caption = $0.caption;
                 pickerItem.title = $0.title;
@@ -50,10 +50,10 @@ class TeamOptionsIC: RefWatchSuperIC {
         colorPicker.setItems(pickerItems);
         var startIndex: Int?;
         if (self.context!.team.teamKey == .home) {
-            startIndex = settings.colorsList.firstIndex(where: { $0.colour == settings.homeColor});
+            startIndex = AppSettings.colorsList.firstIndex(where: { $0.colour == settings.homeColor});
             pickerValue = settings.homeColor;
         } else {
-            startIndex = settings.colorsList.firstIndex(where: { $0.colour == settings.awayColor});
+            startIndex = AppSettings.colorsList.firstIndex(where: { $0.colour == settings.awayColor});
             pickerValue = settings.awayColor;
         }
         if (startIndex != nil) {

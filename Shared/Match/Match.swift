@@ -11,19 +11,6 @@ import Foundation;
 
 class Match {
     
-    static fileprivate var _instance = Match();
-    
-    static func getCurrentMatch() -> Match {
-        return _instance;
-    }
-    
-    @discardableResult
-    static func startNewMatch()  -> Match {
-        self._instance.endMatch();
-        self._instance = Match();
-        return Match.getCurrentMatch();
-    }
-    
     public private(set) var matchID : Int;
     public private(set) var homeTeam : MatchTeam;
     public private(set) var awayTeam : MatchTeam;

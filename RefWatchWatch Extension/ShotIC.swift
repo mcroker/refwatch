@@ -25,9 +25,9 @@ class ShotIC: RefWatchSuperIC {
     @IBOutlet weak var kickClockTimer: WKInterfaceTimer!
     
     var context : ShotPageContext?
-    let match : Match = Match.getCurrentMatch()
-    let clock : MatchClock =  Match.getCurrentMatch().clock
-    let settings : MatchSettings = Match.getCurrentMatch().settings
+    let match : Match = MatchFactory.getCurrentMatch()
+    let clock : MatchClock =  MatchFactory.getCurrentMatch().clock
+    let settings : MatchSettings = MatchFactory.getCurrentMatch().settings
     var kickClockStart : GameTime?
     var kickAllowedTime : GameTime?
     var kickTimer : Timer?
@@ -103,9 +103,9 @@ class ShotIC: RefWatchSuperIC {
     @IBAction func scoreButtonClick() {
         switch (context!.shotType) {
         case .pen:
-            match.addEvent(PenGoalScoredEvent(team: context!.team))
+            match.addEvent(PenGoalScoredEvent(team: context!.team.teamKey))
         case .conv:
-            match.addEvent(ConversionScoredEvent(team: context!.team))
+            match.addEvent(ConversionScoredEvent(team: context!.team.teamKey))
         }
         goHomePage()
     }

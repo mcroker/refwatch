@@ -11,7 +11,7 @@ import Foundation
 
 class SettingsIC: WKInterfaceController {
     
-    let settings : MatchSettings = Match.getCurrentMatch().settings;
+    let settings : MatchSettings = MatchFactory.getCurrentMatch().settings;
     
     var dateFormatter : DateComponentsFormatter = DateComponentsFormatter();
 

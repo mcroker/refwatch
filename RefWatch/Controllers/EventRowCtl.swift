@@ -18,7 +18,7 @@ class EventRowCtl : NSObject {
     // @IBOutlet weak var sideBarSeperator: UISeparator!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    let match : Match = Match.getCurrentMatch();
+    let match : Match = MatchFactory.getCurrentMatch();
     
     var event: MatchEvent? {
         didSet {
@@ -58,7 +58,7 @@ class EventRowCtl : NSObject {
                 // self.sideBarSeperator.setColor(teamEvent.barColor);
                 // self.teamLabel.isHidden = false;
                 // self.sideBarSeperator.setHorizontalAlignment(teamEvent.team.barAlignment);
-                self.teamLabel.text = teamEvent.team.shortTitle;
+                // self.teamLabel.text = teamEvent.team.shortTitle;
                 
                 
             } else {
